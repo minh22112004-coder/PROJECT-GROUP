@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: package-analysis-config
+  namespace: package-analysis
+data:
+  # Django Settings
+  DJANGO_SETTINGS_MODULE: "packamal.settings"
+  ALLOWED_HOSTS: "api.packguard.dev,*.packguard.dev"
+  MEDIA_ROOT: "/media"
+  STATIC_ROOT: "/staticfiles"
+  
+  # Queue Settings
+  QUEUE_NAME: "analysis_tasks"
+  WORKER_CONCURRENCY: "1"
+  TASK_TIMEOUT_MINUTES: "30"
+  
+  # Application Settings
+  LOG_LEVEL: "INFO"
+  DEBUG: "False"
+  
+  # Redis Settings
+  REDIS_DB: "0"
+  REDIS_SOCKET_TIMEOUT: "5"
+  REDIS_SOCKET_CONNECT_TIMEOUT: "5"
+  
+  # Database Connection Pool
+  DB_POOL_SIZE: "10"
+  DB_MAX_OVERFLOW: "20"
+

@@ -1,0 +1,98 @@
+version: '3.8'
+
+services:
+  # INetSim - Network simulation service
+  inetsim:
+    build: ../service-simulation-module/inetsim
+    container_name: pack-a-mal-inetsim
+    hostname: inetsim
+    ports:
+      - "53:53/udp"     # DNS
+      - "8080:80"       # HTTP
+      - "8443:443"      # HTTPS
+      - "8021:21"       # FTP
+      - "8025:25"       # SMTP
+    volumes:
+      - ../service-simulation-module/shared/config/etc/inetsim:/etc/inetsim
+      - ../service-simulation-module/shared/logs:/logs
+      - ../service-simulation-module/shared/logs/inetsim:/var/log/inetsim
+    networks:
+      pack_a_mal_network:
+        ipv4_address: 172.20.0.2
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Service Simulation API - Management interface for INetSim
+  service-simulation:
+    build: ../service-simulation-module/service-simulation
+    container_name: pack-a-mal-sim-api
+    depends_on:
+      inetsim:
+        condition: service_healthy
+    ports:
+      - "5000:5000"     # Flask API
+    volumes:
+      - ../service-simulation-module/shared/logs:/logs
+      - ../service-simulation-module/shared/config:/config
+      - ../service-simulation-module/shared/config/etc/inetsim:/etc/inetsim
+    dns:
+      - 172.20.0.2
+    networks:
+      - pack_a_mal_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/status"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Pack-A-Mal Dynamic Analysis Worker (example configuration)
+  # Uncomment and configure based on your deployment needs
+  # pack-a-mal-worker:
+  #   build:
+  #     context: .
+  #     dockerfile: cmd/analyze/Dockerfile
+  #   container_name: pack-a-mal-worker
+  #   depends_on:
+  #     inetsim:
+  #       condition: service_healthy
+  #   environment:
+  #     # Network simulation configuration
+  #     - OSSF_NETWORK_SIMULATION_ENABLED=true
+  #     - OSSF_INETSIM_DNS_ADDR=172.20.0.2:53
+  #     - OSSF_INETSIM_HTTP_ADDR=172.20.0.2:80
+  #     - OSSF_URL_LIVENESS_TIMEOUT=3
+  #     
+  #     # Pack-A-Mal configuration
+  #     - OSSF_SANDBOX_IMAGE_TAG=latest
+  #     - LOGGER_ENV=production
+  #     - OSSMALWARE_WORKER_SUBSCRIPTION=${WORKER_SUBSCRIPTION}
+  #     - OSSF_MALWARE_ANALYSIS_RESULTS=${RESULTS_BUCKET}
+  #   dns:
+  #     - 172.20.0.2
+  #   networks:
+  #     - pack_a_mal_network
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock  # For podman/docker access
+  #     - ./sample_packages:/sample_packages
+  #   privileged: true  # Required for running containers within containers
+
+networks:
+  pack_a_mal_network:
+    name: pack-a-mal-network
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/24
+          gateway: 172.20.0.1
+
+volumes:
+  inetsim_logs:
+    name: pack-a-mal-inetsim-logs
+  inetsim_config:
+    name: pack-a-mal-inetsim-config

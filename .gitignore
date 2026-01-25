@@ -1,0 +1,23 @@
+web/package-analysis-web/venv
+web/tools
+web/package-analysis-web/db.sqlite3
+web/package-analysis-web/package_analysis/logs
+web/package-analysis-web/package_analysis/__pycache__
+web/package-analysis-web/staticfiles
+package-analysis-web/package_analysis/src/lastpymile/lastpymile/__pycache__
+.vscode
+web/package-analysis-web/package_analysis/src/lastpymile/tmp
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+web/package-analysis-web/oss-gadget.log
+web/package-analysis-web/media
+web/package-analysis-web/package_analysis/src/lastpymile/lastpymile/__pycache__
+web/package-analysis-web/package_analysis/migrations
+web/package-analysis-web/package_analysis/management/__pycache__
+# Do not include __pycache__ folders
+**/__pycache__/
+web/docs
+web/package-analysis-web/.env
+packamalenv/

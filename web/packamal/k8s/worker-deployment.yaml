@@ -1,0 +1,96 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: package-analysis-worker
+  namespace: package-analysis
+  labels:
+    app: package-analysis-worker
+    component: worker
+spec:
+  replicas: 0  # Start at 0, HPA will scale up
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 10
+      maxUnavailable: 5
+  selector:
+    matchLabels:
+      app: package-analysis-worker
+  template:
+    metadata:
+      labels:
+        app: package-analysis-worker
+        component: worker
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9090"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+      - name: worker
+        image: your-registry/package-analysis-worker:latest
+        imagePullPolicy: Always
+        env:
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: package-analysis-secrets
+              key: database-url
+        - name: REDIS_URL
+          valueFrom:
+            secretKeyRef:
+              name: package-analysis-secrets
+              key: redis-url
+        - name: QUEUE_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: package-analysis-config
+              key: QUEUE_NAME
+        - name: WORKER_CONCURRENCY
+          valueFrom:
+            configMapKeyRef:
+              name: package-analysis-config
+              key: WORKER_CONCURRENCY
+        - name: TASK_TIMEOUT_MINUTES
+          valueFrom:
+            configMapKeyRef:
+              name: package-analysis-config
+              key: TASK_TIMEOUT_MINUTES
+        - name: LOG_LEVEL
+          valueFrom:
+            configMapKeyRef:
+              name: package-analysis-config
+              key: LOG_LEVEL
+        - name: DOCKER_HOST
+          value: "unix:///var/run/docker.sock"
+        resources:
+          requests:
+            cpu: "2000m"
+            memory: "8Gi"
+          limits:
+            cpu: "2000m"
+            memory: "8Gi"
+        securityContext:
+          privileged: true  # Required for Docker-in-Docker
+        volumeMounts:
+        - name: docker-sock
+          mountPath: /var/run/docker.sock
+        - name: media-storage
+          mountPath: /media
+        - name: container-storage
+          mountPath: /var/lib/containers
+      volumes:
+      - name: docker-sock
+        hostPath:
+          path: /var/run/docker.sock
+          type: Socket
+      - name: media-storage
+        persistentVolumeClaim:
+          claimName: media-storage-pvc
+      - name: container-storage
+        emptyDir: {}
+      restartPolicy: Always
+      # Node selector for worker nodes (if using dedicated node pool)
+      # nodeSelector:
+      #   node-type: worker
+

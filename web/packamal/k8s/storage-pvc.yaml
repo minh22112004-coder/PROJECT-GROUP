@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: media-storage-pvc
+  namespace: package-analysis
+spec:
+  accessModes:
+    - ReadWriteMany  # For NFS
+  storageClassName: do-nfs-storage  # Or use do-block-storage for ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Ti
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: static-storage-pvc
+  namespace: package-analysis
+spec:
+  accessModes:
+    - ReadWriteMany  # For NFS
+  storageClassName: do-nfs-storage
+  resources:
+    requests:
+      storage: 10Gi
+

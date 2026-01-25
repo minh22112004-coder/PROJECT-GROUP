@@ -1,0 +1,37 @@
+services:
+  inetsim:
+    build: ./inetsim
+    container_name: inetsim
+    ports:
+      - "53:53/udp" #cổng DNS UDP
+      - "8080:80"  #cổng HTTP
+    volumes:
+      - ./shared/config/etc/inetsim:/etc/inetsim  #thư mục cấu hình inetsim
+      - ./shared/logs:/logs  #thư mục chung lưu log
+      - ./shared/logs/inetsim:/var/log/inetsim   #thư mục lưu log của inetsim
+    networks:
+      simulation_network:
+        ipv4_address: 172.20.0.2  #static IP cho DNS resolution
+
+  service-simulation:
+    build: ./service-simulation
+    container_name: service-simulation
+    depends_on:
+      - inetsim #đảm bảo inetsim khởi động trước
+    ports:
+      - "5000:5000" #cổng API Flask
+    volumes:
+      - ./shared/logs:/logs #thư mục chung lưu log
+      - ./shared/config:/config #thư mục cấu hình chung
+      - ./shared/config/etc/inetsim:/etc/inetsim #thư mục cấu hình inetsim
+    dns:
+      - 172.20.0.2  #IP của inetsim container (DNS nameserver)
+    networks:
+      - simulation_network #mạng chung cho các dịch vụ
+
+networks:
+  simulation_network:
+    driver: bridge #sử dụng mạng cầu nối để các container có thể giao tiếp với nhau qua tên dịch vụ
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24  #subnet cho static IP assignment
