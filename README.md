@@ -2,7 +2,7 @@
 
 Package Analysis for Malware - A comprehensive tool for analyzing packages from various open source ecosystems to detect potentially malicious behavior.
 
-## 🌐 Network Simulation Integration (NEW!)
+## Network Simulation Integration (NEW!)
 
 Pack-A-Mal now features **INetSim integration** for safe analysis of packages with network-based malicious behavior!
 
@@ -12,30 +12,6 @@ Pack-A-Mal now features **INetSim integration** for safe analysis of packages wi
 ✅ **Safe C2 analysis** - Analyze malware C2 communication without real connections  
 ✅ **Complete network logging** - Capture all simulated network interactions  
 
-### Quick Start
-```bash
-# Setup (Linux/Mac)
-cd dynamic-analysis
-./scripts/setup_network_simulation.sh
-
-# Setup (Windows)
-.\scripts\setup_network_simulation.ps1
-
-# Enable and test
-export OSSF_NETWORK_SIMULATION_ENABLED=true  # Linux/Mac
-# or
-$env:OSSF_NETWORK_SIMULATION_ENABLED='true'  # Windows
-
-# Test with sample package
-cd sample_packages/malicious_network_package
-python test_network.py
-```
-
-📖 **Full Documentation**:
-- [Network Simulation Guide](dynamic-analysis/NETWORK_SIMULATION_GUIDE.md) (English)
-- [Hướng dẫn Tiếng Việt](HUONG_DAN_TIENG_VIET.md) (Vietnamese)
-- [Quick Reference](dynamic-analysis/QUICK_REFERENCE.md)
-- [Integration Summary](INTEGRATION_SUMMARY.md)
 
 ## Project Overview: a dynamic malware analysis framwork for open-source packages
 
