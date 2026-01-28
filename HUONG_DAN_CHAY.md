@@ -73,19 +73,34 @@ go test -v
 # Kết quả: Tất cả tests phải PASS
 ```
 
-**Kết quả mong đợi:**
+**Kết quả thực tế (đã test):**
 ```
 === RUN   TestDefaultConfig
 --- PASS: TestDefaultConfig (0.00s)
+
 === RUN   TestIsURLAlive
---- PASS: TestIsURLAlive (0.XXs)
+2026/01/28 18:34:20 INFO URL check url=http://127.0.0.1:65408 status=200 alive=true
+2026/01/28 18:34:21 INFO URL not alive url=http://dead-url-12345.com
+--- PASS: TestIsURLAlive (0.20s)
+
 === RUN   TestShouldRedirectToINetSim
---- PASS: TestShouldRedirectToINetSim (0.00s)
+2026/01/28 18:34:21 INFO URL check url=http://127.0.0.1:65410 status=200 alive=true
+2026/01/28 18:34:21 INFO URL not alive url=http://dead-url.com
+2026/01/28 18:34:21 INFO Redirecting to INetSim url=http://dead-url.com
+--- PASS: TestShouldRedirectToINetSim (0.18s)
+
+=== RUN   TestGetDNSServers
+--- PASS: TestGetDNSServers (0.00s)
+
 PASS
-ok      github.com/ossf/package-analysis/internal/networksim    X.XXXs
+ok      github.com/ossf/package-analysis/internal/networksim    1.949s
 ```
 
+✅ **Tất cả 4 tests PASS** - Logic kiểm tra URL và redirect hoạt động đúng!
+
 ## Bước 7: Test với Sample Malicious Package
+
+### 7a. Test KHÔNG có INetSim (Chứng minh URL dead)
 
 ```powershell
 # Quay lại dynamic-analysis
@@ -97,7 +112,7 @@ cd sample_packages\malicious_network_package
 # Cài đặt package
 pip install -e .
 
-# Chạy test
+# Chạy test cơ bản
 python test_network.py
 ```
 
@@ -113,7 +128,64 @@ Malicious Network Package - Connecting to dead URL
 ============================================================
 ```
 
-**Lưu ý:** Package sẽ thử kết nối tới dead URLs. Connection failed là behavior đúng khi chưa cấu hình DNS redirection. Khi network simulation được enable trong Go code, traffic sẽ được redirect đến INetSim.
+👉 **Chứng minh:** URL không alive (dead URL) - Đáp ứng **Yêu cầu 1**
+
+### 7b. Test CÓ INetSim (Chứng minh redirect thành công)
+
+```powershell
+# Chạy script demo redirect (đã tích hợp sẵn)
+python test_with_inetsim.py
+```
+
+**Kết quả mong đợi:**
+```
+╔════════════════════════════════════════════════════════╗
+║  Dead URL Redirect to INetSim - Demo Script          ║
+║  Yêu cầu 2: Kiểm tra URL alive & redirect INetSim    ║
+╚════════════════════════════════════════════════════════╝
+
+============================================================
+Testing Dead URL WITHOUT INetSim (Should Fail)
+============================================================
+
+[*] Target URL: http://malicious-c2-server.example.com/api/data
+[*] No proxy - direct connection attempt
+
+✓ Connection failed (as expected)
+✓ This confirms the URL is indeed dead
+
+------------------------------------------------------------
+
+============================================================
+Testing Dead URL Redirect to INetSim
+============================================================
+
+[*] INetSim Proxy: http://localhost:8080
+[*] Testing dead URLs...
+
+[*] Testing: http://malicious-c2-server.example.com/api/data
+    ✓ Status: 200
+    ✓ Connected via INetSim!
+    ✓ Response confirmed from INetSim
+
+[*] Testing: http://expired-malware-repo.net/payload.exe
+    ✓ Status: 200
+    ✓ Connected via INetSim!
+    ✓ Response confirmed from INetSim
+
+[*] Testing: http://dead-phishing-site.org/login
+    ✓ Status: 200
+    ✓ Connected via INetSim!
+    ✓ Response confirmed from INetSim
+
+============================================================
+Summary: 3/3 URLs successfully redirected
+============================================================
+
+✓ All dead URLs successfully redirected to INetSim!
+```
+
+👉 **Chứng minh:** Dead URLs được redirect đến INetSim - Đáp ứng **Yêu cầu 2**
 
 ## Bước 8: Xem Logs
 

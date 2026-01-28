@@ -1,0 +1,8 @@
+README.md
+setup.py
+malicious_network_package/__init__.py
+malicious_network_package.egg-info/PKG-INFO
+malicious_network_package.egg-info/SOURCES.txt
+malicious_network_package.egg-info/dependency_links.txt
+malicious_network_package.egg-info/requires.txt
+malicious_network_package.egg-info/top_level.txt

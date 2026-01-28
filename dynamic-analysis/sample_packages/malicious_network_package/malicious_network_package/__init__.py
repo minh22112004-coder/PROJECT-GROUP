@@ -30,6 +30,3 @@ def connect_to_dead_url():
         print(f"[-] Error occurred: {e}")
     
     print("\n" + "="*60)
-
-# Auto-execute on import
-connect_to_dead_url()
