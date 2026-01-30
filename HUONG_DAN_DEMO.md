@@ -158,10 +158,27 @@ func (ns *NetworkSimulator) ShouldRedirectToINetSim(...) bool {
 }
 ```
 
-#### Bước 3.2.2: Chạy Unit Tests
+#### Bước 3.2.2: Cấu hình Environment Variables cho Go Test
 
 **Nói với thầy:**
-> "Em đã viết unit tests để test logic này. Cho em chạy tests để thầy xem."
+> "Trước khi test Go code, em cần set biến môi trường để code đọc được config."
+
+```powershell
+# Set biến môi trường cho network simulation
+$env:OSSF_NETWORK_SIMULATION_ENABLED = "true"
+$env:OSSF_INETSIM_DNS_ADDR = "172.20.0.2:53"
+$env:OSSF_INETSIM_HTTP_ADDR = "172.20.0.2:80"
+
+# Kiểm tra
+Write-Host "Network Simulation: $env:OSSF_NETWORK_SIMULATION_ENABLED"
+Write-Host "DNS Server: $env:OSSF_INETSIM_DNS_ADDR"
+Write-Host "HTTP Server: $env:OSSF_INETSIM_HTTP_ADDR"
+```
+
+#### Bước 3.2.3: Chạy Unit Tests
+
+**Nói với thầy:**
+> "Bây giờ em sẽ chạy unit tests để test logic kiểm tra URL."
 
 ```powershell
 # Di chuyển vào thư mục networksim
@@ -195,7 +212,7 @@ ok      github.com/ossf/package-analysis/internal/networksim    1.949s
 
 ---
 
-#### Bước 3.2.3: Demo THỰC TẾ Redirect tới INetSim 🎯
+#### Bước 3.2.4: Demo THỰC TẾ Redirect tới INetSim 🎯
 
 **Nói với thầy:**
 > "Bây giờ em sẽ demo thực tế! Em có script test kết nối URL chết qua INetSim proxy."
