@@ -21,6 +21,9 @@ var (
 	// ErrHalfModeNotEnabled indicates Half Mode is not enabled
 	ErrHalfModeNotEnabled = errors.New("half mode is not enabled")
 
+	// ErrTransparentModeNotEnabled indicates Transparent Mode is not enabled
+	ErrTransparentModeNotEnabled = errors.New("transparent mode is not enabled")
+
 	// ErrRequestBlocked indicates the request was blocked
 	ErrRequestBlocked = errors.New("request blocked by policy")
 

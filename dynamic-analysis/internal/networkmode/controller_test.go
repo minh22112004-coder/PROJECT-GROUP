@@ -13,10 +13,31 @@ func TestMode_IsValid(t *testing.T) {
 		mode  Mode
 		valid bool
 	}{
-		{"Full Mode", ModeFull, true},
-		{"Half Mode", ModeHalf, true},
-		{"Invalid", Mode("invalid"), false},
-		{"Empty", Mode(""), false},
+		{
+			name:  "Full Mode",
+			mode:  ModeFull,
+			valid: true,
+		},
+		{
+			name:  "Half Mode",
+			mode:  ModeHalf,
+			valid: true,
+		},
+		{
+			name:  "Transparent Mode",
+			mode:  ModeTransparent,
+			valid: true,
+		},
+		{
+			name:  "Invalid",
+			mode:  Mode("invalid"),
+			valid: false,
+		},
+		{
+			name:  "Empty",
+			mode:  Mode(""),
+			valid: false,
+		},
 	}
 
 	for _, tt := range tests {
@@ -73,6 +94,38 @@ func TestConfig_Validate(t *testing.T) {
 				Logging: &LoggingConfig{Level: "info"},
 			},
 			wantErr: false,
+		},
+		{
+			name: "Valid Transparent Mode",
+			config: &Config{
+				Mode: ModeTransparent,
+				TransparentMode: &TransparentModeConfig{
+					Enabled:            true,
+					ExtractPayloads:    true,
+					LogConnections:     true,
+					SupportedProtocols: []string{"http", "dns"},
+				},
+				Logging: &LoggingConfig{Level: "info"},
+			},
+			wantErr: false,
+		},
+		{
+			name: "Transparent Mode Not Enabled",
+			config: &Config{
+				Mode: ModeTransparent,
+				TransparentMode: &TransparentModeConfig{
+					Enabled: false,
+				},
+			},
+			wantErr: true,
+		},
+		{
+			name: "Missing Transparent Mode Config",
+			config: &Config{
+				Mode:            ModeTransparent,
+				TransparentMode: nil,
+			},
+			wantErr: true,
 		},
 		{
 			name: "Invalid Mode",
@@ -419,6 +472,143 @@ func TestController_SwitchMode(t *testing.T) {
 
 	if controller.GetMode() != ModeFull {
 		t.Errorf("Expected Full Mode after switch, got %s", controller.GetMode())
+	}
+}
+
+func TestController_TransparentMode(t *testing.T) {
+	config := DefaultConfig()
+	config.Mode = ModeTransparent
+	config.TransparentMode = &TransparentModeConfig{
+		Enabled:            true,
+		ExtractPayloads:    true,
+		LogConnections:     true,
+		LogICMP:            true,
+		SupportedProtocols: []string{"http", "dns", "smtp", "ftp"},
+		// Leave log files empty to use slogger fallback
+	}
+
+	controller, err := NewController(config, slog.Default())
+	if err != nil {
+		t.Fatalf("Failed to create controller in transparent mode: %v", err)
+	}
+	defer controller.Close()
+
+	if controller.GetMode() != ModeTransparent {
+		t.Errorf("Expected Transparent Mode, got %s", controller.GetMode())
+	}
+
+	ctx := context.Background()
+
+	// Handle an HTTP request - should pass through unmodified
+	req := &Request{
+		ID:         "test-transparent-001",
+		Timestamp:  time.Now(),
+		Protocol:   string(ProtocolHTTP),
+		Method:     "GET",
+		Domain:     "example.com",
+		IP:         "93.184.216.34",
+		Port:       80,
+		Path:       "/index.html",
+		SourceIP:   "192.168.1.100",
+		SourcePort: 54321,
+		Headers: map[string]string{
+			"User-Agent": "TestMalware/1.0",
+			"Host":       "example.com",
+		},
+	}
+
+	resp, err := controller.HandleRequest(ctx, req)
+	if err != nil {
+		t.Fatalf("HandleRequest() in transparent mode error = %v", err)
+	}
+
+	if resp == nil {
+		t.Fatal("Expected non-nil response in transparent mode")
+	}
+
+	// Transparent mode must always produce a passthrough response
+	if resp.Source != "transparent_passthrough" {
+		t.Errorf("Expected source=transparent_passthrough, got %s", resp.Source)
+	}
+
+	// Decision must be ActionForward (never block in transparent mode)
+	if resp.Decision == nil {
+		t.Error("Response should have decision")
+	} else if resp.Decision.Action != ActionForward {
+		t.Errorf("Transparent mode decision must be Forward, got %s", resp.Decision.Action)
+	}
+
+	// Handle a DNS request
+	dnsReq := &Request{
+		ID:         "test-transparent-dns-001",
+		Timestamp:  time.Now(),
+		Protocol:   string(ProtocolDNS),
+		Domain:     "malware-c2.example.com",
+		IP:         "8.8.8.8",
+		Port:       53,
+		SourceIP:   "192.168.1.100",
+		SourcePort: 12345,
+	}
+
+	dnsResp, err := controller.HandleRequest(ctx, dnsReq)
+	if err != nil {
+		t.Fatalf("HandleRequest() DNS in transparent mode error = %v", err)
+	}
+	if dnsResp == nil {
+		t.Fatal("Expected non-nil DNS response in transparent mode")
+	}
+
+	// Verify transparent mode stats are accessible
+	stats, err := controller.GetTransparentStats()
+	if err != nil {
+		t.Errorf("GetTransparentStats() error = %v", err)
+	}
+	if v, ok := stats["total_connections"]; !ok || v.(int64) < 1 {
+		t.Errorf("Expected at least 1 connection tracked, got %v", stats["total_connections"])
+	}
+
+	// Summary should be non-empty
+	summary, err := controller.GetTransparentSummary()
+	if err != nil {
+		t.Errorf("GetTransparentSummary() error = %v", err)
+	}
+	if summary == "" {
+		t.Error("Expected non-empty transparent summary")
+	}
+}
+
+func TestController_SwitchToTransparentMode(t *testing.T) {
+	config := DefaultConfig()
+	config.HalfMode.Enabled = true
+	config.TransparentMode = &TransparentModeConfig{
+		Enabled:            true,
+		SupportedProtocols: []string{"http", "dns"},
+	}
+
+	controller, err := NewController(config, slog.Default())
+	if err != nil {
+		t.Fatalf("Failed to create controller: %v", err)
+	}
+	defer controller.Close()
+
+	ctx := context.Background()
+
+	// Switch Full -> Transparent
+	err = controller.SwitchMode(ctx, ModeTransparent)
+	if err != nil {
+		t.Errorf("SwitchMode to Transparent error = %v", err)
+	}
+	if controller.GetMode() != ModeTransparent {
+		t.Errorf("Expected Transparent Mode, got %s", controller.GetMode())
+	}
+
+	// Switch Transparent -> Full
+	err = controller.SwitchMode(ctx, ModeFull)
+	if err != nil {
+		t.Errorf("SwitchMode back to Full error = %v", err)
+	}
+	if controller.GetMode() != ModeFull {
+		t.Errorf("Expected Full Mode, got %s", controller.GetMode())
 	}
 }
 

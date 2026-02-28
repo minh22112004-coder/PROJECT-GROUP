@@ -33,6 +33,13 @@ func main() {
 	// Example 4: Custom Decision Rules
 	fmt.Println("=== Example 4: Custom Decision Rules ===")
 	runCustomRulesExample()
+
+	fmt.Println()
+
+	// Example 5: Transparent Mode (Passive Observation)
+	// Inspired by siemens/sparring transparent mode
+	fmt.Println("=== Example 5: Transparent Mode (Passive Observation) ===")
+	runTransparentModeExample()
 }
 
 // runFullModeExample demonstrates Full Mode usage
@@ -337,6 +344,124 @@ func runCustomRulesExample() {
 		fmt.Printf("%d. %s (priority: %d, action: %s)\n",
 			i+1, rule.Name, rule.Priority, rule.Action)
 	}
+}
+
+// runTransparentModeExample demonstrates Transparent Mode usage.
+//
+// Transparent Mode is inspired by siemens/sparring:
+//   https://github.com/siemens/sparring
+//
+// In this mode sparring (and this controller) will NOT alter any transmitted
+// data and only log connections and try to extract interesting data for
+// supported protocols. Ideal for:
+//   - Passive forensic analysis (don't disturb malware behavior)
+//   - Baseline profiling before switching to Full/Half mode
+//   - Observing C2 communication patterns in a real network
+func runTransparentModeExample() {
+	config := networkmode.DefaultConfig()
+	config.Mode = networkmode.ModeTransparent
+	config.TransparentMode = &networkmode.TransparentModeConfig{
+		Enabled:            true,
+		ExtractPayloads:    true,
+		LogConnections:     true,
+		LogICMP:            true,
+		SupportedProtocols: []string{"http", "https", "dns", "smtp", "ftp"},
+		// Log files intentionally left empty → falls back to slog output
+		// In production: set ConnectionLogFile and PayloadLogFile
+	}
+
+	controller, err := networkmode.NewController(config, slog.Default())
+	if err != nil {
+		log.Fatalf("Failed to create transparent mode controller: %v", err)
+	}
+	defer controller.Close()
+
+	ctx := context.Background()
+	fmt.Printf("Network Mode: %s\n\n", controller.GetMode())
+
+	// Simulate traffic from a malware sample
+	requests := []*networkmode.Request{
+		// HTTP C2 beacon
+		{
+			ID:         "obs-001",
+			Timestamp:  time.Now(),
+			Protocol:   string(networkmode.ProtocolHTTP),
+			Method:     "POST",
+			Domain:     "malware-c2.example.com",
+			IP:         "203.0.113.42",
+			Port:       80,
+			Path:       "/beacon",
+			SourceIP:   "192.168.1.50",
+			SourcePort: 55001,
+			Headers: map[string]string{
+				"User-Agent":   "Mozilla/5.0 (compatible; bot/1.0)",
+				"Content-Type": "application/json",
+			},
+			Body:          []byte(`{"id":"infected-host-01","cmd":"check-in"}`),
+			ContentLength: 42,
+		},
+		// DNS lookup for C2 domain
+		{
+			ID:         "obs-002",
+			Timestamp:  time.Now(),
+			Protocol:   string(networkmode.ProtocolDNS),
+			Domain:     "update.malware-c2.example.com",
+			IP:         "8.8.8.8",
+			Port:       53,
+			SourceIP:   "192.168.1.50",
+			SourcePort: 43210,
+		},
+		// SMTP exfiltration attempt
+		{
+			ID:         "obs-003",
+			Timestamp:  time.Now(),
+			Protocol:   string(networkmode.ProtocolSMTP),
+			Domain:     "mail.attacker.net",
+			IP:         "198.51.100.7",
+			Port:       25,
+			SourceIP:   "192.168.1.50",
+			SourcePort: 60000,
+			Body:       []byte("EHLO infected-host\r\nMAIL FROM:<malware@victim.com>\r\nRCPT TO:<attacker@evil.net>\r\n"),
+		},
+	}
+
+	for _, req := range requests {
+		resp, err := controller.HandleRequest(ctx, req)
+		if err != nil {
+			log.Printf("Error handling request %s: %v", req.ID, err)
+			continue
+		}
+
+		fmt.Printf("[OBSERVED] %s %s:%d → %s\n",
+			req.Protocol, req.SourceIP, req.SourcePort, req.Domain)
+		fmt.Printf("  Action  : %s (traffic NOT modified)\n", resp.Decision.Action)
+		fmt.Printf("  Source  : %s\n", resp.Source)
+		fmt.Printf("  Rule    : %s\n", resp.Decision.RuleName)
+		fmt.Println()
+	}
+
+	// Print transparent mode statistics
+	stats, err := controller.GetTransparentStats()
+	if err != nil {
+		log.Printf("GetTransparentStats error: %v", err)
+		return
+	}
+
+	fmt.Println("--- Transparent Mode Statistics ---")
+	fmt.Printf("Total connections tracked : %v\n", stats["total_connections"])
+	fmt.Printf("TCP connections           : %v\n", stats["tcp_connections"])
+	fmt.Printf("UDP connections           : %v\n", stats["udp_connections"])
+	fmt.Printf("Extracted payloads        : %v\n", stats["extracted_payloads"])
+	if breakdown, ok := stats["protocol_breakdown"].(map[string]int64); ok {
+		fmt.Printf("Protocol breakdown:\n")
+		for proto, count := range breakdown {
+			fmt.Printf("  %-10s: %d\n", proto, count)
+		}
+	}
+
+	// Print full connection summary (mirrors sparring's print_connections)
+	summary, _ := controller.GetTransparentSummary()
+	fmt.Print(summary)
 }
 
 // preview returns a preview of data (truncated if too long)

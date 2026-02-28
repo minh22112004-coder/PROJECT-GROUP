@@ -12,6 +12,9 @@ const (
 	ModeFull Mode = "full"
 	// ModeHalf - Transparent proxy with selective forwarding
 	ModeHalf Mode = "half"
+	// ModeTransparent - Pass-through monitoring only, no traffic alteration
+	// Inspired by siemens/sparring transparent mode
+	ModeTransparent Mode = "transparent"
 )
 
 // String returns string representation of Mode
@@ -21,7 +24,7 @@ func (m Mode) String() string {
 
 // IsValid checks if mode is valid
 func (m Mode) IsValid() bool {
-	return m == ModeFull || m == ModeHalf
+	return m == ModeFull || m == ModeHalf || m == ModeTransparent
 }
 
 // Config holds the network mode configuration
@@ -34,6 +37,9 @@ type Config struct {
 
 	// HalfModeConfig - Configuration for Half Mode
 	HalfMode *HalfModeConfig `json:"half_mode,omitempty" yaml:"half_mode,omitempty"`
+
+	// TransparentModeConfig - Configuration for Transparent Mode
+	TransparentMode *TransparentModeConfig `json:"transparent_mode,omitempty" yaml:"transparent_mode,omitempty"`
 
 	// Logging configuration
 	Logging *LoggingConfig `json:"logging" yaml:"logging"`
@@ -82,6 +88,35 @@ type ServiceConfig struct {
 
 	// FTPAddress - Address of FTP service
 	FTPAddress string `json:"ftp_address" yaml:"ftp_address"`
+}
+
+// TransparentModeConfig holds Transparent Mode specific settings
+// In transparent mode, traffic is NOT altered - only logged and analyzed
+// This mirrors siemens/sparring's TRANSPARENT mode behavior
+type TransparentModeConfig struct {
+	// Enabled - Must be explicitly enabled
+	Enabled bool `json:"enabled" yaml:"enabled"`
+
+	// ExtractPayloads - Extract and log protocol payloads
+	ExtractPayloads bool `json:"extract_payloads" yaml:"extract_payloads"`
+
+	// LogConnections - Log all TCP/UDP connections
+	LogConnections bool `json:"log_connections" yaml:"log_connections"`
+
+	// LogICMP - Log ICMP traffic
+	LogICMP bool `json:"log_icmp" yaml:"log_icmp"`
+
+	// SupportedProtocols - Protocols to extract data from (http, dns, smtp, ftp)
+	SupportedProtocols []string `json:"supported_protocols" yaml:"supported_protocols"`
+
+	// ConnectionLogFile - Path to connection log file
+	ConnectionLogFile string `json:"connection_log_file" yaml:"connection_log_file"`
+
+	// PayloadLogFile - Path to payload extraction log file
+	PayloadLogFile string `json:"payload_log_file" yaml:"payload_log_file"`
+
+	// MaxPayloadSize - Maximum payload size to capture (bytes)
+	MaxPayloadSize int64 `json:"max_payload_size" yaml:"max_payload_size"`
 }
 
 // HalfModeConfig holds Half Mode specific settings
@@ -187,6 +222,16 @@ type LoggingConfig struct {
 func DefaultConfig() *Config {
 	return &Config{
 		Mode: ModeFull, // Default to Full Mode for safety
+		TransparentMode: &TransparentModeConfig{
+			Enabled:            false,
+			ExtractPayloads:    true,
+			LogConnections:     true,
+			LogICMP:            true,
+			SupportedProtocols: []string{"http", "dns", "smtp", "ftp"},
+			ConnectionLogFile:  "/logs/transparent_connections.log",
+			PayloadLogFile:     "/logs/transparent_payloads.log",
+			MaxPayloadSize:     1 * 1024 * 1024, // 1MB
+		},
 		FullMode: &FullModeConfig{
 			CompleteIsolation: true,
 			Services: &ServiceConfig{
@@ -264,6 +309,16 @@ func (c *Config) Validate() error {
 		}
 		if !c.HalfMode.DefaultAction.IsValid() {
 			return ErrInvalidAction
+		}
+	}
+
+	// Transparent Mode validation
+	if c.Mode == ModeTransparent {
+		if c.TransparentMode == nil {
+			return ErrMissingConfig
+		}
+		if !c.TransparentMode.Enabled {
+			return ErrTransparentModeNotEnabled
 		}
 	}
 

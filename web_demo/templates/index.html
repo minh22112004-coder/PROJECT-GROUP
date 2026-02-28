@@ -204,7 +204,90 @@ body::before{
 .loading-bar{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));
   border-radius:2px;width:0%;transition:width .4s;margin-top:10px}
 
-/* ── scrollbar global ─────────────────────────────────────── */
+/* ── Transparent mode extras ─────────────────────────── */
+:root{ --cyan:#06b6d4; --teal:#0d9488; }
+.mtbtn.active-transparent{border-color:var(--cyan);background:rgba(6,182,212,.12);color:#67e8f9}
+.mode-btn.active-transparent{border-color:var(--cyan) !important;box-shadow:0 0 20px rgba(6,182,212,.22)}
+.tag-cyan{color:var(--cyan);border-color:rgba(6,182,212,.3)}
+.badge-cyan{background:rgba(6,182,212,.15);color:var(--cyan);border:1px solid rgba(6,182,212,.3)}
+.rp-transparent .resp-panel-head{background:rgba(6,182,212,.08);color:var(--cyan)}
+.rp-transparent{border-color:rgba(6,182,212,.35) !important}
+
+/* Transparent panel body */
+.tp-section{margin-bottom:14px}
+.tp-label{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.tp-conn-box{background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.18);border-radius:8px;padding:10px 12px;font-size:.76rem;font-family:var(--mono)}
+.tp-conn-row{display:flex;gap:6px;margin:2px 0;flex-wrap:wrap}
+.tp-k{color:var(--muted);width:80px;flex-shrink:0}
+.tp-v{color:var(--cyan)}
+.tp-action-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;
+  background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.3);border-radius:20px;
+  font-size:.7rem;font-weight:700;color:var(--cyan);margin-top:6px}
+.tp-payload-box{background:rgba(0,0,0,.3);border-radius:8px;padding:10px 12px;
+  font-size:.72rem;font-family:var(--mono);color:#8fbcbb;max-height:130px;overflow-y:auto;white-space:pre-wrap;word-break:break-all}
+.tp-note{font-size:.7rem;color:var(--teal);margin-top:8px;display:flex;align-items:center;gap:5px}
+
+/* ── Transparent Observer card (Card 06) ────────────── */
+.obs-toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.obs-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+@media(max-width:700px){.obs-stat-grid{grid-template-columns:1fr 1fr}}
+.obs-stat-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 14px;text-align:center}
+.obs-stat-num{font-size:1.6rem;font-weight:700;color:var(--cyan);font-family:var(--mono);line-height:1}
+.obs-stat-lbl{font-size:.7rem;color:var(--muted);margin-top:4px}
+.obs-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:800px){.obs-grid{grid-template-columns:1fr}}
+
+/* connection table */
+.obs-table{width:100%;border-collapse:collapse;font-size:.77rem}
+.obs-table th{padding:8px 10px;text-align:left;color:var(--muted);font-size:.7rem;font-weight:500;
+  border-bottom:1px solid var(--border);white-space:nowrap}
+.obs-table td{padding:8px 10px;border-bottom:1px solid rgba(38,44,66,.5);vertical-align:middle}
+.obs-table tr:hover td{background:rgba(6,182,212,.04)}
+.obs-table tr.selected td{background:rgba(6,182,212,.08)}
+.obs-table tr.selected .proto-badge{box-shadow:0 0 0 2px var(--cyan)}
+.obs-table-wrap{max-height:260px;overflow-y:auto;border-radius:10px;border:1px solid var(--border)}
+
+/* protocol badges */
+.proto-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.68rem;font-weight:700;font-family:var(--mono)}
+.pb-http{background:rgba(34,197,94,.15);color:var(--green);border:1px solid rgba(34,197,94,.3)}
+.pb-https{background:rgba(108,99,255,.15);color:#a78bfa;border:1px solid rgba(108,99,255,.3)}
+.pb-dns{background:rgba(245,158,11,.15);color:var(--yellow);border:1px solid rgba(245,158,11,.3)}
+.pb-smtp{background:rgba(239,68,68,.15);color:var(--red);border:1px solid rgba(239,68,68,.3)}
+.pb-ftp{background:rgba(6,182,212,.15);color:var(--cyan);border:1px solid rgba(6,182,212,.3)}
+.pb-tcp{background:rgba(148,163,184,.12);color:#94a3b8;border:1px solid rgba(148,163,184,.2)}
+.pb-udp{background:rgba(148,163,184,.12);color:#94a3b8;border:1px solid rgba(148,163,184,.2)}
+
+/* payload detail side */
+.payload-placeholder{color:var(--muted);font-size:.82rem;text-align:center;padding:40px 20px}
+.payload-detail{animation:fadeIn .25s ease}
+.payload-head{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.payload-head h5{font-size:.88rem;font-weight:600;flex:1}
+.parsed-kv{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+.kv-row{display:flex;gap:8px;font-size:.76rem;align-items:flex-start}
+.kv-k{color:var(--muted);width:120px;flex-shrink:0;padding-top:1px}
+.kv-v{color:var(--text);font-family:var(--mono);word-break:break-all}
+.kv-v.kv-suspicious{color:var(--yellow)}
+.kv-v.kv-danger{color:var(--red)}
+
+/* protocol breakdown bars */
+.breakdown-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.bar-row{display:grid;grid-template-columns:60px 1fr 40px;gap:8px;align-items:center;font-size:.75rem}
+.bar-lbl{color:var(--muted);font-family:var(--mono)}
+.bar-track{background:rgba(255,255,255,.05);border-radius:4px;height:8px;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px;transition:width .6s ease}
+.bar-num{color:var(--text);text-align:right}
+
+/* summary output */
+.summary-box{background:#0a0c14;border:1px solid var(--border);border-radius:10px;
+  padding:14px 18px;font-family:var(--mono);font-size:.78rem;color:#c9d1d9;
+  white-space:pre-wrap;max-height:220px;overflow-y:auto;line-height:1.7;margin-top:12px}
+
+/* passthrough label */
+.passthrough-label{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;
+  background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.3);border-radius:20px;
+  font-size:.78rem;font-weight:700;color:var(--cyan)}
+
+/* scrollbar global */
 ::-webkit-scrollbar{width:8px;height:8px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:#2a2f45;border-radius:4px}
@@ -371,6 +454,7 @@ body::before{
         <div class="mode-toggle-group">
           <button class="mtbtn active-half" id="mtb-half" onclick="setDemoMode('half')">🟠 Half Mode</button>
           <button class="mtbtn" id="mtb-full" onclick="setDemoMode('full')">🔴 Full Mode</button>
+          <button class="mtbtn" id="mtb-transparent" onclick="setDemoMode('transparent')">🟢 Transparent</button>
         </div>
       </div>
 
@@ -405,7 +489,7 @@ body::before{
         </div>
 
         <div class="resp-panel rp-after" id="panel-after">
-          <div class="resp-panel-head">
+          <div class="resp-panel-head" id="panel-after-head">
             <i class="fas fa-shield-halved"></i> Sau — Mode Đang Bật
           </div>
           <div class="resp-body-inner" id="body-after">
@@ -450,10 +534,10 @@ body::before{
       <div class="card-head">
         <div class="step">05</div>
         <h3>Network Modes</h3>
-        <span class="tag tag-blue">2 chế độ</span>
+        <span class="tag tag-blue">3 chế độ</span>
       </div>
       <div class="card-body">
-        <div class="mode-grid">
+        <div class="mode-grid" style="grid-template-columns:1fr 1fr 1fr">
           <div class="mode-btn" id="mb-full" onclick="loadMode('full')">
             <div class="mode-icon">🔴</div>
             <div class="mode-title">Full Mode</div>
@@ -464,11 +548,109 @@ body::before{
             <div class="mode-title">Half Mode</div>
             <div class="mode-sub">Chặn dead URLs</div>
           </div>
+          <div class="mode-btn" id="mb-transparent" onclick="loadMode('transparent')">
+            <div class="mode-icon">🟢</div>
+            <div class="mode-title">Transparent</div>
+            <div class="mode-sub">Quan sát thụ động</div>
+          </div>
         </div>
         <div class="mode-detail" id="mode-detail"></div>
       </div>
     </div>
 
+  </div>
+
+  <!-- CARD 06: Transparent Mode Observer (full width) -->
+  <div class="card fade-in mb-16" id="card-transparent-observer">
+    <div class="card-head">
+      <div class="step">06</div>
+      <h3>Transparent Mode Observer</h3>
+      <span class="tag tag-cyan">Quan sát thụ động</span>
+      <span class="passthrough-label" style="margin-left:8px"><i class="fas fa-eye"></i> PASSTHROUGH — Không sửa đổi traffic</span>
+    </div>
+    <div class="card-body">
+
+      <!-- Toolbar -->
+      <div class="obs-toolbar">
+        <button class="btn btn-cyan" id="btn-observe" onclick="runObserve()">
+          <i class="fas fa-satellite-dish"></i> Bắt đầu quan sát
+        </button>
+        <button class="btn btn-ghost btn-sm" id="btn-obs-summary" onclick="showSummary()" disabled>
+          <i class="fas fa-chart-bar"></i> In Summary
+        </button>
+        <span class="muted" style="font-size:.78rem" id="obs-note">Nhấn để mô phỏng quan sát traffic từ malware sample</span>
+      </div>
+
+      <!-- Stats boxes -->
+      <div class="obs-stat-grid" id="obs-stats" style="display:none">
+        <div class="obs-stat-box"><div class="obs-stat-num" id="st-total">0</div><div class="obs-stat-lbl">Tổng kết nối</div></div>
+        <div class="obs-stat-box"><div class="obs-stat-num" id="st-bytes">0</div><div class="obs-stat-lbl">Bytes quan sát</div></div>
+        <div class="obs-stat-box"><div class="obs-stat-num" id="st-payloads">0</div><div class="obs-stat-lbl">Payloads trích xuất</div></div>
+        <div class="obs-stat-box"><div class="obs-stat-num" id="st-modified" style="color:var(--green)">0</div><div class="obs-stat-lbl">Traffic bị sửa đổi</div></div>
+      </div>
+
+      <!-- Main observer grid -->
+      <div class="obs-grid" id="obs-main" style="display:none">
+
+        <!-- LEFT: Connection table -->
+        <div>
+          <div style="font-size:.8rem;font-weight:600;margin-bottom:10px;color:var(--text)">
+            <i class="fas fa-network-wired" style="color:var(--cyan);margin-right:6px"></i>
+            Connection Tracking
+          </div>
+          <div class="obs-table-wrap">
+            <table class="obs-table">
+              <thead>
+                <tr>
+                  <th>Proto</th>
+                  <th>Src</th>
+                  <th>Dst / Domain</th>
+                  <th>Bytes</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="obs-table-body">
+                <!-- filled by JS -->
+              </tbody>
+            </table>
+          </div>
+          <!-- Protocol breakdown -->
+          <div style="margin-top:16px">
+            <div style="font-size:.75rem;color:var(--muted);margin-bottom:4px">Protocol Breakdown</div>
+            <div class="breakdown-list" id="obs-breakdown"></div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Payload detail -->
+        <div>
+          <div style="font-size:.8rem;font-weight:600;margin-bottom:10px;color:var(--text)">
+            <i class="fas fa-code" style="color:var(--cyan);margin-right:6px"></i>
+            Extracted Payload
+            <span class="muted" style="font-size:.72rem;font-weight:400"> — click connection để xem</span>
+          </div>
+          <div id="obs-payload-panel">
+            <div class="payload-placeholder">
+              <i class="fas fa-hand-pointer" style="font-size:1.5rem;display:block;margin-bottom:8px;color:var(--border)"></i>
+              Click vào một connection để xem payload trích xuất
+            </div>
+          </div>
+          <!-- Summary output -->
+          <div id="obs-summary-wrap" style="display:none">
+            <div style="font-size:.75rem;color:var(--muted);margin-top:16px;margin-bottom:4px">
+              <i class="fas fa-terminal" style="margin-right:4px"></i> Traffic Summary
+            </div>
+            <div class="summary-box" id="obs-summary-text"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty state -->
+      <div id="obs-empty" style="text-align:center;padding:36px;color:var(--muted);font-size:.85rem">
+        <i class="fas fa-satellite-dish" style="font-size:2rem;display:block;margin-bottom:10px;color:var(--border)"></i>
+        Transparent Observer chưa chạy.<br>Nhấn <strong>"Bắt đầu quan sát"</strong> để bắt đầu.
+      </div>
+
+    </div>
   </div>
 
 </div><!-- /wrap -->
@@ -614,25 +796,35 @@ async function testSvc(svc) {
 // ── Demo Compare ─────────────────────────────────────────────────────────────
 let _demoMode = 'half';
 const _demoCfg = {
-  half: { url:'http://malicious-c2-server.example.com/api/data', badge:'Dead URL',  badgeCls:'badge-red',   arrow:'🟠 HALF<br>MODE' },
-  full: { url:'http://example.com',                               badge:'Alive URL', badgeCls:'badge-green', arrow:'🔴 FULL<br>MODE' }
+  half:        { url:'http://malicious-c2-server.example.com/api/data', badge:'Dead URL',       badgeCls:'badge-red',   arrow:'🟠 HALF<br>MODE' },
+  full:        { url:'http://example.com',                               badge:'Alive URL',      badgeCls:'badge-green', arrow:'🔴 FULL<br>MODE' },
+  transparent: { url:'http://c2-tracker.evil.example.com/beacon',        badge:'Observe Only',  badgeCls:'badge-cyan',  arrow:'🟢 TRANS<br>PARENT' }
 };
 
 function setDemoMode(mode) {
   _demoMode = mode;
-  document.getElementById('mtb-half').className = 'mtbtn' + (mode==='half' ? ' active-half' : '');
-  document.getElementById('mtb-full').className = 'mtbtn' + (mode==='full' ? ' active-full' : '');
+  document.getElementById('mtb-half').className        = 'mtbtn' + (mode==='half'        ? ' active-half'        : '');
+  document.getElementById('mtb-full').className        = 'mtbtn' + (mode==='full'        ? ' active-full'        : '');
+  document.getElementById('mtb-transparent').className = 'mtbtn' + (mode==='transparent' ? ' active-transparent' : '');
   const cfg = _demoCfg[mode];
   document.getElementById('compare-url').textContent = cfg.url;
   const b = document.getElementById('url-badge');
   b.textContent = cfg.badge; b.className = 'badge ' + cfg.badgeCls;
-  document.getElementById('demo-mode-label').textContent = mode==='half' ? 'Half Mode' : 'Full Mode';
+  const labels = { half:'Half Mode', full:'Full Mode', transparent:'Transparent Mode' };
+  document.getElementById('demo-mode-label').textContent = labels[mode];
   document.getElementById('arrow-label').innerHTML = cfg.arrow;
   ['before','after'].forEach(s => {
     document.getElementById('body-'+s).innerHTML = '<div class="rp-placeholder">Nhấn "Chạy So Sánh" để bắt đầu</div>';
   });
+  const ah = document.getElementById('panel-after-head');
+  if (mode === 'transparent') {
+    document.getElementById('panel-after').className = 'resp-panel rp-after rp-transparent';
+    ah.innerHTML = '<i class="fas fa-eye"></i> Sau — Transparent (Observe Only)';
+  } else {
+    document.getElementById('panel-after').className  = 'resp-panel rp-after';
+    ah.innerHTML = '<i class="fas fa-shield-halved"></i> Sau — Mode Đang Bật';
+  }
   document.getElementById('panel-before').className = 'resp-panel rp-before';
-  document.getElementById('panel-after').className  = 'resp-panel rp-after';
 }
 
 function _esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
@@ -664,6 +856,29 @@ function _renderPanel(bodyId, panelId, data, isAfter) {
   }
 }
 
+function _renderTransparentAfterPanel(bodyId, data) {
+  const el = document.getElementById(bodyId);
+  const c = data.connection || {};
+  const p = data.payload   || {};
+  el.innerHTML = `
+    <div class="tp-section">
+      <div class="tp-label"><i class="fas fa-link" style="margin-right:4px"></i>Connection Info</div>
+      <div class="tp-conn-box">
+        <div class="tp-conn-row"><span class="tp-k">Source</span><span class="tp-v">${_esc(c.src||'127.0.0.1:54321')}</span></div>
+        <div class="tp-conn-row"><span class="tp-k">Destination</span><span class="tp-v">${_esc(c.dst||'93.184.216.34:80')}</span></div>
+        <div class="tp-conn-row"><span class="tp-k">Protocol</span><span class="tp-v">${_esc(c.protocol||'HTTP')}</span></div>
+        <div class="tp-conn-row"><span class="tp-k">Bytes</span><span class="tp-v">${_esc(c.bytes||'1,432 bytes')}</span></div>
+        <div class="tp-action-badge"><i class="fas fa-check-circle"></i> ACTION: PASSTHROUGH — Traffic không bị sửa đổi</div>
+      </div>
+    </div>
+    <div class="tp-section">
+      <div class="tp-label"><i class="fas fa-code" style="margin-right:4px"></i>Extracted Payload</div>
+      <div class="tp-payload-box">${_esc(p.raw_sample || p.method && `${p.method} ${p.path}\nHost: ${p.host}\nUser-Agent: ${p.user_agent}` || JSON.stringify(p, null, 2))}</div>
+    </div>
+    <div class="tp-note"><i class="fas fa-info-circle"></i> ${_esc(data.note||'Traffic observed and logged, never modified.')}</div>
+  `;
+}
+
 async function runCompare() {
   setBtn('btn-compare', true);
   ['before','after'].forEach(s => {
@@ -673,7 +888,11 @@ async function runCompare() {
     const r = await fetch(`/api/compare/${_demoMode}`).then(x=>x.json());
     if (!r.ok) throw new Error('Server error');
     _renderPanel('body-before','panel-before', r.before, false);
-    _renderPanel('body-after', 'panel-after',  r.after,  true);
+    if (_demoMode === 'transparent') {
+      _renderTransparentAfterPanel('body-after', r.after);
+    } else {
+      _renderPanel('body-after', 'panel-after',  r.after,  true);
+    }
   } catch(e) {
     ['before','after'].forEach(s => {
       document.getElementById('body-'+s).innerHTML = `<div class="rp-placeholder">❌ ${_esc(e.message)}</div>`;
@@ -702,8 +921,9 @@ const badgeClass = {danger:'badge-red', warning:'badge-yellow', success:'badge-g
 
 async function loadMode(name) {
   // highlight selected
-  ['full','half'].forEach(m => {
-    document.getElementById('mb-'+m).className = 'mode-btn' + (m===name ? ` active-${m}` : '');
+  ['full','half','transparent'].forEach(m => {
+    const el = document.getElementById('mb-'+m);
+    if (el) el.className = 'mode-btn' + (m===name ? ` active-${m}` : '');
   });
   const d = document.getElementById('mode-detail');
   d.style.display='block'; d.className='mode-detail show';
@@ -723,7 +943,155 @@ async function loadMode(name) {
     <div class="detail-row"><span class="label"><i class="fas fa-lightbulb" style="margin-right:5px;color:var(--yellow)"></i>Use case</span><span style="font-size:.83rem">${m.usecase}</span></div>
     <div style="margin-top:12px;font-size:.78rem;color:var(--muted);margin-bottom:6px">Flow:</div>
     <ul class="flow-list">${flowHtml}</ul>
+    ${name==='transparent' ? '<div style="margin-top:12px"><a href="#card-transparent-observer" class="btn btn-sm" style="background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.3);color:var(--cyan);font-size:.76rem;padding:5px 12px;border-radius:8px;text-decoration:none"><i class="fas fa-satellite-dish"></i> Mở Transparent Observer ↓</a></div>' : ''}
   `;
+}
+
+// ── Transparent Observer (Card 06) ───────────────────────────────────────────
+let _obsData = null;
+
+async function runObserve() {
+  const btn = document.getElementById('btn-observe');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang quan sát…';
+  document.getElementById('obs-note').textContent = 'Connecting to /api/transparent/observe ...';
+  try {
+    const r = await fetch('/api/transparent/observe').then(x=>x.json());
+    if (!r.ok) throw new Error(r.error || 'Server error');
+    _obsData = r;
+    _renderObserve(r);
+  } catch(e) {
+    document.getElementById('obs-note').textContent = '❌ Lỗi: ' + e.message;
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fas fa-redo"></i> Chạy lại';
+  }
+}
+
+const _PROTO_COLORS = {
+  HTTP:'var(--green)', HTTPS:'#a78bfa', DNS:'var(--yellow)',
+  SMTP:'var(--red)', FTP:'var(--cyan)', TCP:'#94a3b8', UDP:'#94a3b8'
+};
+
+function _pbClass(proto) {
+  return 'pb-' + (proto||'tcp').toLowerCase().replace('/','');
+}
+
+function _renderObserve(r) {
+  const conns    = r.connections  || [];
+  const payloads = r.payloads     || [];
+  const stats    = r.stats        || {};
+  const protos   = r.protocol_breakdown || {};
+
+  // show areas
+  document.getElementById('obs-empty').style.display    = 'none';
+  document.getElementById('obs-stats').style.display    = 'grid';
+  document.getElementById('obs-main').style.display     = 'grid';
+  document.getElementById('btn-obs-summary').disabled   = false;
+  document.getElementById('obs-note').textContent       = '✅ Quan sát hoàn tất — ' + conns.length + ' kết nối bắt được';
+
+  // stats
+  document.getElementById('st-total').textContent    = stats.total_connections || conns.length;
+  document.getElementById('st-bytes').textContent    = _fmtBytes(stats.total_bytes || 0);
+  document.getElementById('st-payloads').textContent = stats.extracted_payloads || payloads.length;
+  document.getElementById('st-modified').textContent = stats.traffic_modified || 0;
+
+  // connection table
+  const tbody = document.getElementById('obs-table-body');
+  tbody.innerHTML = conns.map((c,i) => `
+    <tr onclick="_showPayload(${i})" style="cursor:pointer" id="otr-${i}">
+      <td><span class="proto-badge ${_pbClass(c.protocol)}">${_esc(c.protocol)}</span></td>
+      <td style="font-family:var(--mono);font-size:.72rem">${_esc(c.src_ip||'')}</td>
+      <td style="font-family:var(--mono);font-size:.72rem">${_esc(c.dst_domain||c.dst_ip||'')}${c.dst_port ? ':<b>'+c.dst_port+'</b>':''}</td>
+      <td style="font-family:var(--mono);font-size:.72rem">${_fmtBytes(c.bytes_transferred||0)}</td>
+      <td><span style="color:var(--green);font-size:.72rem;font-weight:700">▶ PASS</span></td>
+    </tr>
+  `).join('');
+
+  // store payloads mapped by connection index
+  window._obsPayloads = {};
+  payloads.forEach((p,i) => { window._obsPayloads[i] = p; });
+
+  // protocol breakdown bars
+  const bd = document.getElementById('obs-breakdown');
+  const maxVal = Math.max(...Object.values(protos), 1);
+  bd.innerHTML = Object.entries(protos).map(([k, v]) => `
+    <div class="bar-row">
+      <span class="bar-lbl">${_esc(k)}</span>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:${Math.round(v/maxVal*100)}%;background:${_PROTO_COLORS[k.toUpperCase()]||'var(--accent)'}"></div>
+      </div>
+      <span class="bar-num">${v}</span>
+    </div>
+  `).join('');
+}
+
+function _showPayload(i) {
+  // highlight row
+  document.querySelectorAll('#obs-table-body tr').forEach((tr,j) => {
+    tr.className = j===i ? 'selected' : '';
+  });
+  const p = (window._obsPayloads||{})[i];
+  const panel = document.getElementById('obs-payload-panel');
+  if (!p) {
+    panel.innerHTML = '<div class="payload-placeholder">Không có payload cho kết nối này.</div>';
+    return;
+  }
+  const proto = (p.protocol||'').toUpperCase();
+  const fields = Object.entries(p)
+    .filter(([k]) => !['protocol','connection_id'].includes(k))
+    .map(([k,v]) => `
+      <div class="kv-row">
+        <span class="kv-k">${_esc(k.replace(/_/g,' '))}</span>
+        <span class="kv-v">${_esc(String(v))}</span>
+      </div>
+    `).join('');
+  panel.innerHTML = `
+    <div class="payload-detail">
+      <div class="payload-head">
+        <span class="proto-badge ${_pbClass(proto)}">${proto}</span>
+        <h5>${_esc(p.host||p.domain||proto + ' Payload')}</h5>
+      </div>
+      <div class="parsed-kv">${fields}</div>
+      <div class="tp-note"><i class="fas fa-lock-open"></i> Traffic không bị mã hóa — chỉ quan sát &amp; ghi log</div>
+    </div>
+  `;
+}
+
+function showSummary() {
+  if (!_obsData) return;
+  const wrap = document.getElementById('obs-summary-wrap');
+  const box  = document.getElementById('obs-summary-text');
+  if (wrap.style.display === 'none') {
+    const s = _obsData.stats || {};
+    const lines = [
+      '=== Transparent Mode - Traffic Summary ===',
+      'Total Connections  : ' + (s.total_connections||0),
+      'TCP Connections    : ' + (s.tcp_connections||0),
+      'UDP Connections    : ' + (s.udp_connections||0),
+      'Total Bytes        : ' + _fmtBytes(s.total_bytes||0),
+      'Extracted Payloads : ' + (s.extracted_payloads||0),
+      'Traffic Modified   : ' + (s.traffic_modified||'NONE — passthrough only'),
+      '',
+      '--- Protocol Breakdown ---',
+      ...Object.entries(_obsData.protocol_breakdown||{}).map(([k,v])=>`  ${k.padEnd(8)} : ${v}`),
+      '',
+      '--- Key Connections ---',
+      ...(_obsData.connections||[]).map(c=>`  [${c.protocol}] ${c.src_ip} -> ${c.dst_domain||c.dst_ip} (${_fmtBytes(c.bytes_transferred||0)}) -> PASSTHROUGH`)
+    ];
+    box.textContent = lines.join('\n');
+    wrap.style.display = 'block';
+    document.getElementById('btn-obs-summary').innerHTML = '<i class="fas fa-eye-slash"></i> Ẩn Summary';
+  } else {
+    wrap.style.display = 'none';
+    document.getElementById('btn-obs-summary').innerHTML = '<i class="fas fa-chart-bar"></i> In Summary';
+  }
+}
+
+function _fmtBytes(b) {
+  if (b >= 1048576) return (b/1048576).toFixed(1) + ' MB';
+  if (b >= 1024)    return (b/1024).toFixed(1) + ' KB';
+  return b + ' B';
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────

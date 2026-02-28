@@ -1,9 +1,12 @@
 # Network Mode Configuration
 # This file configures the Network Mode Controller for Pack-A-Mal
 
-# Network Mode: "full" or "half"
-# - full: Complete isolation, no external traffic (SAFEST)
-# - half: Transparent proxy with selective forwarding (ADVANCED)
+# Network Mode: "full", "half", or "transparent"
+# - full:        Complete isolation, no external traffic (SAFEST)
+# - half:        Transparent proxy with selective forwarding (ADVANCED)
+# - transparent: Passive observation only, no traffic alteration
+#                Inspired by siemens/sparring transparent mode
+#                https://github.com/siemens/sparring
 network_mode:
   mode: "full"  # Default to Full Mode for safety
 
@@ -75,6 +78,49 @@ network_mode:
       sandbox_executables: true
       sandbox_dir: "/logs/executables"
       max_response_size: 10485760  # 10MB
+
+  # =========================================================================
+  # Transparent Mode Configuration
+  # Inspired by siemens/sparring TRANSPARENT mode:
+  #   "sparring will NOT alter any transmitted data and only log connections
+  #    and try to extract interesting data for supported protocols."
+  #
+  # Use cases:
+  #   - Passive forensic analysis without disrupting malware behavior
+  #   - Baseline traffic profiling before applying full/half mode
+  #   - Observing C2 communication patterns in a real network environment
+  # =========================================================================
+  transparent_mode:
+    # enabled - Must be explicitly set to true to use this mode
+    enabled: false
+
+    # Extract and log protocol payloads (HTTP bodies, SMTP commands, etc.)
+    extract_payloads: true
+
+    # Log all TCP/UDP connections with src/dst/protocol info
+    log_connections: true
+
+    # Log ICMP traffic (ping, unreachable, etc.)
+    log_icmp: true
+
+    # Protocols to perform deep payload extraction on
+    # Valid values: http, https, dns, smtp, ftp
+    supported_protocols:
+      - "http"
+      - "https"
+      - "dns"
+      - "smtp"
+      - "ftp"
+
+    # Path for connection tracking log (JSONL format)
+    connection_log_file: "/logs/transparent_connections.log"
+
+    # Path for payload extraction log (JSONL format)
+    payload_log_file: "/logs/transparent_payloads.log"
+
+    # Maximum payload size to capture per request (bytes)
+    # Larger payloads will be truncated and flagged
+    max_payload_size: 1048576  # 1MB
 
   # Logging Configuration
   logging:

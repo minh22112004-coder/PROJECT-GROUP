@@ -17,11 +17,12 @@ type Controller struct {
 	config *Config
 
 	// Components
-	interceptor    *TrafficInterceptor
-	decisionEngine *DecisionEngine
-	modifier       *TrafficModifier
-	router         *Router
-	logger         *NetworkLogger
+	interceptor        *TrafficInterceptor
+	decisionEngine     *DecisionEngine
+	modifier           *TrafficModifier
+	router             *Router
+	logger             *NetworkLogger
+	transparentHandler *TransparentModeHandler
 
 	// Structured logger
 	slogger *slog.Logger
@@ -87,16 +88,30 @@ func NewController(config *Config, logger *slog.Logger) (*Controller, error) {
 		}
 	}
 
+	// Create Transparent Mode handler if in Transparent Mode
+	var transparentHandler *TransparentModeHandler
+	if config.Mode == ModeTransparent {
+		if config.TransparentMode == nil {
+			return nil, fmt.Errorf("transparent mode config is required for Transparent Mode")
+		}
+		var err error
+		transparentHandler, err = NewTransparentModeHandler(config.TransparentMode, logger)
+		if err != nil {
+			return nil, fmt.Errorf("failed to create transparent mode handler: %w", err)
+		}
+	}
+
 	controller := &Controller{
-		mode:           config.Mode,
-		config:         config,
-		interceptor:    interceptor,
-		decisionEngine: decisionEngine,
-		modifier:       modifier,
-		router:         router,
-		logger:         networkLogger,
-		slogger:        logger,
-		shutdown:       make(chan struct{}),
+		mode:               config.Mode,
+		config:             config,
+		interceptor:        interceptor,
+		decisionEngine:     decisionEngine,
+		modifier:           modifier,
+		router:             router,
+		logger:             networkLogger,
+		slogger:            logger,
+		transparentHandler: transparentHandler,
+		shutdown:           make(chan struct{}),
 		stats: &Stats{
 			StartTime: time.Now(),
 		},
@@ -104,7 +119,8 @@ func NewController(config *Config, logger *slog.Logger) (*Controller, error) {
 
 	logger.Info("Network Mode Controller initialized",
 		"mode", config.Mode,
-		"full_mode_isolation", config.Mode == ModeFull)
+		"full_mode_isolation", config.Mode == ModeFull,
+		"transparent_mode", config.Mode == ModeTransparent)
 
 	return controller, nil
 }
@@ -149,6 +165,9 @@ func (c *Controller) HandleRequest(ctx context.Context, req *Request) (*Response
 
 	case ModeHalf:
 		resp, decision, err = c.handleHalfMode(ctx, req)
+
+	case ModeTransparent:
+		resp, decision, err = c.handleTransparentMode(ctx, req)
 
 	default:
 		// Invalid mode - fail safe to Full Mode
@@ -221,6 +240,49 @@ func (c *Controller) handleFullMode(ctx context.Context, req *Request) (*Respons
 	}
 
 	return resp, nil
+}
+
+// handleTransparentMode handles a request in Transparent Mode.
+// Key principle (from siemens/sparring): DO NOT modify traffic, only log and observe.
+// All connections pass through unmodified; payloads are extracted for analysis.
+func (c *Controller) handleTransparentMode(ctx context.Context, req *Request) (*Response, *Decision, error) {
+	c.slogger.InfoContext(ctx, "Handling in Transparent Mode (observe only)",
+		"req_id", req.ID,
+		"domain", req.Domain,
+		"protocol", req.Protocol)
+
+	// Ensure handler is available
+	if c.transparentHandler == nil {
+		c.slogger.ErrorContext(ctx, "Transparent handler not initialized, failing safe to Full Mode",
+			"req_id", req.ID)
+		resp, err := c.handleFullMode(ctx, req)
+		decision := &Decision{
+			Action:     ActionSimulate,
+			Reason:     "Transparent handler not ready - failed safe to Full Mode",
+			RuleName:   "transparent_failsafe",
+			Confidence: 0.0,
+		}
+		return resp, decision, err
+	}
+
+	// Let the transparent handler observe (no modification)
+	resp, err := c.transparentHandler.HandleRequest(ctx, req)
+	if err != nil {
+		return nil, nil, fmt.Errorf("transparent mode handler error: %w", err)
+	}
+
+	// Decision for transparent mode: always "forward" (pass through)
+	// Traffic is NOT blocked or modified - this is the core invariant
+	decision := &Decision{
+		Action:     ActionForward,
+		Reason:     "Transparent Mode - traffic observed and passed through unmodified",
+		RuleName:   "transparent_passthrough",
+		Confidence: 1.0,
+	}
+
+	c.incrementStat("forwarded")
+
+	return resp, decision, nil
 }
 
 // handleHalfMode handles request in Half Mode
@@ -320,6 +382,13 @@ func (c *Controller) SwitchMode(ctx context.Context, newMode Mode) error {
 		}
 	}
 
+	// Validate that Transparent Mode is enabled if switching to it
+	if newMode == ModeTransparent {
+		if c.config.TransparentMode == nil || !c.config.TransparentMode.Enabled {
+			return ErrTransparentModeNotEnabled
+		}
+	}
+
 	c.slogger.InfoContext(ctx, "Switching network mode",
 		"from", c.mode,
 		"to", newMode)
@@ -334,6 +403,15 @@ func (c *Controller) SwitchMode(ctx context.Context, newMode Mode) error {
 		if err := c.decisionEngine.AddRules(DefaultRules()); err != nil {
 			return fmt.Errorf("failed to add default rules: %w", err)
 		}
+	}
+
+	// Initialize Transparent Mode handler if switching to it
+	if newMode == ModeTransparent && c.transparentHandler == nil {
+		handler, err := NewTransparentModeHandler(c.config.TransparentMode, c.slogger)
+		if err != nil {
+			return fmt.Errorf("failed to initialize transparent mode handler: %w", err)
+		}
+		c.transparentHandler = handler
 	}
 
 	return nil
@@ -398,6 +476,22 @@ func (c *Controller) ClearDecisionCache() {
 	}
 }
 
+// GetTransparentStats returns transparent mode statistics (only valid in Transparent Mode)
+func (c *Controller) GetTransparentStats() (map[string]interface{}, error) {
+	if c.mode != ModeTransparent || c.transparentHandler == nil {
+		return nil, fmt.Errorf("transparent stats only available in Transparent Mode")
+	}
+	return c.transparentHandler.GetConnectionStats(), nil
+}
+
+// GetTransparentSummary returns a human-readable traffic summary for Transparent Mode
+func (c *Controller) GetTransparentSummary() (string, error) {
+	if c.mode != ModeTransparent || c.transparentHandler == nil {
+		return "", fmt.Errorf("transparent summary only available in Transparent Mode")
+	}
+	return c.transparentHandler.PrintSummary(), nil
+}
+
 // Close gracefully shuts down the controller
 func (c *Controller) Close() error {
 	c.slogger.Info("Shutting down Network Mode Controller")
@@ -407,6 +501,13 @@ func (c *Controller) Close() error {
 
 	// Wait for goroutines to finish
 	c.wg.Wait()
+
+	// Close transparent handler and flush logs
+	if c.transparentHandler != nil {
+		if err := c.transparentHandler.Close(); err != nil {
+			c.slogger.Warn("Error closing transparent handler", "error", err)
+		}
+	}
 
 	// Close logger
 	if c.logger != nil {
@@ -438,6 +539,13 @@ func (c *Controller) Health(ctx context.Context) error {
 		}
 		if c.modifier == nil {
 			return fmt.Errorf("modifier not initialized in Half Mode")
+		}
+	}
+
+	// Check Transparent Mode specific health
+	if c.mode == ModeTransparent {
+		if c.transparentHandler == nil {
+			return fmt.Errorf("transparent handler not initialized in Transparent Mode")
 		}
 	}
 
