@@ -31,6 +31,11 @@ func (r *Router) RouteRequest(ctx context.Context, req *Request, decision *Decis
 		return r.routeFullMode(ctx, req)
 	case ModeHalf:
 		return r.routeHalfMode(ctx, req, decision)
+	case ModeTransparent:
+		// In transparent mode the router returns a pass-through response.
+		// The actual traffic observation is handled by TransparentModeHandler;
+		// the router simply acknowledges the pass-through.
+		return r.routeTransparentMode(ctx, req)
 	default:
 		// If mode is invalid or unknown, fail safe to Full Mode
 		r.logger.WarnContext(ctx, "Invalid mode, falling back to Full Mode",
@@ -80,6 +85,32 @@ func (r *Router) routeFullMode(ctx context.Context, req *Request) (*Response, er
 	// Generate simulated response based on protocol
 	resp.Body = r.generateSimulatedResponse(req)
 	resp.ContentLength = int64(len(resp.Body))
+
+	return resp, nil
+}
+
+// routeTransparentMode returns a pass-through response for Transparent Mode.
+// No traffic is altered; the response signals that the packet should be allowed.
+// Inspired by siemens/sparring transparent mode: NF_STOP (allow packet through).
+func (r *Router) routeTransparentMode(ctx context.Context, req *Request) (*Response, error) {
+	r.logger.DebugContext(ctx, "Routing in Transparent Mode (pass-through)",
+		"req_id", req.ID,
+		"protocol", req.Protocol,
+		"domain", req.Domain)
+
+	resp := &Response{
+		ID:        req.ID,
+		Timestamp: req.Timestamp,
+		Headers:   make(map[string]string),
+		Source:    "transparent_passthrough",
+		Metadata: map[string]interface{}{
+			"mode":   "transparent",
+			"action": "passthrough",
+		},
+	}
+
+	resp.Headers["X-Pack-A-Mal-Mode"] = "transparent"
+	resp.Headers["X-Pack-A-Mal-Source"] = "passthrough"
 
 	return resp, nil
 }

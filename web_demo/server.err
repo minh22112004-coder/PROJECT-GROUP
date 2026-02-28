@@ -1,18 +1,17 @@
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
  * Running on http://127.0.0.1:5500
 Press CTRL+C to quit
-127.0.0.1 - - [21/Feb/2026 16:43:01] "GET / HTTP/1.1" 200 -
-127.0.0.1 - - [21/Feb/2026 16:43:14] "GET /api/compare/half HTTP/1.1" 200 -
-127.0.0.1 - - [21/Feb/2026 16:44:48] "GET / HTTP/1.1" 200 -
-127.0.0.1 - - [21/Feb/2026 16:44:52] "GET /api/docker/stop HTTP/1.1" 200 -
-127.0.0.1 - - [21/Feb/2026 16:44:56] "GET /api/docker/start HTTP/1.1" 200 -
-127.0.0.1 - - [21/Feb/2026 16:45:36] "GET /api/docker/stop HTTP/1.1" 200 -
-127.0.0.1 - - [21/Feb/2026 16:45:43] "GET /api/docker/start HTTP/1.1" 200 -
-127.0.0.1 - - [21/Feb/2026 16:46:43] "GET /api/docker/status HTTP/1.1" 200 -
-127.0.0.1 - - [21/Feb/2026 16:46:43] "GET /api/docker/status HTTP/1.1" 200 -
-127.0.0.1 - - [21/Feb/2026 16:46:43] "GET /api/docker/status HTTP/1.1" 200 -
-127.0.0.1 - - [21/Feb/2026 16:46:43] "GET /api/docker/status HTTP/1.1" 200 -
-127.0.0.1 - - [21/Feb/2026 16:46:43] "GET /api/docker/status HTTP/1.1" 200 -
-127.0.0.1 - - [21/Feb/2026 16:46:43] "GET /api/docker/status HTTP/1.1" 200 -
-127.0.0.1 - - [21/Feb/2026 16:46:43] "GET /api/docker/status HTTP/1.1" 200 -
-127.0.0.1 - - [21/Feb/2026 16:46:43] "GET /api/docker/status HTTP/1.1" 200 -
+127.0.0.1 - - [26/Feb/2026 21:14:15] "GET /api/compare/half HTTP/1.1" 200 -
+127.0.0.1 - - [26/Feb/2026 21:14:16] "GET /api/compare/full HTTP/1.1" 200 -
+127.0.0.1 - - [26/Feb/2026 21:14:16] "GET /api/compare/transparent HTTP/1.1" 200 -
+127.0.0.1 - - [26/Feb/2026 21:14:16] "GET /api/mode/half HTTP/1.1" 200 -
+127.0.0.1 - - [26/Feb/2026 21:14:16] "GET /api/mode/full HTTP/1.1" 200 -
+127.0.0.1 - - [26/Feb/2026 21:14:16] "GET /api/mode/transparent HTTP/1.1" 200 -
+127.0.0.1 - - [26/Feb/2026 21:14:16] "GET /api/transparent/observe HTTP/1.1" 200 -
+127.0.0.1 - - [26/Feb/2026 21:14:30] "GET /api/compare/half HTTP/1.1" 200 -
+127.0.0.1 - - [26/Feb/2026 21:14:31] "GET /api/compare/full HTTP/1.1" 200 -
+127.0.0.1 - - [26/Feb/2026 21:14:31] "GET /api/compare/transparent HTTP/1.1" 200 -
+127.0.0.1 - - [26/Feb/2026 21:14:31] "GET /api/mode/half HTTP/1.1" 200 -
+127.0.0.1 - - [26/Feb/2026 21:14:31] "GET /api/mode/full HTTP/1.1" 200 -
+127.0.0.1 - - [26/Feb/2026 21:14:31] "GET /api/mode/transparent HTTP/1.1" 200 -
+127.0.0.1 - - [26/Feb/2026 21:14:31] "GET /api/transparent/observe HTTP/1.1" 200 -

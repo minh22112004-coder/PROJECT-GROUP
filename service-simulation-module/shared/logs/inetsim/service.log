@@ -10296,3 +10296,1154 @@
 [2026-02-21 09:47:50] [1] [http_80_tcp 94] [127.0.0.1:49526] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
 [2026-02-21 09:47:50] [1] [http_80_tcp 94] [127.0.0.1:49526] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
 [2026-02-21 09:47:50] [1] [http_80_tcp 94] [127.0.0.1:49526] disconnect
+[2026-02-26 14:08:08] [1] [http_80_tcp 23] [127.0.0.1:34868] connect
+[2026-02-26 14:08:08] [1] [http_80_tcp 23] [127.0.0.1:34868] recv: GET / HTTP/1.1
+[2026-02-26 14:08:08] [1] [http_80_tcp 23] [127.0.0.1:34868] recv: Host: localhost
+[2026-02-26 14:08:08] [1] [http_80_tcp 23] [127.0.0.1:34868] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:08:08] [1] [http_80_tcp 23] [127.0.0.1:34868] recv: Accept: */*
+[2026-02-26 14:08:08] [1] [http_80_tcp 23] [127.0.0.1:34868] info: Request URL: http://localhost/
+[2026-02-26 14:08:08] [1] [http_80_tcp 23] [127.0.0.1:34868] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:08:08] [1] [http_80_tcp 23] [127.0.0.1:34868] send: HTTP/1.1 200 OK
+[2026-02-26 14:08:08] [1] [http_80_tcp 23] [127.0.0.1:34868] send: Server: INetSim HTTP Server
+[2026-02-26 14:08:08] [1] [http_80_tcp 23] [127.0.0.1:34868] send: Date: Thu, 26 Feb 2026 14:08:08 GMT
+[2026-02-26 14:08:08] [1] [http_80_tcp 23] [127.0.0.1:34868] send: Content-Length: 258
+[2026-02-26 14:08:08] [1] [http_80_tcp 23] [127.0.0.1:34868] send: Content-Type: text/html
+[2026-02-26 14:08:08] [1] [http_80_tcp 23] [127.0.0.1:34868] send: Connection: Close
+[2026-02-26 14:08:08] [1] [http_80_tcp 23] [127.0.0.1:34868] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:08:08] [1] [http_80_tcp 23] [127.0.0.1:34868] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:08:08] [1] [http_80_tcp 23] [127.0.0.1:34868] disconnect
+[2026-02-26 14:08:09] [1] [http_80_tcp 24] [172.20.0.3:59766] connect
+[2026-02-26 14:08:09] [1] [http_80_tcp 24] [172.20.0.3:59766] info: Client sent no data
+[2026-02-26 14:08:09] [1] [http_80_tcp 24] [172.20.0.3:59766] disconnect
+[2026-02-26 14:08:16] [1] [http_80_tcp 25] [172.20.0.1:50352] connect
+[2026-02-26 14:08:16] [1] [http_80_tcp 25] [172.20.0.1:50352] recv: GET http://malicious-c2-server.example.com/api/data HTTP/1.1
+[2026-02-26 14:08:16] [1] [http_80_tcp 25] [172.20.0.1:50352] recv: Host: malicious-c2-server.example.com
+[2026-02-26 14:08:16] [1] [http_80_tcp 25] [172.20.0.1:50352] recv: User-Agent: python-requests/2.32.5
+[2026-02-26 14:08:16] [1] [http_80_tcp 25] [172.20.0.1:50352] recv: Accept-Encoding: gzip, deflate, zstd
+[2026-02-26 14:08:16] [1] [http_80_tcp 25] [172.20.0.1:50352] recv: Accept: */*
+[2026-02-26 14:08:16] [1] [http_80_tcp 25] [172.20.0.1:50352] recv: Connection: keep-alive
+[2026-02-26 14:08:16] [1] [http_80_tcp 25] [172.20.0.1:50352] info: Request URL: http://malicious-c2-server.example.com/api/data
+[2026-02-26 14:08:16] [1] [http_80_tcp 25] [172.20.0.1:50352] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:08:16] [1] [http_80_tcp 25] [172.20.0.1:50352] send: HTTP/1.1 200 OK
+[2026-02-26 14:08:16] [1] [http_80_tcp 25] [172.20.0.1:50352] send: Connection: Close
+[2026-02-26 14:08:16] [1] [http_80_tcp 25] [172.20.0.1:50352] send: Server: INetSim HTTP Server
+[2026-02-26 14:08:16] [1] [http_80_tcp 25] [172.20.0.1:50352] send: Content-Type: text/html
+[2026-02-26 14:08:16] [1] [http_80_tcp 25] [172.20.0.1:50352] send: Content-Length: 258
+[2026-02-26 14:08:16] [1] [http_80_tcp 25] [172.20.0.1:50352] send: Date: Thu, 26 Feb 2026 14:08:16 GMT
+[2026-02-26 14:08:17] [1] [http_80_tcp 25] [172.20.0.1:50352] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:08:17] [1] [http_80_tcp 25] [172.20.0.1:50352] stat: 1 method=GET url=http://malicious-c2-server.example.com/api/data sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:08:17] [1] [http_80_tcp 25] [172.20.0.1:50352] disconnect
+[2026-02-26 14:08:18] [1] [http_80_tcp 32] [127.0.0.1:50486] connect
+[2026-02-26 14:08:18] [1] [http_80_tcp 32] [127.0.0.1:50486] recv: GET / HTTP/1.1
+[2026-02-26 14:08:18] [1] [http_80_tcp 32] [127.0.0.1:50486] recv: Host: localhost
+[2026-02-26 14:08:19] [1] [http_80_tcp 32] [127.0.0.1:50486] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:08:19] [1] [http_80_tcp 32] [127.0.0.1:50486] recv: Accept: */*
+[2026-02-26 14:08:19] [1] [http_80_tcp 32] [127.0.0.1:50486] info: Request URL: http://localhost/
+[2026-02-26 14:08:19] [1] [http_80_tcp 32] [127.0.0.1:50486] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:08:19] [1] [http_80_tcp 32] [127.0.0.1:50486] send: HTTP/1.1 200 OK
+[2026-02-26 14:08:19] [1] [http_80_tcp 32] [127.0.0.1:50486] send: Connection: Close
+[2026-02-26 14:08:19] [1] [http_80_tcp 32] [127.0.0.1:50486] send: Date: Thu, 26 Feb 2026 14:08:19 GMT
+[2026-02-26 14:08:19] [1] [http_80_tcp 32] [127.0.0.1:50486] send: Content-Length: 258
+[2026-02-26 14:08:19] [1] [http_80_tcp 32] [127.0.0.1:50486] send: Content-Type: text/html
+[2026-02-26 14:08:19] [1] [http_80_tcp 32] [127.0.0.1:50486] send: Server: INetSim HTTP Server
+[2026-02-26 14:08:19] [1] [http_80_tcp 32] [127.0.0.1:50486] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:08:19] [1] [http_80_tcp 32] [127.0.0.1:50486] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:08:19] [1] [http_80_tcp 32] [127.0.0.1:50486] disconnect
+[2026-02-26 14:08:29] [1] [http_80_tcp 39] [127.0.0.1:43530] connect
+[2026-02-26 14:08:29] [1] [http_80_tcp 39] [127.0.0.1:43530] recv: GET / HTTP/1.1
+[2026-02-26 14:08:29] [1] [http_80_tcp 39] [127.0.0.1:43530] recv: Host: localhost
+[2026-02-26 14:08:29] [1] [http_80_tcp 39] [127.0.0.1:43530] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:08:29] [1] [http_80_tcp 39] [127.0.0.1:43530] recv: Accept: */*
+[2026-02-26 14:08:29] [1] [http_80_tcp 39] [127.0.0.1:43530] info: Request URL: http://localhost/
+[2026-02-26 14:08:29] [1] [http_80_tcp 39] [127.0.0.1:43530] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:08:29] [1] [http_80_tcp 39] [127.0.0.1:43530] send: HTTP/1.1 200 OK
+[2026-02-26 14:08:29] [1] [http_80_tcp 39] [127.0.0.1:43530] send: Connection: Close
+[2026-02-26 14:08:29] [1] [http_80_tcp 39] [127.0.0.1:43530] send: Server: INetSim HTTP Server
+[2026-02-26 14:08:40] [1] [http_80_tcp 39] [127.0.0.1:43530] send: Date: Thu, 26 Feb 2026 14:08:29 GMT
+[2026-02-26 14:08:40] [1] [http_80_tcp 39] [127.0.0.1:43530] send: Content-Type: text/html
+[2026-02-26 14:08:40] [1] [http_80_tcp 39] [127.0.0.1:43530] send: Content-Length: 258
+[2026-02-26 14:08:40] [1] [http_80_tcp 39] [127.0.0.1:43530] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:08:40] [1] [http_80_tcp 39] [127.0.0.1:43530] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:08:40] [1] [http_80_tcp 39] [127.0.0.1:43530] disconnect
+[2026-02-26 14:08:40] [1] [http_80_tcp 46] [127.0.0.1:60072] connect
+[2026-02-26 14:08:40] [1] [http_80_tcp 46] [127.0.0.1:60072] recv: GET / HTTP/1.1
+[2026-02-26 14:08:40] [1] [http_80_tcp 46] [127.0.0.1:60072] recv: Host: localhost
+[2026-02-26 14:08:40] [1] [http_80_tcp 46] [127.0.0.1:60072] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:08:40] [1] [http_80_tcp 46] [127.0.0.1:60072] recv: Accept: */*
+[2026-02-26 14:08:40] [1] [http_80_tcp 46] [127.0.0.1:60072] info: Request URL: http://localhost/
+[2026-02-26 14:08:40] [1] [http_80_tcp 46] [127.0.0.1:60072] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:08:40] [1] [http_80_tcp 46] [127.0.0.1:60072] send: HTTP/1.1 200 OK
+[2026-02-26 14:08:40] [1] [http_80_tcp 46] [127.0.0.1:60072] send: Content-Type: text/html
+[2026-02-26 14:08:40] [1] [http_80_tcp 46] [127.0.0.1:60072] send: Content-Length: 258
+[2026-02-26 14:08:40] [1] [http_80_tcp 46] [127.0.0.1:60072] send: Date: Thu, 26 Feb 2026 14:08:40 GMT
+[2026-02-26 14:08:40] [1] [http_80_tcp 46] [127.0.0.1:60072] send: Server: INetSim HTTP Server
+[2026-02-26 14:08:40] [1] [http_80_tcp 46] [127.0.0.1:60072] send: Connection: Close
+[2026-02-26 14:08:40] [1] [http_80_tcp 46] [127.0.0.1:60072] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:08:40] [1] [http_80_tcp 46] [127.0.0.1:60072] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:08:40] [1] [http_80_tcp 46] [127.0.0.1:60072] disconnect
+[2026-02-26 14:08:50] [1] [http_80_tcp 53] [127.0.0.1:39552] connect
+[2026-02-26 14:08:50] [1] [http_80_tcp 53] [127.0.0.1:39552] recv: GET / HTTP/1.1
+[2026-02-26 14:08:50] [1] [http_80_tcp 53] [127.0.0.1:39552] recv: Host: localhost
+[2026-02-26 14:08:50] [1] [http_80_tcp 53] [127.0.0.1:39552] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:08:50] [1] [http_80_tcp 53] [127.0.0.1:39552] recv: Accept: */*
+[2026-02-26 14:08:50] [1] [http_80_tcp 53] [127.0.0.1:39552] info: Request URL: http://localhost/
+[2026-02-26 14:08:50] [1] [http_80_tcp 53] [127.0.0.1:39552] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:08:50] [1] [http_80_tcp 53] [127.0.0.1:39552] send: HTTP/1.1 200 OK
+[2026-02-26 14:08:50] [1] [http_80_tcp 53] [127.0.0.1:39552] send: Connection: Close
+[2026-02-26 14:08:50] [1] [http_80_tcp 53] [127.0.0.1:39552] send: Date: Thu, 26 Feb 2026 14:08:50 GMT
+[2026-02-26 14:08:50] [1] [http_80_tcp 53] [127.0.0.1:39552] send: Content-Length: 258
+[2026-02-26 14:08:51] [1] [http_80_tcp 53] [127.0.0.1:39552] send: Content-Type: text/html
+[2026-02-26 14:08:51] [1] [http_80_tcp 53] [127.0.0.1:39552] send: Server: INetSim HTTP Server
+[2026-02-26 14:08:51] [1] [http_80_tcp 53] [127.0.0.1:39552] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:08:51] [1] [http_80_tcp 53] [127.0.0.1:39552] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:08:51] [1] [http_80_tcp 53] [127.0.0.1:39552] disconnect
+[2026-02-26 14:08:58] [1] [http_80_tcp 54] [172.20.0.1:53386] connect
+[2026-02-26 14:08:58] [1] [http_80_tcp 54] [172.20.0.1:53386] recv: GET / HTTP/1.1
+[2026-02-26 14:08:58] [1] [http_80_tcp 54] [172.20.0.1:53386] recv: Host: localhost:8080
+[2026-02-26 14:08:58] [1] [http_80_tcp 54] [172.20.0.1:53386] recv: User-Agent: curl/8.16.0
+[2026-02-26 14:09:08] [1] [http_80_tcp 54] [172.20.0.1:53386] recv: Accept: */*
+[2026-02-26 14:09:08] [1] [http_80_tcp 54] [172.20.0.1:53386] info: Request URL: http://localhost:8080/
+[2026-02-26 14:09:08] [1] [http_80_tcp 54] [172.20.0.1:53386] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:09:08] [1] [http_80_tcp 54] [172.20.0.1:53386] send: HTTP/1.1 200 OK
+[2026-02-26 14:09:08] [1] [http_80_tcp 54] [172.20.0.1:53386] send: Connection: Close
+[2026-02-26 14:08:58] [1] [http_80_tcp 54] [172.20.0.1:53386] send: Server: INetSim HTTP Server
+[2026-02-26 14:08:58] [1] [http_80_tcp 54] [172.20.0.1:53386] send: Content-Length: 258
+[2026-02-26 14:08:58] [1] [http_80_tcp 54] [172.20.0.1:53386] send: Content-Type: text/html
+[2026-02-26 14:08:58] [1] [http_80_tcp 54] [172.20.0.1:53386] send: Date: Thu, 26 Feb 2026 14:09:08 GMT
+[2026-02-26 14:08:58] [1] [http_80_tcp 54] [172.20.0.1:53386] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:08:58] [1] [http_80_tcp 54] [172.20.0.1:53386] stat: 1 method=GET url=http://localhost:8080/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:08:58] [1] [http_80_tcp 54] [172.20.0.1:53386] disconnect
+[2026-02-26 14:09:01] [1] [http_80_tcp 61] [127.0.0.1:56992] connect
+[2026-02-26 14:09:01] [1] [http_80_tcp 61] [127.0.0.1:56992] recv: GET / HTTP/1.1
+[2026-02-26 14:09:01] [1] [http_80_tcp 61] [127.0.0.1:56992] recv: Host: localhost
+[2026-02-26 14:09:01] [1] [http_80_tcp 61] [127.0.0.1:56992] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:09:01] [1] [http_80_tcp 61] [127.0.0.1:56992] recv: Accept: */*
+[2026-02-26 14:09:01] [1] [http_80_tcp 61] [127.0.0.1:56992] info: Request URL: http://localhost/
+[2026-02-26 14:09:01] [1] [http_80_tcp 61] [127.0.0.1:56992] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:09:01] [1] [http_80_tcp 61] [127.0.0.1:56992] send: HTTP/1.1 200 OK
+[2026-02-26 14:09:01] [1] [http_80_tcp 61] [127.0.0.1:56992] send: Server: INetSim HTTP Server
+[2026-02-26 14:09:01] [1] [http_80_tcp 61] [127.0.0.1:56992] send: Date: Thu, 26 Feb 2026 14:09:01 GMT
+[2026-02-26 14:09:01] [1] [http_80_tcp 61] [127.0.0.1:56992] send: Content-Length: 258
+[2026-02-26 14:09:01] [1] [http_80_tcp 61] [127.0.0.1:56992] send: Content-Type: text/html
+[2026-02-26 14:09:01] [1] [http_80_tcp 61] [127.0.0.1:56992] send: Connection: Close
+[2026-02-26 14:09:01] [1] [http_80_tcp 61] [127.0.0.1:56992] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:09:01] [1] [http_80_tcp 61] [127.0.0.1:56992] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:09:01] [1] [http_80_tcp 61] [127.0.0.1:56992] disconnect
+[2026-02-26 14:09:02] [1] [http_80_tcp 62] [172.20.0.1:53398] connect
+[2026-02-26 14:09:02] [1] [http_80_tcp 62] [172.20.0.1:53398] recv: GET http://malicious-c2-server.example.com/api/data HTTP/1.1
+[2026-02-26 14:09:02] [1] [http_80_tcp 62] [172.20.0.1:53398] recv: Host: malicious-c2-server.example.com
+[2026-02-26 14:09:02] [1] [http_80_tcp 62] [172.20.0.1:53398] recv: User-Agent: python-requests/2.32.5
+[2026-02-26 14:09:02] [1] [http_80_tcp 62] [172.20.0.1:53398] recv: Accept-Encoding: gzip, deflate, zstd
+[2026-02-26 14:09:02] [1] [http_80_tcp 62] [172.20.0.1:53398] recv: Accept: */*
+[2026-02-26 14:09:02] [1] [http_80_tcp 62] [172.20.0.1:53398] recv: Connection: keep-alive
+[2026-02-26 14:09:02] [1] [http_80_tcp 62] [172.20.0.1:53398] info: Request URL: http://malicious-c2-server.example.com/api/data
+[2026-02-26 14:09:02] [1] [http_80_tcp 62] [172.20.0.1:53398] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:09:02] [1] [http_80_tcp 62] [172.20.0.1:53398] send: HTTP/1.1 200 OK
+[2026-02-26 14:09:03] [1] [http_80_tcp 62] [172.20.0.1:53398] send: Connection: Close
+[2026-02-26 14:09:03] [1] [http_80_tcp 62] [172.20.0.1:53398] send: Server: INetSim HTTP Server
+[2026-02-26 14:09:03] [1] [http_80_tcp 62] [172.20.0.1:53398] send: Date: Thu, 26 Feb 2026 14:09:02 GMT
+[2026-02-26 14:09:13] [1] [http_80_tcp 62] [172.20.0.1:53398] send: Content-Type: text/html
+[2026-02-26 14:09:13] [1] [http_80_tcp 62] [172.20.0.1:53398] send: Content-Length: 258
+[2026-02-26 14:09:13] [1] [http_80_tcp 62] [172.20.0.1:53398] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:09:13] [1] [http_80_tcp 62] [172.20.0.1:53398] stat: 1 method=GET url=http://malicious-c2-server.example.com/api/data sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:09:13] [1] [http_80_tcp 62] [172.20.0.1:53398] disconnect
+[2026-02-26 14:09:11] [1] [http_80_tcp 69] [127.0.0.1:38666] connect
+[2026-02-26 14:09:11] [1] [http_80_tcp 69] [127.0.0.1:38666] recv: GET / HTTP/1.1
+[2026-02-26 14:09:11] [1] [http_80_tcp 69] [127.0.0.1:38666] recv: Host: localhost
+[2026-02-26 14:09:11] [1] [http_80_tcp 69] [127.0.0.1:38666] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:09:11] [1] [http_80_tcp 69] [127.0.0.1:38666] recv: Accept: */*
+[2026-02-26 14:09:11] [1] [http_80_tcp 69] [127.0.0.1:38666] info: Request URL: http://localhost/
+[2026-02-26 14:09:11] [1] [http_80_tcp 69] [127.0.0.1:38666] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:09:11] [1] [http_80_tcp 69] [127.0.0.1:38666] send: HTTP/1.1 200 OK
+[2026-02-26 14:09:11] [1] [http_80_tcp 69] [127.0.0.1:38666] send: Server: INetSim HTTP Server
+[2026-02-26 14:09:11] [1] [http_80_tcp 69] [127.0.0.1:38666] send: Content-Length: 258
+[2026-02-26 14:09:11] [1] [http_80_tcp 69] [127.0.0.1:38666] send: Content-Type: text/html
+[2026-02-26 14:09:12] [1] [http_80_tcp 69] [127.0.0.1:38666] send: Date: Thu, 26 Feb 2026 14:09:11 GMT
+[2026-02-26 14:09:12] [1] [http_80_tcp 69] [127.0.0.1:38666] send: Connection: Close
+[2026-02-26 14:09:12] [1] [http_80_tcp 69] [127.0.0.1:38666] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:09:12] [1] [http_80_tcp 69] [127.0.0.1:38666] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:09:12] [1] [http_80_tcp 69] [127.0.0.1:38666] disconnect
+[2026-02-26 14:09:22] [1] [http_80_tcp 76] [127.0.0.1:53196] connect
+[2026-02-26 14:09:22] [1] [http_80_tcp 76] [127.0.0.1:53196] recv: GET / HTTP/1.1
+[2026-02-26 14:09:22] [1] [http_80_tcp 76] [127.0.0.1:53196] recv: Host: localhost
+[2026-02-26 14:09:22] [1] [http_80_tcp 76] [127.0.0.1:53196] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:09:22] [1] [http_80_tcp 76] [127.0.0.1:53196] recv: Accept: */*
+[2026-02-26 14:09:22] [1] [http_80_tcp 76] [127.0.0.1:53196] info: Request URL: http://localhost/
+[2026-02-26 14:09:22] [1] [http_80_tcp 76] [127.0.0.1:53196] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:09:22] [1] [http_80_tcp 76] [127.0.0.1:53196] send: HTTP/1.1 200 OK
+[2026-02-26 14:09:22] [1] [http_80_tcp 76] [127.0.0.1:53196] send: Connection: Close
+[2026-02-26 14:09:22] [1] [http_80_tcp 76] [127.0.0.1:53196] send: Server: INetSim HTTP Server
+[2026-02-26 14:09:22] [1] [http_80_tcp 76] [127.0.0.1:53196] send: Date: Thu, 26 Feb 2026 14:09:22 GMT
+[2026-02-26 14:09:22] [1] [http_80_tcp 76] [127.0.0.1:53196] send: Content-Length: 258
+[2026-02-26 14:09:22] [1] [http_80_tcp 76] [127.0.0.1:53196] send: Content-Type: text/html
+[2026-02-26 14:09:22] [1] [http_80_tcp 76] [127.0.0.1:53196] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:09:22] [1] [http_80_tcp 76] [127.0.0.1:53196] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:09:22] [1] [http_80_tcp 76] [127.0.0.1:53196] disconnect
+[2026-02-26 14:09:32] [1] [http_80_tcp 83] [127.0.0.1:34300] connect
+[2026-02-26 14:09:32] [1] [http_80_tcp 83] [127.0.0.1:34300] recv: GET / HTTP/1.1
+[2026-02-26 14:09:32] [1] [http_80_tcp 83] [127.0.0.1:34300] recv: Host: localhost
+[2026-02-26 14:09:32] [1] [http_80_tcp 83] [127.0.0.1:34300] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:09:32] [1] [http_80_tcp 83] [127.0.0.1:34300] recv: Accept: */*
+[2026-02-26 14:09:32] [1] [http_80_tcp 83] [127.0.0.1:34300] info: Request URL: http://localhost/
+[2026-02-26 14:09:32] [1] [http_80_tcp 83] [127.0.0.1:34300] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:09:33] [1] [http_80_tcp 83] [127.0.0.1:34300] send: HTTP/1.1 200 OK
+[2026-02-26 14:09:33] [1] [http_80_tcp 83] [127.0.0.1:34300] send: Server: INetSim HTTP Server
+[2026-02-26 14:09:33] [1] [http_80_tcp 83] [127.0.0.1:34300] send: Content-Length: 258
+[2026-02-26 14:09:33] [1] [http_80_tcp 83] [127.0.0.1:34300] send: Content-Type: text/html
+[2026-02-26 14:09:33] [1] [http_80_tcp 83] [127.0.0.1:34300] send: Date: Thu, 26 Feb 2026 14:09:33 GMT
+[2026-02-26 14:09:43] [1] [http_80_tcp 83] [127.0.0.1:34300] send: Connection: Close
+[2026-02-26 14:09:43] [1] [http_80_tcp 83] [127.0.0.1:34300] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:09:43] [1] [http_80_tcp 83] [127.0.0.1:34300] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:09:43] [1] [http_80_tcp 83] [127.0.0.1:34300] disconnect
+[2026-02-26 14:09:53] [1] [http_80_tcp 90] [127.0.0.1:33524] connect
+[2026-02-26 14:09:53] [1] [http_80_tcp 90] [127.0.0.1:33524] recv: GET / HTTP/1.1
+[2026-02-26 14:09:53] [1] [http_80_tcp 90] [127.0.0.1:33524] recv: Host: localhost
+[2026-02-26 14:09:53] [1] [http_80_tcp 90] [127.0.0.1:33524] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:09:54] [1] [http_80_tcp 90] [127.0.0.1:33524] recv: Accept: */*
+[2026-02-26 14:09:54] [1] [http_80_tcp 90] [127.0.0.1:33524] info: Request URL: http://localhost/
+[2026-02-26 14:09:54] [1] [http_80_tcp 90] [127.0.0.1:33524] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:09:54] [1] [http_80_tcp 90] [127.0.0.1:33524] send: HTTP/1.1 200 OK
+[2026-02-26 14:09:54] [1] [http_80_tcp 90] [127.0.0.1:33524] send: Content-Length: 258
+[2026-02-26 14:09:54] [1] [http_80_tcp 90] [127.0.0.1:33524] send: Content-Type: text/html
+[2026-02-26 14:09:54] [1] [http_80_tcp 90] [127.0.0.1:33524] send: Date: Thu, 26 Feb 2026 14:09:54 GMT
+[2026-02-26 14:09:54] [1] [http_80_tcp 90] [127.0.0.1:33524] send: Server: INetSim HTTP Server
+[2026-02-26 14:09:54] [1] [http_80_tcp 90] [127.0.0.1:33524] send: Connection: Close
+[2026-02-26 14:09:54] [1] [http_80_tcp 90] [127.0.0.1:33524] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:09:54] [1] [http_80_tcp 90] [127.0.0.1:33524] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:09:54] [1] [http_80_tcp 90] [127.0.0.1:33524] disconnect
+[2026-02-26 14:10:04] [1] [http_80_tcp 97] [127.0.0.1:39228] connect
+[2026-02-26 14:10:04] [1] [http_80_tcp 97] [127.0.0.1:39228] recv: GET / HTTP/1.1
+[2026-02-26 14:10:04] [1] [http_80_tcp 97] [127.0.0.1:39228] recv: Host: localhost
+[2026-02-26 14:10:04] [1] [http_80_tcp 97] [127.0.0.1:39228] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:10:04] [1] [http_80_tcp 97] [127.0.0.1:39228] recv: Accept: */*
+[2026-02-26 14:10:04] [1] [http_80_tcp 97] [127.0.0.1:39228] info: Request URL: http://localhost/
+[2026-02-26 14:10:04] [1] [http_80_tcp 97] [127.0.0.1:39228] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:10:04] [1] [http_80_tcp 97] [127.0.0.1:39228] send: HTTP/1.1 200 OK
+[2026-02-26 14:10:04] [1] [http_80_tcp 97] [127.0.0.1:39228] send: Server: INetSim HTTP Server
+[2026-02-26 14:10:04] [1] [http_80_tcp 97] [127.0.0.1:39228] send: Content-Type: text/html
+[2026-02-26 14:10:04] [1] [http_80_tcp 97] [127.0.0.1:39228] send: Content-Length: 258
+[2026-02-26 14:10:04] [1] [http_80_tcp 97] [127.0.0.1:39228] send: Date: Thu, 26 Feb 2026 14:10:04 GMT
+[2026-02-26 14:10:04] [1] [http_80_tcp 97] [127.0.0.1:39228] send: Connection: Close
+[2026-02-26 14:10:04] [1] [http_80_tcp 97] [127.0.0.1:39228] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:10:05] [1] [http_80_tcp 97] [127.0.0.1:39228] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:10:05] [1] [http_80_tcp 97] [127.0.0.1:39228] disconnect
+[2026-02-26 14:10:04] [1] [http_80_tcp 104] [127.0.0.1:52394] connect
+[2026-02-26 14:10:04] [1] [http_80_tcp 104] [127.0.0.1:52394] recv: GET / HTTP/1.1
+[2026-02-26 14:10:04] [1] [http_80_tcp 104] [127.0.0.1:52394] recv: Host: localhost
+[2026-02-26 14:10:04] [1] [http_80_tcp 104] [127.0.0.1:52394] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:10:04] [1] [http_80_tcp 104] [127.0.0.1:52394] recv: Accept: */*
+[2026-02-26 14:10:04] [1] [http_80_tcp 104] [127.0.0.1:52394] info: Request URL: http://localhost/
+[2026-02-26 14:10:04] [1] [http_80_tcp 104] [127.0.0.1:52394] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:10:04] [1] [http_80_tcp 104] [127.0.0.1:52394] send: HTTP/1.1 200 OK
+[2026-02-26 14:10:04] [1] [http_80_tcp 104] [127.0.0.1:52394] send: Server: INetSim HTTP Server
+[2026-02-26 14:10:04] [1] [http_80_tcp 104] [127.0.0.1:52394] send: Date: Thu, 26 Feb 2026 14:10:04 GMT
+[2026-02-26 14:10:04] [1] [http_80_tcp 104] [127.0.0.1:52394] send: Content-Type: text/html
+[2026-02-26 14:10:04] [1] [http_80_tcp 104] [127.0.0.1:52394] send: Content-Length: 258
+[2026-02-26 14:10:04] [1] [http_80_tcp 104] [127.0.0.1:52394] send: Connection: Close
+[2026-02-26 14:10:04] [1] [http_80_tcp 104] [127.0.0.1:52394] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:10:04] [1] [http_80_tcp 104] [127.0.0.1:52394] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:10:04] [1] [http_80_tcp 104] [127.0.0.1:52394] disconnect
+[2026-02-26 14:10:14] [1] [http_80_tcp 111] [127.0.0.1:52124] connect
+[2026-02-26 14:10:14] [1] [http_80_tcp 111] [127.0.0.1:52124] recv: GET / HTTP/1.1
+[2026-02-26 14:10:14] [1] [http_80_tcp 111] [127.0.0.1:52124] recv: Host: localhost
+[2026-02-26 14:10:14] [1] [http_80_tcp 111] [127.0.0.1:52124] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:10:14] [1] [http_80_tcp 111] [127.0.0.1:52124] recv: Accept: */*
+[2026-02-26 14:10:15] [1] [http_80_tcp 111] [127.0.0.1:52124] info: Request URL: http://localhost/
+[2026-02-26 14:10:15] [1] [http_80_tcp 111] [127.0.0.1:52124] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:10:15] [1] [http_80_tcp 111] [127.0.0.1:52124] send: HTTP/1.1 200 OK
+[2026-02-26 14:10:15] [1] [http_80_tcp 111] [127.0.0.1:52124] send: Server: INetSim HTTP Server
+[2026-02-26 14:10:15] [1] [http_80_tcp 111] [127.0.0.1:52124] send: Date: Thu, 26 Feb 2026 14:10:15 GMT
+[2026-02-26 14:10:15] [1] [http_80_tcp 111] [127.0.0.1:52124] send: Content-Type: text/html
+[2026-02-26 14:10:15] [1] [http_80_tcp 111] [127.0.0.1:52124] send: Content-Length: 258
+[2026-02-26 14:10:15] [1] [http_80_tcp 111] [127.0.0.1:52124] send: Connection: Close
+[2026-02-26 14:10:15] [1] [http_80_tcp 111] [127.0.0.1:52124] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:10:15] [1] [http_80_tcp 111] [127.0.0.1:52124] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:10:15] [1] [http_80_tcp 111] [127.0.0.1:52124] disconnect
+[2026-02-26 14:10:25] [1] [http_80_tcp 118] [127.0.0.1:49112] connect
+[2026-02-26 14:10:25] [1] [http_80_tcp 118] [127.0.0.1:49112] recv: GET / HTTP/1.1
+[2026-02-26 14:10:25] [1] [http_80_tcp 118] [127.0.0.1:49112] recv: Host: localhost
+[2026-02-26 14:10:25] [1] [http_80_tcp 118] [127.0.0.1:49112] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:10:25] [1] [http_80_tcp 118] [127.0.0.1:49112] recv: Accept: */*
+[2026-02-26 14:10:25] [1] [http_80_tcp 118] [127.0.0.1:49112] info: Request URL: http://localhost/
+[2026-02-26 14:10:25] [1] [http_80_tcp 118] [127.0.0.1:49112] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:10:25] [1] [http_80_tcp 118] [127.0.0.1:49112] send: HTTP/1.1 200 OK
+[2026-02-26 14:10:25] [1] [http_80_tcp 118] [127.0.0.1:49112] send: Date: Thu, 26 Feb 2026 14:10:25 GMT
+[2026-02-26 14:10:25] [1] [http_80_tcp 118] [127.0.0.1:49112] send: Content-Length: 258
+[2026-02-26 14:10:25] [1] [http_80_tcp 118] [127.0.0.1:49112] send: Content-Type: text/html
+[2026-02-26 14:10:25] [1] [http_80_tcp 118] [127.0.0.1:49112] send: Server: INetSim HTTP Server
+[2026-02-26 14:10:25] [1] [http_80_tcp 118] [127.0.0.1:49112] send: Connection: Close
+[2026-02-26 14:10:25] [1] [http_80_tcp 118] [127.0.0.1:49112] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:10:25] [1] [http_80_tcp 118] [127.0.0.1:49112] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:10:25] [1] [http_80_tcp 118] [127.0.0.1:49112] disconnect
+[2026-02-26 14:10:35] [1] [http_80_tcp 125] [127.0.0.1:60530] connect
+[2026-02-26 14:10:35] [1] [http_80_tcp 125] [127.0.0.1:60530] recv: GET / HTTP/1.1
+[2026-02-26 14:10:36] [1] [http_80_tcp 125] [127.0.0.1:60530] recv: Host: localhost
+[2026-02-26 14:10:36] [1] [http_80_tcp 125] [127.0.0.1:60530] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:10:36] [1] [http_80_tcp 125] [127.0.0.1:60530] recv: Accept: */*
+[2026-02-26 14:10:36] [1] [http_80_tcp 125] [127.0.0.1:60530] info: Request URL: http://localhost/
+[2026-02-26 14:10:36] [1] [http_80_tcp 125] [127.0.0.1:60530] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:10:36] [1] [http_80_tcp 125] [127.0.0.1:60530] send: HTTP/1.1 200 OK
+[2026-02-26 14:10:36] [1] [http_80_tcp 125] [127.0.0.1:60530] send: Date: Thu, 26 Feb 2026 14:10:36 GMT
+[2026-02-26 14:10:36] [1] [http_80_tcp 125] [127.0.0.1:60530] send: Content-Type: text/html
+[2026-02-26 14:10:36] [1] [http_80_tcp 125] [127.0.0.1:60530] send: Content-Length: 258
+[2026-02-26 14:10:36] [1] [http_80_tcp 125] [127.0.0.1:60530] send: Server: INetSim HTTP Server
+[2026-02-26 14:10:36] [1] [http_80_tcp 125] [127.0.0.1:60530] send: Connection: Close
+[2026-02-26 14:10:36] [1] [http_80_tcp 125] [127.0.0.1:60530] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:10:36] [1] [http_80_tcp 125] [127.0.0.1:60530] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:10:36] [1] [http_80_tcp 125] [127.0.0.1:60530] disconnect
+[2026-02-26 14:10:46] [1] [http_80_tcp 132] [127.0.0.1:39966] connect
+[2026-02-26 14:10:46] [1] [http_80_tcp 132] [127.0.0.1:39966] recv: GET / HTTP/1.1
+[2026-02-26 14:10:46] [1] [http_80_tcp 132] [127.0.0.1:39966] recv: Host: localhost
+[2026-02-26 14:10:46] [1] [http_80_tcp 132] [127.0.0.1:39966] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:10:46] [1] [http_80_tcp 132] [127.0.0.1:39966] recv: Accept: */*
+[2026-02-26 14:10:46] [1] [http_80_tcp 132] [127.0.0.1:39966] info: Request URL: http://localhost/
+[2026-02-26 14:10:46] [1] [http_80_tcp 132] [127.0.0.1:39966] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:10:46] [1] [http_80_tcp 132] [127.0.0.1:39966] send: HTTP/1.1 200 OK
+[2026-02-26 14:10:46] [1] [http_80_tcp 132] [127.0.0.1:39966] send: Connection: Close
+[2026-02-26 14:10:46] [1] [http_80_tcp 132] [127.0.0.1:39966] send: Server: INetSim HTTP Server
+[2026-02-26 14:10:46] [1] [http_80_tcp 132] [127.0.0.1:39966] send: Content-Type: text/html
+[2026-02-26 14:10:46] [1] [http_80_tcp 132] [127.0.0.1:39966] send: Content-Length: 258
+[2026-02-26 14:10:46] [1] [http_80_tcp 132] [127.0.0.1:39966] send: Date: Thu, 26 Feb 2026 14:10:46 GMT
+[2026-02-26 14:10:47] [1] [http_80_tcp 132] [127.0.0.1:39966] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:10:47] [1] [http_80_tcp 132] [127.0.0.1:39966] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:10:47] [1] [http_80_tcp 132] [127.0.0.1:39966] disconnect
+[2026-02-26 14:10:57] [1] [http_80_tcp 139] [127.0.0.1:40908] connect
+[2026-02-26 14:10:57] [1] [http_80_tcp 139] [127.0.0.1:40908] recv: GET / HTTP/1.1
+[2026-02-26 14:10:57] [1] [http_80_tcp 139] [127.0.0.1:40908] recv: Host: localhost
+[2026-02-26 14:10:57] [1] [http_80_tcp 139] [127.0.0.1:40908] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:10:57] [1] [http_80_tcp 139] [127.0.0.1:40908] recv: Accept: */*
+[2026-02-26 14:10:57] [1] [http_80_tcp 139] [127.0.0.1:40908] info: Request URL: http://localhost/
+[2026-02-26 14:10:57] [1] [http_80_tcp 139] [127.0.0.1:40908] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:10:57] [1] [http_80_tcp 139] [127.0.0.1:40908] send: HTTP/1.1 200 OK
+[2026-02-26 14:10:57] [1] [http_80_tcp 139] [127.0.0.1:40908] send: Connection: Close
+[2026-02-26 14:10:57] [1] [http_80_tcp 139] [127.0.0.1:40908] send: Content-Length: 258
+[2026-02-26 14:10:57] [1] [http_80_tcp 139] [127.0.0.1:40908] send: Content-Type: text/html
+[2026-02-26 14:10:57] [1] [http_80_tcp 139] [127.0.0.1:40908] send: Date: Thu, 26 Feb 2026 14:10:57 GMT
+[2026-02-26 14:10:57] [1] [http_80_tcp 139] [127.0.0.1:40908] send: Server: INetSim HTTP Server
+[2026-02-26 14:10:57] [1] [http_80_tcp 139] [127.0.0.1:40908] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:10:57] [1] [http_80_tcp 139] [127.0.0.1:40908] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:10:57] [1] [http_80_tcp 139] [127.0.0.1:40908] disconnect
+[2026-02-26 14:11:07] [1] [http_80_tcp 146] [127.0.0.1:56152] connect
+[2026-02-26 14:11:07] [1] [http_80_tcp 146] [127.0.0.1:56152] recv: GET / HTTP/1.1
+[2026-02-26 14:11:07] [1] [http_80_tcp 146] [127.0.0.1:56152] recv: Host: localhost
+[2026-02-26 14:11:07] [1] [http_80_tcp 146] [127.0.0.1:56152] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:11:07] [1] [http_80_tcp 146] [127.0.0.1:56152] recv: Accept: */*
+[2026-02-26 14:11:07] [1] [http_80_tcp 146] [127.0.0.1:56152] info: Request URL: http://localhost/
+[2026-02-26 14:11:07] [1] [http_80_tcp 146] [127.0.0.1:56152] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:11:07] [1] [http_80_tcp 146] [127.0.0.1:56152] send: HTTP/1.1 200 OK
+[2026-02-26 14:11:07] [1] [http_80_tcp 146] [127.0.0.1:56152] send: Connection: Close
+[2026-02-26 14:11:07] [1] [http_80_tcp 146] [127.0.0.1:56152] send: Content-Length: 258
+[2026-02-26 14:11:07] [1] [http_80_tcp 146] [127.0.0.1:56152] send: Content-Type: text/html
+[2026-02-26 14:11:07] [1] [http_80_tcp 146] [127.0.0.1:56152] send: Date: Thu, 26 Feb 2026 14:11:07 GMT
+[2026-02-26 14:11:07] [1] [http_80_tcp 146] [127.0.0.1:56152] send: Server: INetSim HTTP Server
+[2026-02-26 14:11:07] [1] [http_80_tcp 146] [127.0.0.1:56152] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:11:08] [1] [http_80_tcp 146] [127.0.0.1:56152] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:11:08] [1] [http_80_tcp 146] [127.0.0.1:56152] disconnect
+[2026-02-26 14:11:28] [1] [http_80_tcp 153] [127.0.0.1:43072] connect
+[2026-02-26 14:11:28] [1] [http_80_tcp 153] [127.0.0.1:43072] recv: GET / HTTP/1.1
+[2026-02-26 14:11:28] [1] [http_80_tcp 153] [127.0.0.1:43072] recv: Host: localhost
+[2026-02-26 14:11:28] [1] [http_80_tcp 153] [127.0.0.1:43072] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:11:28] [1] [http_80_tcp 153] [127.0.0.1:43072] recv: Accept: */*
+[2026-02-26 14:11:28] [1] [http_80_tcp 153] [127.0.0.1:43072] info: Request URL: http://localhost/
+[2026-02-26 14:11:28] [1] [http_80_tcp 153] [127.0.0.1:43072] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:11:28] [1] [http_80_tcp 153] [127.0.0.1:43072] send: HTTP/1.1 200 OK
+[2026-02-26 14:11:28] [1] [http_80_tcp 153] [127.0.0.1:43072] send: Server: INetSim HTTP Server
+[2026-02-26 14:11:28] [1] [http_80_tcp 153] [127.0.0.1:43072] send: Date: Thu, 26 Feb 2026 14:11:28 GMT
+[2026-02-26 14:11:29] [1] [http_80_tcp 153] [127.0.0.1:43072] send: Content-Type: text/html
+[2026-02-26 14:11:29] [1] [http_80_tcp 153] [127.0.0.1:43072] send: Content-Length: 258
+[2026-02-26 14:11:29] [1] [http_80_tcp 153] [127.0.0.1:43072] send: Connection: Close
+[2026-02-26 14:11:29] [1] [http_80_tcp 153] [127.0.0.1:43072] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:11:29] [1] [http_80_tcp 153] [127.0.0.1:43072] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:11:29] [1] [http_80_tcp 153] [127.0.0.1:43072] disconnect
+[2026-02-26 14:11:39] [1] [http_80_tcp 161] [127.0.0.1:48296] connect
+[2026-02-26 14:11:39] [1] [http_80_tcp 161] [127.0.0.1:48296] recv: GET / HTTP/1.1
+[2026-02-26 14:11:28] [1] [http_80_tcp 161] [127.0.0.1:48296] recv: Host: localhost
+[2026-02-26 14:11:28] [1] [http_80_tcp 161] [127.0.0.1:48296] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:11:28] [1] [http_80_tcp 161] [127.0.0.1:48296] recv: Accept: */*
+[2026-02-26 14:11:28] [1] [http_80_tcp 161] [127.0.0.1:48296] info: Request URL: http://localhost/
+[2026-02-26 14:11:28] [1] [http_80_tcp 161] [127.0.0.1:48296] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:11:28] [1] [http_80_tcp 161] [127.0.0.1:48296] send: HTTP/1.1 200 OK
+[2026-02-26 14:11:28] [1] [http_80_tcp 161] [127.0.0.1:48296] send: Connection: Close
+[2026-02-26 14:11:28] [1] [http_80_tcp 161] [127.0.0.1:48296] send: Content-Length: 258
+[2026-02-26 14:11:28] [1] [http_80_tcp 161] [127.0.0.1:48296] send: Content-Type: text/html
+[2026-02-26 14:11:28] [1] [http_80_tcp 161] [127.0.0.1:48296] send: Date: Thu, 26 Feb 2026 14:11:28 GMT
+[2026-02-26 14:11:28] [1] [http_80_tcp 161] [127.0.0.1:48296] send: Server: INetSim HTTP Server
+[2026-02-26 14:11:29] [1] [http_80_tcp 161] [127.0.0.1:48296] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:11:29] [1] [http_80_tcp 161] [127.0.0.1:48296] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:11:29] [1] [http_80_tcp 161] [127.0.0.1:48296] disconnect
+[2026-02-26 14:11:39] [1] [http_80_tcp 168] [127.0.0.1:54164] connect
+[2026-02-26 14:11:39] [1] [http_80_tcp 168] [127.0.0.1:54164] recv: GET / HTTP/1.1
+[2026-02-26 14:11:39] [1] [http_80_tcp 168] [127.0.0.1:54164] recv: Host: localhost
+[2026-02-26 14:11:39] [1] [http_80_tcp 168] [127.0.0.1:54164] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:11:39] [1] [http_80_tcp 168] [127.0.0.1:54164] recv: Accept: */*
+[2026-02-26 14:11:39] [1] [http_80_tcp 168] [127.0.0.1:54164] info: Request URL: http://localhost/
+[2026-02-26 14:11:39] [1] [http_80_tcp 168] [127.0.0.1:54164] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:11:39] [1] [http_80_tcp 168] [127.0.0.1:54164] send: HTTP/1.1 200 OK
+[2026-02-26 14:11:39] [1] [http_80_tcp 168] [127.0.0.1:54164] send: Server: INetSim HTTP Server
+[2026-02-26 14:11:39] [1] [http_80_tcp 168] [127.0.0.1:54164] send: Date: Thu, 26 Feb 2026 14:11:39 GMT
+[2026-02-26 14:11:39] [1] [http_80_tcp 168] [127.0.0.1:54164] send: Content-Length: 258
+[2026-02-26 14:11:39] [1] [http_80_tcp 168] [127.0.0.1:54164] send: Content-Type: text/html
+[2026-02-26 14:11:39] [1] [http_80_tcp 168] [127.0.0.1:54164] send: Connection: Close
+[2026-02-26 14:11:39] [1] [http_80_tcp 168] [127.0.0.1:54164] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:11:39] [1] [http_80_tcp 168] [127.0.0.1:54164] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:11:39] [1] [http_80_tcp 168] [127.0.0.1:54164] disconnect
+[2026-02-26 14:11:49] [1] [http_80_tcp 175] [127.0.0.1:48092] connect
+[2026-02-26 14:11:49] [1] [http_80_tcp 175] [127.0.0.1:48092] recv: GET / HTTP/1.1
+[2026-02-26 14:11:49] [1] [http_80_tcp 175] [127.0.0.1:48092] recv: Host: localhost
+[2026-02-26 14:11:49] [1] [http_80_tcp 175] [127.0.0.1:48092] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:11:49] [1] [http_80_tcp 175] [127.0.0.1:48092] recv: Accept: */*
+[2026-02-26 14:11:49] [1] [http_80_tcp 175] [127.0.0.1:48092] info: Request URL: http://localhost/
+[2026-02-26 14:11:49] [1] [http_80_tcp 175] [127.0.0.1:48092] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:11:49] [1] [http_80_tcp 175] [127.0.0.1:48092] send: HTTP/1.1 200 OK
+[2026-02-26 14:11:49] [1] [http_80_tcp 175] [127.0.0.1:48092] send: Server: INetSim HTTP Server
+[2026-02-26 14:11:49] [1] [http_80_tcp 175] [127.0.0.1:48092] send: Date: Thu, 26 Feb 2026 14:11:49 GMT
+[2026-02-26 14:11:49] [1] [http_80_tcp 175] [127.0.0.1:48092] send: Content-Length: 258
+[2026-02-26 14:11:49] [1] [http_80_tcp 175] [127.0.0.1:48092] send: Content-Type: text/html
+[2026-02-26 14:11:49] [1] [http_80_tcp 175] [127.0.0.1:48092] send: Connection: Close
+[2026-02-26 14:11:50] [1] [http_80_tcp 175] [127.0.0.1:48092] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:11:50] [1] [http_80_tcp 175] [127.0.0.1:48092] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:11:50] [1] [http_80_tcp 175] [127.0.0.1:48092] disconnect
+[2026-02-26 14:12:10] [1] [http_80_tcp 182] [127.0.0.1:48094] connect
+[2026-02-26 14:12:10] [1] [http_80_tcp 182] [127.0.0.1:48094] recv: GET / HTTP/1.1
+[2026-02-26 14:12:10] [1] [http_80_tcp 182] [127.0.0.1:48094] recv: Host: localhost
+[2026-02-26 14:12:00] [1] [http_80_tcp 182] [127.0.0.1:48094] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:12:00] [1] [http_80_tcp 182] [127.0.0.1:48094] recv: Accept: */*
+[2026-02-26 14:12:00] [1] [http_80_tcp 182] [127.0.0.1:48094] info: Request URL: http://localhost/
+[2026-02-26 14:12:00] [1] [http_80_tcp 182] [127.0.0.1:48094] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:12:00] [1] [http_80_tcp 182] [127.0.0.1:48094] send: HTTP/1.1 200 OK
+[2026-02-26 14:12:00] [1] [http_80_tcp 182] [127.0.0.1:48094] send: Server: INetSim HTTP Server
+[2026-02-26 14:12:00] [1] [http_80_tcp 182] [127.0.0.1:48094] send: Date: Thu, 26 Feb 2026 14:12:00 GMT
+[2026-02-26 14:12:00] [1] [http_80_tcp 182] [127.0.0.1:48094] send: Content-Type: text/html
+[2026-02-26 14:12:00] [1] [http_80_tcp 182] [127.0.0.1:48094] send: Content-Length: 258
+[2026-02-26 14:12:00] [1] [http_80_tcp 182] [127.0.0.1:48094] send: Connection: Close
+[2026-02-26 14:12:00] [1] [http_80_tcp 182] [127.0.0.1:48094] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:12:00] [1] [http_80_tcp 182] [127.0.0.1:48094] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:12:00] [1] [http_80_tcp 182] [127.0.0.1:48094] disconnect
+[2026-02-26 14:12:10] [1] [http_80_tcp 189] [127.0.0.1:46794] connect
+[2026-02-26 14:12:10] [1] [http_80_tcp 189] [127.0.0.1:46794] recv: GET / HTTP/1.1
+[2026-02-26 14:12:10] [1] [http_80_tcp 189] [127.0.0.1:46794] recv: Host: localhost
+[2026-02-26 14:12:10] [1] [http_80_tcp 189] [127.0.0.1:46794] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:12:10] [1] [http_80_tcp 189] [127.0.0.1:46794] recv: Accept: */*
+[2026-02-26 14:12:10] [1] [http_80_tcp 189] [127.0.0.1:46794] info: Request URL: http://localhost/
+[2026-02-26 14:12:10] [1] [http_80_tcp 189] [127.0.0.1:46794] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:12:10] [1] [http_80_tcp 189] [127.0.0.1:46794] send: HTTP/1.1 200 OK
+[2026-02-26 14:12:10] [1] [http_80_tcp 189] [127.0.0.1:46794] send: Content-Type: text/html
+[2026-02-26 14:12:10] [1] [http_80_tcp 189] [127.0.0.1:46794] send: Content-Length: 258
+[2026-02-26 14:12:10] [1] [http_80_tcp 189] [127.0.0.1:46794] send: Date: Thu, 26 Feb 2026 14:12:10 GMT
+[2026-02-26 14:12:10] [1] [http_80_tcp 189] [127.0.0.1:46794] send: Server: INetSim HTTP Server
+[2026-02-26 14:12:10] [1] [http_80_tcp 189] [127.0.0.1:46794] send: Connection: Close
+[2026-02-26 14:12:11] [1] [http_80_tcp 189] [127.0.0.1:46794] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:12:11] [1] [http_80_tcp 189] [127.0.0.1:46794] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:12:11] [1] [http_80_tcp 189] [127.0.0.1:46794] disconnect
+[2026-02-26 14:12:21] [1] [http_80_tcp 196] [127.0.0.1:57388] connect
+[2026-02-26 14:12:21] [1] [http_80_tcp 196] [127.0.0.1:57388] recv: GET / HTTP/1.1
+[2026-02-26 14:12:21] [1] [http_80_tcp 196] [127.0.0.1:57388] recv: Host: localhost
+[2026-02-26 14:12:21] [1] [http_80_tcp 196] [127.0.0.1:57388] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:12:21] [1] [http_80_tcp 196] [127.0.0.1:57388] recv: Accept: */*
+[2026-02-26 14:12:21] [1] [http_80_tcp 196] [127.0.0.1:57388] info: Request URL: http://localhost/
+[2026-02-26 14:12:21] [1] [http_80_tcp 196] [127.0.0.1:57388] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:12:21] [1] [http_80_tcp 196] [127.0.0.1:57388] send: HTTP/1.1 200 OK
+[2026-02-26 14:12:21] [1] [http_80_tcp 196] [127.0.0.1:57388] send: Connection: Close
+[2026-02-26 14:12:21] [1] [http_80_tcp 196] [127.0.0.1:57388] send: Date: Thu, 26 Feb 2026 14:12:21 GMT
+[2026-02-26 14:12:21] [1] [http_80_tcp 196] [127.0.0.1:57388] send: Content-Type: text/html
+[2026-02-26 14:12:21] [1] [http_80_tcp 196] [127.0.0.1:57388] send: Content-Length: 258
+[2026-02-26 14:12:21] [1] [http_80_tcp 196] [127.0.0.1:57388] send: Server: INetSim HTTP Server
+[2026-02-26 14:12:21] [1] [http_80_tcp 196] [127.0.0.1:57388] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:12:21] [1] [http_80_tcp 196] [127.0.0.1:57388] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:12:21] [1] [http_80_tcp 196] [127.0.0.1:57388] disconnect
+[2026-02-26 14:12:31] [1] [http_80_tcp 204] [127.0.0.1:55404] connect
+[2026-02-26 14:12:31] [1] [http_80_tcp 204] [127.0.0.1:55404] recv: GET / HTTP/1.1
+[2026-02-26 14:12:31] [1] [http_80_tcp 204] [127.0.0.1:55404] recv: Host: localhost
+[2026-02-26 14:12:31] [1] [http_80_tcp 204] [127.0.0.1:55404] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:12:31] [1] [http_80_tcp 204] [127.0.0.1:55404] recv: Accept: */*
+[2026-02-26 14:12:31] [1] [http_80_tcp 204] [127.0.0.1:55404] info: Request URL: http://localhost/
+[2026-02-26 14:12:31] [1] [http_80_tcp 204] [127.0.0.1:55404] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:12:31] [1] [http_80_tcp 204] [127.0.0.1:55404] send: HTTP/1.1 200 OK
+[2026-02-26 14:12:31] [1] [http_80_tcp 204] [127.0.0.1:55404] send: Server: INetSim HTTP Server
+[2026-02-26 14:12:31] [1] [http_80_tcp 204] [127.0.0.1:55404] send: Content-Length: 258
+[2026-02-26 14:12:31] [1] [http_80_tcp 204] [127.0.0.1:55404] send: Content-Type: text/html
+[2026-02-26 14:12:32] [1] [http_80_tcp 204] [127.0.0.1:55404] send: Date: Thu, 26 Feb 2026 14:12:31 GMT
+[2026-02-26 14:12:32] [1] [http_80_tcp 204] [127.0.0.1:55404] send: Connection: Close
+[2026-02-26 14:12:32] [1] [http_80_tcp 204] [127.0.0.1:55404] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:12:32] [1] [http_80_tcp 204] [127.0.0.1:55404] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:12:32] [1] [http_80_tcp 204] [127.0.0.1:55404] disconnect
+[2026-02-26 14:12:42] [1] [http_80_tcp 211] [127.0.0.1:50794] connect
+[2026-02-26 14:12:42] [1] [http_80_tcp 211] [127.0.0.1:50794] recv: GET / HTTP/1.1
+[2026-02-26 14:12:42] [1] [http_80_tcp 211] [127.0.0.1:50794] recv: Host: localhost
+[2026-02-26 14:12:42] [1] [http_80_tcp 211] [127.0.0.1:50794] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:12:42] [1] [http_80_tcp 211] [127.0.0.1:50794] recv: Accept: */*
+[2026-02-26 14:12:42] [1] [http_80_tcp 211] [127.0.0.1:50794] info: Request URL: http://localhost/
+[2026-02-26 14:12:42] [1] [http_80_tcp 211] [127.0.0.1:50794] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:12:42] [1] [http_80_tcp 211] [127.0.0.1:50794] send: HTTP/1.1 200 OK
+[2026-02-26 14:12:42] [1] [http_80_tcp 211] [127.0.0.1:50794] send: Connection: Close
+[2026-02-26 14:12:42] [1] [http_80_tcp 211] [127.0.0.1:50794] send: Date: Thu, 26 Feb 2026 14:12:42 GMT
+[2026-02-26 14:12:42] [1] [http_80_tcp 211] [127.0.0.1:50794] send: Content-Type: text/html
+[2026-02-26 14:12:42] [1] [http_80_tcp 211] [127.0.0.1:50794] send: Content-Length: 258
+[2026-02-26 14:12:42] [1] [http_80_tcp 211] [127.0.0.1:50794] send: Server: INetSim HTTP Server
+[2026-02-26 14:12:42] [1] [http_80_tcp 211] [127.0.0.1:50794] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:12:42] [1] [http_80_tcp 211] [127.0.0.1:50794] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:12:42] [1] [http_80_tcp 211] [127.0.0.1:50794] disconnect
+[2026-02-26 14:12:52] [1] [http_80_tcp 218] [127.0.0.1:38164] connect
+[2026-02-26 14:12:52] [1] [http_80_tcp 218] [127.0.0.1:38164] recv: GET / HTTP/1.1
+[2026-02-26 14:12:52] [1] [http_80_tcp 218] [127.0.0.1:38164] recv: Host: localhost
+[2026-02-26 14:12:52] [1] [http_80_tcp 218] [127.0.0.1:38164] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:12:52] [1] [http_80_tcp 218] [127.0.0.1:38164] recv: Accept: */*
+[2026-02-26 14:12:52] [1] [http_80_tcp 218] [127.0.0.1:38164] info: Request URL: http://localhost/
+[2026-02-26 14:12:52] [1] [http_80_tcp 218] [127.0.0.1:38164] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:12:52] [1] [http_80_tcp 218] [127.0.0.1:38164] send: HTTP/1.1 200 OK
+[2026-02-26 14:12:53] [1] [http_80_tcp 218] [127.0.0.1:38164] send: Connection: Close
+[2026-02-26 14:12:53] [1] [http_80_tcp 218] [127.0.0.1:38164] send: Server: INetSim HTTP Server
+[2026-02-26 14:12:53] [1] [http_80_tcp 218] [127.0.0.1:38164] send: Content-Length: 258
+[2026-02-26 14:12:53] [1] [http_80_tcp 218] [127.0.0.1:38164] send: Content-Type: text/html
+[2026-02-26 14:12:53] [1] [http_80_tcp 218] [127.0.0.1:38164] send: Date: Thu, 26 Feb 2026 14:12:52 GMT
+[2026-02-26 14:12:53] [1] [http_80_tcp 218] [127.0.0.1:38164] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:12:53] [1] [http_80_tcp 218] [127.0.0.1:38164] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:12:53] [1] [http_80_tcp 218] [127.0.0.1:38164] disconnect
+[2026-02-26 14:13:03] [1] [http_80_tcp 225] [127.0.0.1:55880] connect
+[2026-02-26 14:13:03] [1] [http_80_tcp 225] [127.0.0.1:55880] recv: GET / HTTP/1.1
+[2026-02-26 14:13:03] [1] [http_80_tcp 225] [127.0.0.1:55880] recv: Host: localhost
+[2026-02-26 14:13:03] [1] [http_80_tcp 225] [127.0.0.1:55880] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:13:03] [1] [http_80_tcp 225] [127.0.0.1:55880] recv: Accept: */*
+[2026-02-26 14:13:03] [1] [http_80_tcp 225] [127.0.0.1:55880] info: Request URL: http://localhost/
+[2026-02-26 14:13:03] [1] [http_80_tcp 225] [127.0.0.1:55880] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:13:14] [1] [http_80_tcp 225] [127.0.0.1:55880] send: HTTP/1.1 200 OK
+[2026-02-26 14:13:14] [1] [http_80_tcp 225] [127.0.0.1:55880] send: Connection: Close
+[2026-02-26 14:13:14] [1] [http_80_tcp 225] [127.0.0.1:55880] send: Server: INetSim HTTP Server
+[2026-02-26 14:13:14] [1] [http_80_tcp 225] [127.0.0.1:55880] send: Date: Thu, 26 Feb 2026 14:13:14 GMT
+[2026-02-26 14:13:14] [1] [http_80_tcp 225] [127.0.0.1:55880] send: Content-Length: 258
+[2026-02-26 14:13:14] [1] [http_80_tcp 225] [127.0.0.1:55880] send: Content-Type: text/html
+[2026-02-26 14:13:03] [1] [http_80_tcp 225] [127.0.0.1:55880] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:13:03] [1] [http_80_tcp 225] [127.0.0.1:55880] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:13:03] [1] [http_80_tcp 225] [127.0.0.1:55880] disconnect
+[2026-02-26 14:13:13] [1] [http_80_tcp 232] [127.0.0.1:38068] connect
+[2026-02-26 14:13:13] [1] [http_80_tcp 232] [127.0.0.1:38068] recv: GET / HTTP/1.1
+[2026-02-26 14:13:13] [1] [http_80_tcp 232] [127.0.0.1:38068] recv: Host: localhost
+[2026-02-26 14:13:13] [1] [http_80_tcp 232] [127.0.0.1:38068] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:13:13] [1] [http_80_tcp 232] [127.0.0.1:38068] recv: Accept: */*
+[2026-02-26 14:13:14] [1] [http_80_tcp 232] [127.0.0.1:38068] info: Request URL: http://localhost/
+[2026-02-26 14:13:14] [1] [http_80_tcp 232] [127.0.0.1:38068] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:13:14] [1] [http_80_tcp 232] [127.0.0.1:38068] send: HTTP/1.1 200 OK
+[2026-02-26 14:13:14] [1] [http_80_tcp 232] [127.0.0.1:38068] send: Server: INetSim HTTP Server
+[2026-02-26 14:13:14] [1] [http_80_tcp 232] [127.0.0.1:38068] send: Content-Type: text/html
+[2026-02-26 14:13:14] [1] [http_80_tcp 232] [127.0.0.1:38068] send: Content-Length: 258
+[2026-02-26 14:13:14] [1] [http_80_tcp 232] [127.0.0.1:38068] send: Date: Thu, 26 Feb 2026 14:13:14 GMT
+[2026-02-26 14:13:14] [1] [http_80_tcp 232] [127.0.0.1:38068] send: Connection: Close
+[2026-02-26 14:13:14] [1] [http_80_tcp 232] [127.0.0.1:38068] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:13:14] [1] [http_80_tcp 232] [127.0.0.1:38068] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:13:14] [1] [http_80_tcp 232] [127.0.0.1:38068] disconnect
+[2026-02-26 14:13:24] [1] [http_80_tcp 239] [127.0.0.1:42182] connect
+[2026-02-26 14:13:24] [1] [http_80_tcp 239] [127.0.0.1:42182] recv: GET / HTTP/1.1
+[2026-02-26 14:13:24] [1] [http_80_tcp 239] [127.0.0.1:42182] recv: Host: localhost
+[2026-02-26 14:13:24] [1] [http_80_tcp 239] [127.0.0.1:42182] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:13:24] [1] [http_80_tcp 239] [127.0.0.1:42182] recv: Accept: */*
+[2026-02-26 14:13:24] [1] [http_80_tcp 239] [127.0.0.1:42182] info: Request URL: http://localhost/
+[2026-02-26 14:13:24] [1] [http_80_tcp 239] [127.0.0.1:42182] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:13:24] [1] [http_80_tcp 239] [127.0.0.1:42182] send: HTTP/1.1 200 OK
+[2026-02-26 14:13:24] [1] [http_80_tcp 239] [127.0.0.1:42182] send: Content-Length: 258
+[2026-02-26 14:13:24] [1] [http_80_tcp 239] [127.0.0.1:42182] send: Content-Type: text/html
+[2026-02-26 14:13:24] [1] [http_80_tcp 239] [127.0.0.1:42182] send: Date: Thu, 26 Feb 2026 14:13:24 GMT
+[2026-02-26 14:13:24] [1] [http_80_tcp 239] [127.0.0.1:42182] send: Server: INetSim HTTP Server
+[2026-02-26 14:13:24] [1] [http_80_tcp 239] [127.0.0.1:42182] send: Connection: Close
+[2026-02-26 14:13:24] [1] [http_80_tcp 239] [127.0.0.1:42182] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:13:24] [1] [http_80_tcp 239] [127.0.0.1:42182] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:13:24] [1] [http_80_tcp 239] [127.0.0.1:42182] disconnect
+[2026-02-26 14:13:34] [1] [http_80_tcp 246] [127.0.0.1:57574] connect
+[2026-02-26 14:13:34] [1] [http_80_tcp 246] [127.0.0.1:57574] recv: GET / HTTP/1.1
+[2026-02-26 14:13:34] [1] [http_80_tcp 246] [127.0.0.1:57574] recv: Host: localhost
+[2026-02-26 14:13:34] [1] [http_80_tcp 246] [127.0.0.1:57574] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:13:35] [1] [http_80_tcp 246] [127.0.0.1:57574] recv: Accept: */*
+[2026-02-26 14:13:35] [1] [http_80_tcp 246] [127.0.0.1:57574] info: Request URL: http://localhost/
+[2026-02-26 14:13:35] [1] [http_80_tcp 246] [127.0.0.1:57574] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:13:35] [1] [http_80_tcp 246] [127.0.0.1:57574] send: HTTP/1.1 200 OK
+[2026-02-26 14:13:35] [1] [http_80_tcp 246] [127.0.0.1:57574] send: Connection: Close
+[2026-02-26 14:13:35] [1] [http_80_tcp 246] [127.0.0.1:57574] send: Content-Type: text/html
+[2026-02-26 14:13:35] [1] [http_80_tcp 246] [127.0.0.1:57574] send: Content-Length: 258
+[2026-02-26 14:13:35] [1] [http_80_tcp 246] [127.0.0.1:57574] send: Date: Thu, 26 Feb 2026 14:13:35 GMT
+[2026-02-26 14:13:35] [1] [http_80_tcp 246] [127.0.0.1:57574] send: Server: INetSim HTTP Server
+[2026-02-26 14:13:35] [1] [http_80_tcp 246] [127.0.0.1:57574] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:13:35] [1] [http_80_tcp 246] [127.0.0.1:57574] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:13:35] [1] [http_80_tcp 246] [127.0.0.1:57574] disconnect
+[2026-02-26 14:13:45] [1] [http_80_tcp 253] [127.0.0.1:51864] connect
+[2026-02-26 14:13:45] [1] [http_80_tcp 253] [127.0.0.1:51864] recv: GET / HTTP/1.1
+[2026-02-26 14:13:45] [1] [http_80_tcp 253] [127.0.0.1:51864] recv: Host: localhost
+[2026-02-26 14:13:45] [1] [http_80_tcp 253] [127.0.0.1:51864] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:13:45] [1] [http_80_tcp 253] [127.0.0.1:51864] recv: Accept: */*
+[2026-02-26 14:13:45] [1] [http_80_tcp 253] [127.0.0.1:51864] info: Request URL: http://localhost/
+[2026-02-26 14:13:45] [1] [http_80_tcp 253] [127.0.0.1:51864] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:13:45] [1] [http_80_tcp 253] [127.0.0.1:51864] send: HTTP/1.1 200 OK
+[2026-02-26 14:13:45] [1] [http_80_tcp 253] [127.0.0.1:51864] send: Content-Type: text/html
+[2026-02-26 14:13:45] [1] [http_80_tcp 253] [127.0.0.1:51864] send: Content-Length: 258
+[2026-02-26 14:13:45] [1] [http_80_tcp 253] [127.0.0.1:51864] send: Date: Thu, 26 Feb 2026 14:13:45 GMT
+[2026-02-26 14:13:45] [1] [http_80_tcp 253] [127.0.0.1:51864] send: Server: INetSim HTTP Server
+[2026-02-26 14:13:45] [1] [http_80_tcp 253] [127.0.0.1:51864] send: Connection: Close
+[2026-02-26 14:13:45] [1] [http_80_tcp 253] [127.0.0.1:51864] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:13:45] [1] [http_80_tcp 253] [127.0.0.1:51864] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:13:45] [1] [http_80_tcp 253] [127.0.0.1:51864] disconnect
+[2026-02-26 14:13:55] [1] [http_80_tcp 260] [127.0.0.1:51816] connect
+[2026-02-26 14:13:55] [1] [http_80_tcp 260] [127.0.0.1:51816] recv: GET / HTTP/1.1
+[2026-02-26 14:13:55] [1] [http_80_tcp 260] [127.0.0.1:51816] recv: Host: localhost
+[2026-02-26 14:13:55] [1] [http_80_tcp 260] [127.0.0.1:51816] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:13:55] [1] [http_80_tcp 260] [127.0.0.1:51816] recv: Accept: */*
+[2026-02-26 14:13:56] [1] [http_80_tcp 260] [127.0.0.1:51816] info: Request URL: http://localhost/
+[2026-02-26 14:13:56] [1] [http_80_tcp 260] [127.0.0.1:51816] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:13:56] [1] [http_80_tcp 260] [127.0.0.1:51816] send: HTTP/1.1 200 OK
+[2026-02-26 14:13:56] [1] [http_80_tcp 260] [127.0.0.1:51816] send: Server: INetSim HTTP Server
+[2026-02-26 14:13:56] [1] [http_80_tcp 260] [127.0.0.1:51816] send: Date: Thu, 26 Feb 2026 14:13:56 GMT
+[2026-02-26 14:13:56] [1] [http_80_tcp 260] [127.0.0.1:51816] send: Content-Type: text/html
+[2026-02-26 14:13:56] [1] [http_80_tcp 260] [127.0.0.1:51816] send: Content-Length: 258
+[2026-02-26 14:13:56] [1] [http_80_tcp 260] [127.0.0.1:51816] send: Connection: Close
+[2026-02-26 14:13:56] [1] [http_80_tcp 260] [127.0.0.1:51816] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:13:56] [1] [http_80_tcp 260] [127.0.0.1:51816] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:13:56] [1] [http_80_tcp 260] [127.0.0.1:51816] disconnect
+[2026-02-26 14:14:04] [1] [http_80_tcp 261] [172.20.0.1:54064] connect
+[2026-02-26 14:14:04] [1] [http_80_tcp 261] [172.20.0.1:54064] recv: GET http://malicious-c2-server.example.com/api/data HTTP/1.1
+[2026-02-26 14:14:04] [1] [http_80_tcp 261] [172.20.0.1:54064] recv: Host: malicious-c2-server.example.com
+[2026-02-26 14:14:04] [1] [http_80_tcp 261] [172.20.0.1:54064] recv: User-Agent: python-requests/2.32.5
+[2026-02-26 14:14:04] [1] [http_80_tcp 261] [172.20.0.1:54064] recv: Accept-Encoding: gzip, deflate, zstd
+[2026-02-26 14:14:04] [1] [http_80_tcp 261] [172.20.0.1:54064] recv: Accept: */*
+[2026-02-26 14:14:04] [1] [http_80_tcp 261] [172.20.0.1:54064] recv: Connection: keep-alive
+[2026-02-26 14:14:04] [1] [http_80_tcp 261] [172.20.0.1:54064] info: Request URL: http://malicious-c2-server.example.com/api/data
+[2026-02-26 14:14:04] [1] [http_80_tcp 261] [172.20.0.1:54064] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:14:04] [1] [http_80_tcp 261] [172.20.0.1:54064] send: HTTP/1.1 200 OK
+[2026-02-26 14:14:04] [1] [http_80_tcp 261] [172.20.0.1:54064] send: Connection: Close
+[2026-02-26 14:14:04] [1] [http_80_tcp 261] [172.20.0.1:54064] send: Server: INetSim HTTP Server
+[2026-02-26 14:14:04] [1] [http_80_tcp 261] [172.20.0.1:54064] send: Date: Thu, 26 Feb 2026 14:14:04 GMT
+[2026-02-26 14:14:04] [1] [http_80_tcp 261] [172.20.0.1:54064] send: Content-Type: text/html
+[2026-02-26 14:14:04] [1] [http_80_tcp 261] [172.20.0.1:54064] send: Content-Length: 258
+[2026-02-26 14:14:04] [1] [http_80_tcp 261] [172.20.0.1:54064] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:14:05] [1] [http_80_tcp 261] [172.20.0.1:54064] stat: 1 method=GET url=http://malicious-c2-server.example.com/api/data sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:14:05] [1] [http_80_tcp 261] [172.20.0.1:54064] disconnect
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] connect
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] recv: GET http://example.com/ HTTP/1.1
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] recv: Host: example.com
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] recv: User-Agent: python-requests/2.32.5
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] recv: Accept-Encoding: gzip, deflate, zstd
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] recv: Accept: */*
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] recv: Connection: keep-alive
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] info: Request URL: http://example.com/
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] send: HTTP/1.1 200 OK
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] send: Server: INetSim HTTP Server
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] send: Date: Thu, 26 Feb 2026 14:14:05 GMT
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] send: Content-Type: text/html
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] send: Content-Length: 258
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] send: Connection: Close
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] stat: 1 method=GET url=http://example.com/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:14:05] [1] [http_80_tcp 262] [172.20.0.1:54072] disconnect
+[2026-02-26 14:14:06] [1] [http_80_tcp 269] [127.0.0.1:60686] connect
+[2026-02-26 14:14:06] [1] [http_80_tcp 269] [127.0.0.1:60686] recv: GET / HTTP/1.1
+[2026-02-26 14:14:06] [1] [http_80_tcp 269] [127.0.0.1:60686] recv: Host: localhost
+[2026-02-26 14:14:06] [1] [http_80_tcp 269] [127.0.0.1:60686] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:14:06] [1] [http_80_tcp 269] [127.0.0.1:60686] recv: Accept: */*
+[2026-02-26 14:14:06] [1] [http_80_tcp 269] [127.0.0.1:60686] info: Request URL: http://localhost/
+[2026-02-26 14:14:06] [1] [http_80_tcp 269] [127.0.0.1:60686] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:14:06] [1] [http_80_tcp 269] [127.0.0.1:60686] send: HTTP/1.1 200 OK
+[2026-02-26 14:14:06] [1] [http_80_tcp 269] [127.0.0.1:60686] send: Server: INetSim HTTP Server
+[2026-02-26 14:14:06] [1] [http_80_tcp 269] [127.0.0.1:60686] send: Date: Thu, 26 Feb 2026 14:14:06 GMT
+[2026-02-26 14:14:06] [1] [http_80_tcp 269] [127.0.0.1:60686] send: Content-Type: text/html
+[2026-02-26 14:14:06] [1] [http_80_tcp 269] [127.0.0.1:60686] send: Content-Length: 258
+[2026-02-26 14:14:06] [1] [http_80_tcp 269] [127.0.0.1:60686] send: Connection: Close
+[2026-02-26 14:14:06] [1] [http_80_tcp 269] [127.0.0.1:60686] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:14:06] [1] [http_80_tcp 269] [127.0.0.1:60686] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:14:06] [1] [http_80_tcp 269] [127.0.0.1:60686] disconnect
+[2026-02-26 14:14:16] [1] [http_80_tcp 276] [127.0.0.1:42266] connect
+[2026-02-26 14:14:16] [1] [http_80_tcp 276] [127.0.0.1:42266] recv: GET / HTTP/1.1
+[2026-02-26 14:14:16] [1] [http_80_tcp 276] [127.0.0.1:42266] recv: Host: localhost
+[2026-02-26 14:14:16] [1] [http_80_tcp 276] [127.0.0.1:42266] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:14:17] [1] [http_80_tcp 276] [127.0.0.1:42266] recv: Accept: */*
+[2026-02-26 14:14:17] [1] [http_80_tcp 276] [127.0.0.1:42266] info: Request URL: http://localhost/
+[2026-02-26 14:14:17] [1] [http_80_tcp 276] [127.0.0.1:42266] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:14:17] [1] [http_80_tcp 276] [127.0.0.1:42266] send: HTTP/1.1 200 OK
+[2026-02-26 14:14:17] [1] [http_80_tcp 276] [127.0.0.1:42266] send: Server: INetSim HTTP Server
+[2026-02-26 14:14:17] [1] [http_80_tcp 276] [127.0.0.1:42266] send: Date: Thu, 26 Feb 2026 14:14:17 GMT
+[2026-02-26 14:14:17] [1] [http_80_tcp 276] [127.0.0.1:42266] send: Content-Type: text/html
+[2026-02-26 14:14:17] [1] [http_80_tcp 276] [127.0.0.1:42266] send: Content-Length: 258
+[2026-02-26 14:14:17] [1] [http_80_tcp 276] [127.0.0.1:42266] send: Connection: Close
+[2026-02-26 14:14:17] [1] [http_80_tcp 276] [127.0.0.1:42266] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:14:17] [1] [http_80_tcp 276] [127.0.0.1:42266] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:14:17] [1] [http_80_tcp 276] [127.0.0.1:42266] disconnect
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] connect
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] recv: GET http://malicious-c2-server.example.com/api/data HTTP/1.1
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] recv: Host: malicious-c2-server.example.com
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] recv: User-Agent: python-requests/2.32.5
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] recv: Accept-Encoding: gzip, deflate, zstd
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] recv: Accept: */*
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] recv: Connection: keep-alive
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] info: Request URL: http://malicious-c2-server.example.com/api/data
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] send: HTTP/1.1 200 OK
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] send: Date: Thu, 26 Feb 2026 14:14:19 GMT
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] send: Content-Type: text/html
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] send: Content-Length: 258
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] send: Server: INetSim HTTP Server
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] send: Connection: Close
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] stat: 1 method=GET url=http://malicious-c2-server.example.com/api/data sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:14:19] [1] [http_80_tcp 277] [172.20.0.1:48902] disconnect
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] connect
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] recv: GET http://example.com/ HTTP/1.1
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] recv: Host: example.com
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] recv: User-Agent: python-requests/2.32.5
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] recv: Accept-Encoding: gzip, deflate, zstd
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] recv: Accept: */*
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] recv: Connection: keep-alive
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] info: Request URL: http://example.com/
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] send: HTTP/1.1 200 OK
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] send: Connection: Close
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] send: Content-Type: text/html
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] send: Content-Length: 258
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] send: Date: Thu, 26 Feb 2026 14:14:20 GMT
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] send: Server: INetSim HTTP Server
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] stat: 1 method=GET url=http://example.com/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:14:20] [1] [http_80_tcp 278] [172.20.0.1:48918] disconnect
+[2026-02-26 14:14:27] [1] [http_80_tcp 285] [127.0.0.1:53162] connect
+[2026-02-26 14:14:27] [1] [http_80_tcp 285] [127.0.0.1:53162] recv: GET / HTTP/1.1
+[2026-02-26 14:14:27] [1] [http_80_tcp 285] [127.0.0.1:53162] recv: Host: localhost
+[2026-02-26 14:14:27] [1] [http_80_tcp 285] [127.0.0.1:53162] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:14:27] [1] [http_80_tcp 285] [127.0.0.1:53162] recv: Accept: */*
+[2026-02-26 14:14:27] [1] [http_80_tcp 285] [127.0.0.1:53162] info: Request URL: http://localhost/
+[2026-02-26 14:14:27] [1] [http_80_tcp 285] [127.0.0.1:53162] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:14:27] [1] [http_80_tcp 285] [127.0.0.1:53162] send: HTTP/1.1 200 OK
+[2026-02-26 14:14:27] [1] [http_80_tcp 285] [127.0.0.1:53162] send: Connection: Close
+[2026-02-26 14:14:27] [1] [http_80_tcp 285] [127.0.0.1:53162] send: Server: INetSim HTTP Server
+[2026-02-26 14:14:27] [1] [http_80_tcp 285] [127.0.0.1:53162] send: Content-Type: text/html
+[2026-02-26 14:14:27] [1] [http_80_tcp 285] [127.0.0.1:53162] send: Content-Length: 258
+[2026-02-26 14:14:27] [1] [http_80_tcp 285] [127.0.0.1:53162] send: Date: Thu, 26 Feb 2026 14:14:27 GMT
+[2026-02-26 14:14:27] [1] [http_80_tcp 285] [127.0.0.1:53162] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:14:27] [1] [http_80_tcp 285] [127.0.0.1:53162] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:14:27] [1] [http_80_tcp 285] [127.0.0.1:53162] disconnect
+[2026-02-26 14:14:37] [1] [http_80_tcp 292] [127.0.0.1:46080] connect
+[2026-02-26 14:14:37] [1] [http_80_tcp 292] [127.0.0.1:46080] recv: GET / HTTP/1.1
+[2026-02-26 14:14:37] [1] [http_80_tcp 292] [127.0.0.1:46080] recv: Host: localhost
+[2026-02-26 14:14:38] [1] [http_80_tcp 292] [127.0.0.1:46080] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:14:38] [1] [http_80_tcp 292] [127.0.0.1:46080] recv: Accept: */*
+[2026-02-26 14:14:38] [1] [http_80_tcp 292] [127.0.0.1:46080] info: Request URL: http://localhost/
+[2026-02-26 14:14:38] [1] [http_80_tcp 292] [127.0.0.1:46080] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:14:38] [1] [http_80_tcp 292] [127.0.0.1:46080] send: HTTP/1.1 200 OK
+[2026-02-26 14:14:38] [1] [http_80_tcp 292] [127.0.0.1:46080] send: Server: INetSim HTTP Server
+[2026-02-26 14:14:38] [1] [http_80_tcp 292] [127.0.0.1:46080] send: Date: Thu, 26 Feb 2026 14:14:38 GMT
+[2026-02-26 14:14:38] [1] [http_80_tcp 292] [127.0.0.1:46080] send: Content-Type: text/html
+[2026-02-26 14:14:38] [1] [http_80_tcp 292] [127.0.0.1:46080] send: Content-Length: 258
+[2026-02-26 14:14:38] [1] [http_80_tcp 292] [127.0.0.1:46080] send: Connection: Close
+[2026-02-26 14:14:38] [1] [http_80_tcp 292] [127.0.0.1:46080] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:14:38] [1] [http_80_tcp 292] [127.0.0.1:46080] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:14:38] [1] [http_80_tcp 292] [127.0.0.1:46080] disconnect
+[2026-02-26 14:14:48] [1] [http_80_tcp 299] [127.0.0.1:56230] connect
+[2026-02-26 14:14:48] [1] [http_80_tcp 299] [127.0.0.1:56230] recv: GET / HTTP/1.1
+[2026-02-26 14:14:48] [1] [http_80_tcp 299] [127.0.0.1:56230] recv: Host: localhost
+[2026-02-26 14:14:48] [1] [http_80_tcp 299] [127.0.0.1:56230] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:14:48] [1] [http_80_tcp 299] [127.0.0.1:56230] recv: Accept: */*
+[2026-02-26 14:14:48] [1] [http_80_tcp 299] [127.0.0.1:56230] info: Request URL: http://localhost/
+[2026-02-26 14:14:48] [1] [http_80_tcp 299] [127.0.0.1:56230] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:14:59] [1] [http_80_tcp 299] [127.0.0.1:56230] send: HTTP/1.1 200 OK
+[2026-02-26 14:14:59] [1] [http_80_tcp 299] [127.0.0.1:56230] send: Server: INetSim HTTP Server
+[2026-02-26 14:14:59] [1] [http_80_tcp 299] [127.0.0.1:56230] send: Content-Length: 258
+[2026-02-26 14:14:59] [1] [http_80_tcp 299] [127.0.0.1:56230] send: Content-Type: text/html
+[2026-02-26 14:14:59] [1] [http_80_tcp 299] [127.0.0.1:56230] send: Date: Thu, 26 Feb 2026 14:14:59 GMT
+[2026-02-26 14:14:59] [1] [http_80_tcp 299] [127.0.0.1:56230] send: Connection: Close
+[2026-02-26 14:14:48] [1] [http_80_tcp 299] [127.0.0.1:56230] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:14:48] [1] [http_80_tcp 299] [127.0.0.1:56230] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:14:49] [1] [http_80_tcp 299] [127.0.0.1:56230] disconnect
+[2026-02-26 14:14:59] [1] [http_80_tcp 306] [127.0.0.1:46392] connect
+[2026-02-26 14:14:59] [1] [http_80_tcp 306] [127.0.0.1:46392] recv: GET / HTTP/1.1
+[2026-02-26 14:14:59] [1] [http_80_tcp 306] [127.0.0.1:46392] recv: Host: localhost
+[2026-02-26 14:14:59] [1] [http_80_tcp 306] [127.0.0.1:46392] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:14:59] [1] [http_80_tcp 306] [127.0.0.1:46392] recv: Accept: */*
+[2026-02-26 14:14:59] [1] [http_80_tcp 306] [127.0.0.1:46392] info: Request URL: http://localhost/
+[2026-02-26 14:14:59] [1] [http_80_tcp 306] [127.0.0.1:46392] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:14:59] [1] [http_80_tcp 306] [127.0.0.1:46392] send: HTTP/1.1 200 OK
+[2026-02-26 14:14:59] [1] [http_80_tcp 306] [127.0.0.1:46392] send: Server: INetSim HTTP Server
+[2026-02-26 14:14:59] [1] [http_80_tcp 306] [127.0.0.1:46392] send: Content-Length: 258
+[2026-02-26 14:14:59] [1] [http_80_tcp 306] [127.0.0.1:46392] send: Content-Type: text/html
+[2026-02-26 14:14:59] [1] [http_80_tcp 306] [127.0.0.1:46392] send: Date: Thu, 26 Feb 2026 14:14:59 GMT
+[2026-02-26 14:14:59] [1] [http_80_tcp 306] [127.0.0.1:46392] send: Connection: Close
+[2026-02-26 14:14:59] [1] [http_80_tcp 306] [127.0.0.1:46392] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:14:59] [1] [http_80_tcp 306] [127.0.0.1:46392] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:14:59] [1] [http_80_tcp 306] [127.0.0.1:46392] disconnect
+[2026-02-26 14:15:09] [1] [http_80_tcp 313] [127.0.0.1:44838] connect
+[2026-02-26 14:15:09] [1] [http_80_tcp 313] [127.0.0.1:44838] recv: GET / HTTP/1.1
+[2026-02-26 14:15:09] [1] [http_80_tcp 313] [127.0.0.1:44838] recv: Host: localhost
+[2026-02-26 14:15:09] [1] [http_80_tcp 313] [127.0.0.1:44838] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:15:09] [1] [http_80_tcp 313] [127.0.0.1:44838] recv: Accept: */*
+[2026-02-26 14:15:09] [1] [http_80_tcp 313] [127.0.0.1:44838] info: Request URL: http://localhost/
+[2026-02-26 14:15:09] [1] [http_80_tcp 313] [127.0.0.1:44838] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:15:09] [1] [http_80_tcp 313] [127.0.0.1:44838] send: HTTP/1.1 200 OK
+[2026-02-26 14:15:09] [1] [http_80_tcp 313] [127.0.0.1:44838] send: Date: Thu, 26 Feb 2026 14:15:09 GMT
+[2026-02-26 14:15:09] [1] [http_80_tcp 313] [127.0.0.1:44838] send: Content-Length: 258
+[2026-02-26 14:15:09] [1] [http_80_tcp 313] [127.0.0.1:44838] send: Content-Type: text/html
+[2026-02-26 14:15:09] [1] [http_80_tcp 313] [127.0.0.1:44838] send: Server: INetSim HTTP Server
+[2026-02-26 14:15:09] [1] [http_80_tcp 313] [127.0.0.1:44838] send: Connection: Close
+[2026-02-26 14:15:10] [1] [http_80_tcp 313] [127.0.0.1:44838] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:15:10] [1] [http_80_tcp 313] [127.0.0.1:44838] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:15:10] [1] [http_80_tcp 313] [127.0.0.1:44838] disconnect
+[2026-02-26 14:15:20] [1] [http_80_tcp 320] [127.0.0.1:43522] connect
+[2026-02-26 14:15:20] [1] [http_80_tcp 320] [127.0.0.1:43522] recv: GET / HTTP/1.1
+[2026-02-26 14:15:20] [1] [http_80_tcp 320] [127.0.0.1:43522] recv: Host: localhost
+[2026-02-26 14:15:20] [1] [http_80_tcp 320] [127.0.0.1:43522] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:15:20] [1] [http_80_tcp 320] [127.0.0.1:43522] recv: Accept: */*
+[2026-02-26 14:15:20] [1] [http_80_tcp 320] [127.0.0.1:43522] info: Request URL: http://localhost/
+[2026-02-26 14:15:20] [1] [http_80_tcp 320] [127.0.0.1:43522] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:15:20] [1] [http_80_tcp 320] [127.0.0.1:43522] send: HTTP/1.1 200 OK
+[2026-02-26 14:15:20] [1] [http_80_tcp 320] [127.0.0.1:43522] send: Server: INetSim HTTP Server
+[2026-02-26 14:15:20] [1] [http_80_tcp 320] [127.0.0.1:43522] send: Content-Length: 258
+[2026-02-26 14:15:20] [1] [http_80_tcp 320] [127.0.0.1:43522] send: Content-Type: text/html
+[2026-02-26 14:15:20] [1] [http_80_tcp 320] [127.0.0.1:43522] send: Date: Thu, 26 Feb 2026 14:15:20 GMT
+[2026-02-26 14:15:20] [1] [http_80_tcp 320] [127.0.0.1:43522] send: Connection: Close
+[2026-02-26 14:15:20] [1] [http_80_tcp 320] [127.0.0.1:43522] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:15:20] [1] [http_80_tcp 320] [127.0.0.1:43522] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:15:20] [1] [http_80_tcp 320] [127.0.0.1:43522] disconnect
+[2026-02-26 14:15:30] [1] [http_80_tcp 327] [127.0.0.1:46832] connect
+[2026-02-26 14:15:30] [1] [http_80_tcp 327] [127.0.0.1:46832] recv: GET / HTTP/1.1
+[2026-02-26 14:15:30] [1] [http_80_tcp 327] [127.0.0.1:46832] recv: Host: localhost
+[2026-02-26 14:15:30] [1] [http_80_tcp 327] [127.0.0.1:46832] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:15:30] [1] [http_80_tcp 327] [127.0.0.1:46832] recv: Accept: */*
+[2026-02-26 14:15:30] [1] [http_80_tcp 327] [127.0.0.1:46832] info: Request URL: http://localhost/
+[2026-02-26 14:15:30] [1] [http_80_tcp 327] [127.0.0.1:46832] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:15:30] [1] [http_80_tcp 327] [127.0.0.1:46832] send: HTTP/1.1 200 OK
+[2026-02-26 14:15:30] [1] [http_80_tcp 327] [127.0.0.1:46832] send: Connection: Close
+[2026-02-26 14:15:30] [1] [http_80_tcp 327] [127.0.0.1:46832] send: Date: Thu, 26 Feb 2026 14:15:30 GMT
+[2026-02-26 14:15:30] [1] [http_80_tcp 327] [127.0.0.1:46832] send: Content-Type: text/html
+[2026-02-26 14:15:30] [1] [http_80_tcp 327] [127.0.0.1:46832] send: Content-Length: 258
+[2026-02-26 14:15:30] [1] [http_80_tcp 327] [127.0.0.1:46832] send: Server: INetSim HTTP Server
+[2026-02-26 14:15:30] [1] [http_80_tcp 327] [127.0.0.1:46832] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:15:30] [1] [http_80_tcp 327] [127.0.0.1:46832] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:15:31] [1] [http_80_tcp 327] [127.0.0.1:46832] disconnect
+[2026-02-26 14:15:41] [1] [http_80_tcp 334] [127.0.0.1:51474] connect
+[2026-02-26 14:15:41] [1] [http_80_tcp 334] [127.0.0.1:51474] recv: GET / HTTP/1.1
+[2026-02-26 14:15:41] [1] [http_80_tcp 334] [127.0.0.1:51474] recv: Host: localhost
+[2026-02-26 14:15:41] [1] [http_80_tcp 334] [127.0.0.1:51474] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:15:41] [1] [http_80_tcp 334] [127.0.0.1:51474] recv: Accept: */*
+[2026-02-26 14:15:41] [1] [http_80_tcp 334] [127.0.0.1:51474] info: Request URL: http://localhost/
+[2026-02-26 14:15:41] [1] [http_80_tcp 334] [127.0.0.1:51474] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:15:41] [1] [http_80_tcp 334] [127.0.0.1:51474] send: HTTP/1.1 200 OK
+[2026-02-26 14:15:41] [1] [http_80_tcp 334] [127.0.0.1:51474] send: Connection: Close
+[2026-02-26 14:15:41] [1] [http_80_tcp 334] [127.0.0.1:51474] send: Date: Thu, 26 Feb 2026 14:15:41 GMT
+[2026-02-26 14:15:41] [1] [http_80_tcp 334] [127.0.0.1:51474] send: Content-Type: text/html
+[2026-02-26 14:15:41] [1] [http_80_tcp 334] [127.0.0.1:51474] send: Content-Length: 258
+[2026-02-26 14:15:41] [1] [http_80_tcp 334] [127.0.0.1:51474] send: Server: INetSim HTTP Server
+[2026-02-26 14:15:41] [1] [http_80_tcp 334] [127.0.0.1:51474] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:15:41] [1] [http_80_tcp 334] [127.0.0.1:51474] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:15:41] [1] [http_80_tcp 334] [127.0.0.1:51474] disconnect
+[2026-02-26 14:15:51] [1] [http_80_tcp 341] [127.0.0.1:48658] connect
+[2026-02-26 14:15:51] [1] [http_80_tcp 341] [127.0.0.1:48658] recv: GET / HTTP/1.1
+[2026-02-26 14:15:51] [1] [http_80_tcp 341] [127.0.0.1:48658] recv: Host: localhost
+[2026-02-26 14:15:51] [1] [http_80_tcp 341] [127.0.0.1:48658] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:15:51] [1] [http_80_tcp 341] [127.0.0.1:48658] recv: Accept: */*
+[2026-02-26 14:15:51] [1] [http_80_tcp 341] [127.0.0.1:48658] info: Request URL: http://localhost/
+[2026-02-26 14:15:51] [1] [http_80_tcp 341] [127.0.0.1:48658] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:15:51] [1] [http_80_tcp 341] [127.0.0.1:48658] send: HTTP/1.1 200 OK
+[2026-02-26 14:15:51] [1] [http_80_tcp 341] [127.0.0.1:48658] send: Content-Type: text/html
+[2026-02-26 14:15:51] [1] [http_80_tcp 341] [127.0.0.1:48658] send: Content-Length: 258
+[2026-02-26 14:15:51] [1] [http_80_tcp 341] [127.0.0.1:48658] send: Date: Thu, 26 Feb 2026 14:15:51 GMT
+[2026-02-26 14:15:51] [1] [http_80_tcp 341] [127.0.0.1:48658] send: Server: INetSim HTTP Server
+[2026-02-26 14:15:52] [1] [http_80_tcp 341] [127.0.0.1:48658] send: Connection: Close
+[2026-02-26 14:15:52] [1] [http_80_tcp 341] [127.0.0.1:48658] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:15:52] [1] [http_80_tcp 341] [127.0.0.1:48658] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:15:52] [1] [http_80_tcp 341] [127.0.0.1:48658] disconnect
+[2026-02-26 14:16:02] [1] [http_80_tcp 348] [127.0.0.1:52876] connect
+[2026-02-26 14:16:02] [1] [http_80_tcp 348] [127.0.0.1:52876] recv: GET / HTTP/1.1
+[2026-02-26 14:16:02] [1] [http_80_tcp 348] [127.0.0.1:52876] recv: Host: localhost
+[2026-02-26 14:16:02] [1] [http_80_tcp 348] [127.0.0.1:52876] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:16:02] [1] [http_80_tcp 348] [127.0.0.1:52876] recv: Accept: */*
+[2026-02-26 14:16:02] [1] [http_80_tcp 348] [127.0.0.1:52876] info: Request URL: http://localhost/
+[2026-02-26 14:16:02] [1] [http_80_tcp 348] [127.0.0.1:52876] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:16:02] [1] [http_80_tcp 348] [127.0.0.1:52876] send: HTTP/1.1 200 OK
+[2026-02-26 14:16:02] [1] [http_80_tcp 348] [127.0.0.1:52876] send: Connection: Close
+[2026-02-26 14:16:02] [1] [http_80_tcp 348] [127.0.0.1:52876] send: Server: INetSim HTTP Server
+[2026-02-26 14:16:02] [1] [http_80_tcp 348] [127.0.0.1:52876] send: Date: Thu, 26 Feb 2026 14:16:02 GMT
+[2026-02-26 14:16:02] [1] [http_80_tcp 348] [127.0.0.1:52876] send: Content-Type: text/html
+[2026-02-26 14:16:02] [1] [http_80_tcp 348] [127.0.0.1:52876] send: Content-Length: 258
+[2026-02-26 14:16:02] [1] [http_80_tcp 348] [127.0.0.1:52876] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:16:02] [1] [http_80_tcp 348] [127.0.0.1:52876] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:16:02] [1] [http_80_tcp 348] [127.0.0.1:52876] disconnect
+[2026-02-26 14:16:12] [1] [http_80_tcp 355] [127.0.0.1:53332] connect
+[2026-02-26 14:16:12] [1] [http_80_tcp 355] [127.0.0.1:53332] recv: GET / HTTP/1.1
+[2026-02-26 14:16:12] [1] [http_80_tcp 355] [127.0.0.1:53332] recv: Host: localhost
+[2026-02-26 14:16:12] [1] [http_80_tcp 355] [127.0.0.1:53332] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:16:12] [1] [http_80_tcp 355] [127.0.0.1:53332] recv: Accept: */*
+[2026-02-26 14:16:12] [1] [http_80_tcp 355] [127.0.0.1:53332] info: Request URL: http://localhost/
+[2026-02-26 14:16:12] [1] [http_80_tcp 355] [127.0.0.1:53332] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:16:12] [1] [http_80_tcp 355] [127.0.0.1:53332] send: HTTP/1.1 200 OK
+[2026-02-26 14:16:12] [1] [http_80_tcp 355] [127.0.0.1:53332] send: Server: INetSim HTTP Server
+[2026-02-26 14:16:12] [1] [http_80_tcp 355] [127.0.0.1:53332] send: Date: Thu, 26 Feb 2026 14:16:12 GMT
+[2026-02-26 14:16:12] [1] [http_80_tcp 355] [127.0.0.1:53332] send: Content-Length: 258
+[2026-02-26 14:16:12] [1] [http_80_tcp 355] [127.0.0.1:53332] send: Content-Type: text/html
+[2026-02-26 14:16:13] [1] [http_80_tcp 355] [127.0.0.1:53332] send: Connection: Close
+[2026-02-26 14:16:13] [1] [http_80_tcp 355] [127.0.0.1:53332] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:16:13] [1] [http_80_tcp 355] [127.0.0.1:53332] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:16:13] [1] [http_80_tcp 355] [127.0.0.1:53332] disconnect
+[2026-02-26 14:16:23] [1] [http_80_tcp 362] [127.0.0.1:42626] connect
+[2026-02-26 14:16:23] [1] [http_80_tcp 362] [127.0.0.1:42626] recv: GET / HTTP/1.1
+[2026-02-26 14:16:23] [1] [http_80_tcp 362] [127.0.0.1:42626] recv: Host: localhost
+[2026-02-26 14:16:23] [1] [http_80_tcp 362] [127.0.0.1:42626] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:16:23] [1] [http_80_tcp 362] [127.0.0.1:42626] recv: Accept: */*
+[2026-02-26 14:16:23] [1] [http_80_tcp 362] [127.0.0.1:42626] info: Request URL: http://localhost/
+[2026-02-26 14:16:23] [1] [http_80_tcp 362] [127.0.0.1:42626] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:16:23] [1] [http_80_tcp 362] [127.0.0.1:42626] send: HTTP/1.1 200 OK
+[2026-02-26 14:16:23] [1] [http_80_tcp 362] [127.0.0.1:42626] send: Connection: Close
+[2026-02-26 14:16:23] [1] [http_80_tcp 362] [127.0.0.1:42626] send: Server: INetSim HTTP Server
+[2026-02-26 14:16:23] [1] [http_80_tcp 362] [127.0.0.1:42626] send: Date: Thu, 26 Feb 2026 14:16:23 GMT
+[2026-02-26 14:16:23] [1] [http_80_tcp 362] [127.0.0.1:42626] send: Content-Type: text/html
+[2026-02-26 14:16:23] [1] [http_80_tcp 362] [127.0.0.1:42626] send: Content-Length: 258
+[2026-02-26 14:16:23] [1] [http_80_tcp 362] [127.0.0.1:42626] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:16:23] [1] [http_80_tcp 362] [127.0.0.1:42626] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:16:23] [1] [http_80_tcp 362] [127.0.0.1:42626] disconnect
+[2026-02-26 14:16:33] [1] [http_80_tcp 369] [127.0.0.1:51100] connect
+[2026-02-26 14:16:33] [1] [http_80_tcp 369] [127.0.0.1:51100] recv: GET / HTTP/1.1
+[2026-02-26 14:16:33] [1] [http_80_tcp 369] [127.0.0.1:51100] recv: Host: localhost
+[2026-02-26 14:16:33] [1] [http_80_tcp 369] [127.0.0.1:51100] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:16:33] [1] [http_80_tcp 369] [127.0.0.1:51100] recv: Accept: */*
+[2026-02-26 14:16:33] [1] [http_80_tcp 369] [127.0.0.1:51100] info: Request URL: http://localhost/
+[2026-02-26 14:16:33] [1] [http_80_tcp 369] [127.0.0.1:51100] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:16:33] [1] [http_80_tcp 369] [127.0.0.1:51100] send: HTTP/1.1 200 OK
+[2026-02-26 14:16:44] [1] [http_80_tcp 369] [127.0.0.1:51100] send: Server: INetSim HTTP Server
+[2026-02-26 14:16:44] [1] [http_80_tcp 369] [127.0.0.1:51100] send: Date: Thu, 26 Feb 2026 14:16:33 GMT
+[2026-02-26 14:16:44] [1] [http_80_tcp 369] [127.0.0.1:51100] send: Content-Type: text/html
+[2026-02-26 14:16:44] [1] [http_80_tcp 369] [127.0.0.1:51100] send: Content-Length: 258
+[2026-02-26 14:16:44] [1] [http_80_tcp 369] [127.0.0.1:51100] send: Connection: Close
+[2026-02-26 14:16:44] [1] [http_80_tcp 369] [127.0.0.1:51100] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:16:34] [1] [http_80_tcp 369] [127.0.0.1:51100] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:16:34] [1] [http_80_tcp 369] [127.0.0.1:51100] disconnect
+[2026-02-26 14:16:44] [1] [http_80_tcp 376] [127.0.0.1:51592] connect
+[2026-02-26 14:16:44] [1] [http_80_tcp 376] [127.0.0.1:51592] recv: GET / HTTP/1.1
+[2026-02-26 14:16:44] [1] [http_80_tcp 376] [127.0.0.1:51592] recv: Host: localhost
+[2026-02-26 14:16:44] [1] [http_80_tcp 376] [127.0.0.1:51592] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:16:44] [1] [http_80_tcp 376] [127.0.0.1:51592] recv: Accept: */*
+[2026-02-26 14:16:44] [1] [http_80_tcp 376] [127.0.0.1:51592] info: Request URL: http://localhost/
+[2026-02-26 14:16:44] [1] [http_80_tcp 376] [127.0.0.1:51592] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:16:44] [1] [http_80_tcp 376] [127.0.0.1:51592] send: HTTP/1.1 200 OK
+[2026-02-26 14:16:44] [1] [http_80_tcp 376] [127.0.0.1:51592] send: Content-Type: text/html
+[2026-02-26 14:16:44] [1] [http_80_tcp 376] [127.0.0.1:51592] send: Content-Length: 258
+[2026-02-26 14:16:44] [1] [http_80_tcp 376] [127.0.0.1:51592] send: Date: Thu, 26 Feb 2026 14:16:44 GMT
+[2026-02-26 14:16:44] [1] [http_80_tcp 376] [127.0.0.1:51592] send: Server: INetSim HTTP Server
+[2026-02-26 14:16:44] [1] [http_80_tcp 376] [127.0.0.1:51592] send: Connection: Close
+[2026-02-26 14:16:44] [1] [http_80_tcp 376] [127.0.0.1:51592] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:16:44] [1] [http_80_tcp 376] [127.0.0.1:51592] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:16:44] [1] [http_80_tcp 376] [127.0.0.1:51592] disconnect
+[2026-02-26 14:16:54] [1] [http_80_tcp 383] [127.0.0.1:55768] connect
+[2026-02-26 14:16:54] [1] [http_80_tcp 383] [127.0.0.1:55768] recv: GET / HTTP/1.1
+[2026-02-26 14:16:54] [1] [http_80_tcp 383] [127.0.0.1:55768] recv: Host: localhost
+[2026-02-26 14:16:54] [1] [http_80_tcp 383] [127.0.0.1:55768] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:16:54] [1] [http_80_tcp 383] [127.0.0.1:55768] recv: Accept: */*
+[2026-02-26 14:16:55] [1] [http_80_tcp 383] [127.0.0.1:55768] info: Request URL: http://localhost/
+[2026-02-26 14:16:55] [1] [http_80_tcp 383] [127.0.0.1:55768] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:16:55] [1] [http_80_tcp 383] [127.0.0.1:55768] send: HTTP/1.1 200 OK
+[2026-02-26 14:16:55] [1] [http_80_tcp 383] [127.0.0.1:55768] send: Date: Thu, 26 Feb 2026 14:16:55 GMT
+[2026-02-26 14:16:55] [1] [http_80_tcp 383] [127.0.0.1:55768] send: Content-Type: text/html
+[2026-02-26 14:16:55] [1] [http_80_tcp 383] [127.0.0.1:55768] send: Content-Length: 258
+[2026-02-26 14:16:55] [1] [http_80_tcp 383] [127.0.0.1:55768] send: Server: INetSim HTTP Server
+[2026-02-26 14:16:55] [1] [http_80_tcp 383] [127.0.0.1:55768] send: Connection: Close
+[2026-02-26 14:16:55] [1] [http_80_tcp 383] [127.0.0.1:55768] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:16:55] [1] [http_80_tcp 383] [127.0.0.1:55768] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:16:55] [1] [http_80_tcp 383] [127.0.0.1:55768] disconnect
+[2026-02-26 14:17:05] [1] [http_80_tcp 390] [127.0.0.1:60980] connect
+[2026-02-26 14:17:05] [1] [http_80_tcp 390] [127.0.0.1:60980] recv: GET / HTTP/1.1
+[2026-02-26 14:17:05] [1] [http_80_tcp 390] [127.0.0.1:60980] recv: Host: localhost
+[2026-02-26 14:17:05] [1] [http_80_tcp 390] [127.0.0.1:60980] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:17:05] [1] [http_80_tcp 390] [127.0.0.1:60980] recv: Accept: */*
+[2026-02-26 14:17:05] [1] [http_80_tcp 390] [127.0.0.1:60980] info: Request URL: http://localhost/
+[2026-02-26 14:17:05] [1] [http_80_tcp 390] [127.0.0.1:60980] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:17:05] [1] [http_80_tcp 390] [127.0.0.1:60980] send: HTTP/1.1 200 OK
+[2026-02-26 14:17:05] [1] [http_80_tcp 390] [127.0.0.1:60980] send: Connection: Close
+[2026-02-26 14:17:05] [1] [http_80_tcp 390] [127.0.0.1:60980] send: Server: INetSim HTTP Server
+[2026-02-26 14:17:05] [1] [http_80_tcp 390] [127.0.0.1:60980] send: Content-Type: text/html
+[2026-02-26 14:17:05] [1] [http_80_tcp 390] [127.0.0.1:60980] send: Content-Length: 258
+[2026-02-26 14:17:05] [1] [http_80_tcp 390] [127.0.0.1:60980] send: Date: Thu, 26 Feb 2026 14:17:05 GMT
+[2026-02-26 14:17:05] [1] [http_80_tcp 390] [127.0.0.1:60980] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:17:05] [1] [http_80_tcp 390] [127.0.0.1:60980] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:17:05] [1] [http_80_tcp 390] [127.0.0.1:60980] disconnect
+[2026-02-26 14:17:15] [1] [http_80_tcp 397] [127.0.0.1:57224] connect
+[2026-02-26 14:17:15] [1] [http_80_tcp 397] [127.0.0.1:57224] recv: GET / HTTP/1.1
+[2026-02-26 14:17:15] [1] [http_80_tcp 397] [127.0.0.1:57224] recv: Host: localhost
+[2026-02-26 14:17:15] [1] [http_80_tcp 397] [127.0.0.1:57224] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:17:15] [1] [http_80_tcp 397] [127.0.0.1:57224] recv: Accept: */*
+[2026-02-26 14:17:15] [1] [http_80_tcp 397] [127.0.0.1:57224] info: Request URL: http://localhost/
+[2026-02-26 14:17:16] [1] [http_80_tcp 397] [127.0.0.1:57224] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:17:16] [1] [http_80_tcp 397] [127.0.0.1:57224] send: HTTP/1.1 200 OK
+[2026-02-26 14:17:16] [1] [http_80_tcp 397] [127.0.0.1:57224] send: Date: Thu, 26 Feb 2026 14:17:16 GMT
+[2026-02-26 14:17:16] [1] [http_80_tcp 397] [127.0.0.1:57224] send: Content-Type: text/html
+[2026-02-26 14:17:16] [1] [http_80_tcp 397] [127.0.0.1:57224] send: Content-Length: 258
+[2026-02-26 14:17:16] [1] [http_80_tcp 397] [127.0.0.1:57224] send: Server: INetSim HTTP Server
+[2026-02-26 14:17:16] [1] [http_80_tcp 397] [127.0.0.1:57224] send: Connection: Close
+[2026-02-26 14:17:16] [1] [http_80_tcp 397] [127.0.0.1:57224] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:17:16] [1] [http_80_tcp 397] [127.0.0.1:57224] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:17:16] [1] [http_80_tcp 397] [127.0.0.1:57224] disconnect
+[2026-02-26 14:17:26] [1] [http_80_tcp 405] [127.0.0.1:46538] connect
+[2026-02-26 14:17:26] [1] [http_80_tcp 405] [127.0.0.1:46538] recv: GET / HTTP/1.1
+[2026-02-26 14:17:26] [1] [http_80_tcp 405] [127.0.0.1:46538] recv: Host: localhost
+[2026-02-26 14:17:26] [1] [http_80_tcp 405] [127.0.0.1:46538] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:17:26] [1] [http_80_tcp 405] [127.0.0.1:46538] recv: Accept: */*
+[2026-02-26 14:17:26] [1] [http_80_tcp 405] [127.0.0.1:46538] info: Request URL: http://localhost/
+[2026-02-26 14:17:26] [1] [http_80_tcp 405] [127.0.0.1:46538] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:17:26] [1] [http_80_tcp 405] [127.0.0.1:46538] send: HTTP/1.1 200 OK
+[2026-02-26 14:17:26] [1] [http_80_tcp 405] [127.0.0.1:46538] send: Date: Thu, 26 Feb 2026 14:17:26 GMT
+[2026-02-26 14:17:26] [1] [http_80_tcp 405] [127.0.0.1:46538] send: Content-Type: text/html
+[2026-02-26 14:17:26] [1] [http_80_tcp 405] [127.0.0.1:46538] send: Content-Length: 258
+[2026-02-26 14:17:26] [1] [http_80_tcp 405] [127.0.0.1:46538] send: Server: INetSim HTTP Server
+[2026-02-26 14:17:26] [1] [http_80_tcp 405] [127.0.0.1:46538] send: Connection: Close
+[2026-02-26 14:17:26] [1] [http_80_tcp 405] [127.0.0.1:46538] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:17:26] [1] [http_80_tcp 405] [127.0.0.1:46538] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:17:26] [1] [http_80_tcp 405] [127.0.0.1:46538] disconnect
+[2026-02-26 14:17:36] [1] [http_80_tcp 412] [127.0.0.1:51412] connect
+[2026-02-26 14:17:36] [1] [http_80_tcp 412] [127.0.0.1:51412] recv: GET / HTTP/1.1
+[2026-02-26 14:17:36] [1] [http_80_tcp 412] [127.0.0.1:51412] recv: Host: localhost
+[2026-02-26 14:17:36] [1] [http_80_tcp 412] [127.0.0.1:51412] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:17:37] [1] [http_80_tcp 412] [127.0.0.1:51412] recv: Accept: */*
+[2026-02-26 14:17:37] [1] [http_80_tcp 412] [127.0.0.1:51412] info: Request URL: http://localhost/
+[2026-02-26 14:17:37] [1] [http_80_tcp 412] [127.0.0.1:51412] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:17:37] [1] [http_80_tcp 412] [127.0.0.1:51412] send: HTTP/1.1 200 OK
+[2026-02-26 14:17:37] [1] [http_80_tcp 412] [127.0.0.1:51412] send: Connection: Close
+[2026-02-26 14:17:37] [1] [http_80_tcp 412] [127.0.0.1:51412] send: Server: INetSim HTTP Server
+[2026-02-26 14:17:37] [1] [http_80_tcp 412] [127.0.0.1:51412] send: Date: Thu, 26 Feb 2026 14:17:37 GMT
+[2026-02-26 14:17:37] [1] [http_80_tcp 412] [127.0.0.1:51412] send: Content-Length: 258
+[2026-02-26 14:17:37] [1] [http_80_tcp 412] [127.0.0.1:51412] send: Content-Type: text/html
+[2026-02-26 14:17:37] [1] [http_80_tcp 412] [127.0.0.1:51412] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:17:37] [1] [http_80_tcp 412] [127.0.0.1:51412] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:17:37] [1] [http_80_tcp 412] [127.0.0.1:51412] disconnect
+[2026-02-26 14:17:47] [1] [http_80_tcp 419] [127.0.0.1:43946] connect
+[2026-02-26 14:17:47] [1] [http_80_tcp 419] [127.0.0.1:43946] recv: GET / HTTP/1.1
+[2026-02-26 14:17:47] [1] [http_80_tcp 419] [127.0.0.1:43946] recv: Host: localhost
+[2026-02-26 14:17:47] [1] [http_80_tcp 419] [127.0.0.1:43946] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:17:47] [1] [http_80_tcp 419] [127.0.0.1:43946] recv: Accept: */*
+[2026-02-26 14:17:47] [1] [http_80_tcp 419] [127.0.0.1:43946] info: Request URL: http://localhost/
+[2026-02-26 14:17:47] [1] [http_80_tcp 419] [127.0.0.1:43946] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:17:47] [1] [http_80_tcp 419] [127.0.0.1:43946] send: HTTP/1.1 200 OK
+[2026-02-26 14:17:47] [1] [http_80_tcp 419] [127.0.0.1:43946] send: Connection: Close
+[2026-02-26 14:17:47] [1] [http_80_tcp 419] [127.0.0.1:43946] send: Content-Type: text/html
+[2026-02-26 14:17:47] [1] [http_80_tcp 419] [127.0.0.1:43946] send: Content-Length: 258
+[2026-02-26 14:17:47] [1] [http_80_tcp 419] [127.0.0.1:43946] send: Date: Thu, 26 Feb 2026 14:17:47 GMT
+[2026-02-26 14:17:47] [1] [http_80_tcp 419] [127.0.0.1:43946] send: Server: INetSim HTTP Server
+[2026-02-26 14:17:47] [1] [http_80_tcp 419] [127.0.0.1:43946] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:17:47] [1] [http_80_tcp 419] [127.0.0.1:43946] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:17:47] [1] [http_80_tcp 419] [127.0.0.1:43946] disconnect
+[2026-02-26 14:17:57] [1] [http_80_tcp 426] [127.0.0.1:40344] connect
+[2026-02-26 14:17:57] [1] [http_80_tcp 426] [127.0.0.1:40344] recv: GET / HTTP/1.1
+[2026-02-26 14:17:57] [1] [http_80_tcp 426] [127.0.0.1:40344] recv: Host: localhost
+[2026-02-26 14:17:58] [1] [http_80_tcp 426] [127.0.0.1:40344] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:17:58] [1] [http_80_tcp 426] [127.0.0.1:40344] recv: Accept: */*
+[2026-02-26 14:17:58] [1] [http_80_tcp 426] [127.0.0.1:40344] info: Request URL: http://localhost/
+[2026-02-26 14:17:58] [1] [http_80_tcp 426] [127.0.0.1:40344] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:17:58] [1] [http_80_tcp 426] [127.0.0.1:40344] send: HTTP/1.1 200 OK
+[2026-02-26 14:17:58] [1] [http_80_tcp 426] [127.0.0.1:40344] send: Connection: Close
+[2026-02-26 14:17:58] [1] [http_80_tcp 426] [127.0.0.1:40344] send: Server: INetSim HTTP Server
+[2026-02-26 14:17:58] [1] [http_80_tcp 426] [127.0.0.1:40344] send: Date: Thu, 26 Feb 2026 14:17:58 GMT
+[2026-02-26 14:17:58] [1] [http_80_tcp 426] [127.0.0.1:40344] send: Content-Length: 258
+[2026-02-26 14:17:58] [1] [http_80_tcp 426] [127.0.0.1:40344] send: Content-Type: text/html
+[2026-02-26 14:17:58] [1] [http_80_tcp 426] [127.0.0.1:40344] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:17:58] [1] [http_80_tcp 426] [127.0.0.1:40344] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:17:58] [1] [http_80_tcp 426] [127.0.0.1:40344] disconnect
+[2026-02-26 14:18:08] [1] [http_80_tcp 433] [127.0.0.1:46476] connect
+[2026-02-26 14:18:08] [1] [http_80_tcp 433] [127.0.0.1:46476] recv: GET / HTTP/1.1
+[2026-02-26 14:18:08] [1] [http_80_tcp 433] [127.0.0.1:46476] recv: Host: localhost
+[2026-02-26 14:18:08] [1] [http_80_tcp 433] [127.0.0.1:46476] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:18:08] [1] [http_80_tcp 433] [127.0.0.1:46476] recv: Accept: */*
+[2026-02-26 14:18:08] [1] [http_80_tcp 433] [127.0.0.1:46476] info: Request URL: http://localhost/
+[2026-02-26 14:18:08] [1] [http_80_tcp 433] [127.0.0.1:46476] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:18:08] [1] [http_80_tcp 433] [127.0.0.1:46476] send: HTTP/1.1 200 OK
+[2026-02-26 14:18:08] [1] [http_80_tcp 433] [127.0.0.1:46476] send: Server: INetSim HTTP Server
+[2026-02-26 14:18:08] [1] [http_80_tcp 433] [127.0.0.1:46476] send: Date: Thu, 26 Feb 2026 14:18:08 GMT
+[2026-02-26 14:18:08] [1] [http_80_tcp 433] [127.0.0.1:46476] send: Content-Type: text/html
+[2026-02-26 14:18:08] [1] [http_80_tcp 433] [127.0.0.1:46476] send: Content-Length: 258
+[2026-02-26 14:18:08] [1] [http_80_tcp 433] [127.0.0.1:46476] send: Connection: Close
+[2026-02-26 14:18:08] [1] [http_80_tcp 433] [127.0.0.1:46476] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:18:08] [1] [http_80_tcp 433] [127.0.0.1:46476] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:18:09] [1] [http_80_tcp 433] [127.0.0.1:46476] disconnect
+[2026-02-26 14:18:19] [1] [http_80_tcp 440] [127.0.0.1:33928] connect
+[2026-02-26 14:18:19] [1] [http_80_tcp 440] [127.0.0.1:33928] recv: GET / HTTP/1.1
+[2026-02-26 14:18:19] [1] [http_80_tcp 440] [127.0.0.1:33928] recv: Host: localhost
+[2026-02-26 14:18:29] [1] [http_80_tcp 440] [127.0.0.1:33928] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:18:29] [1] [http_80_tcp 440] [127.0.0.1:33928] recv: Accept: */*
+[2026-02-26 14:18:29] [1] [http_80_tcp 440] [127.0.0.1:33928] info: Request URL: http://localhost/
+[2026-02-26 14:18:29] [1] [http_80_tcp 440] [127.0.0.1:33928] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:18:29] [1] [http_80_tcp 440] [127.0.0.1:33928] send: HTTP/1.1 200 OK
+[2026-02-26 14:18:29] [1] [http_80_tcp 440] [127.0.0.1:33928] send: Connection: Close
+[2026-02-26 14:18:19] [1] [http_80_tcp 440] [127.0.0.1:33928] send: Date: Thu, 26 Feb 2026 14:18:29 GMT
+[2026-02-26 14:18:19] [1] [http_80_tcp 440] [127.0.0.1:33928] send: Content-Length: 258
+[2026-02-26 14:18:19] [1] [http_80_tcp 440] [127.0.0.1:33928] send: Content-Type: text/html
+[2026-02-26 14:18:19] [1] [http_80_tcp 440] [127.0.0.1:33928] send: Server: INetSim HTTP Server
+[2026-02-26 14:18:19] [1] [http_80_tcp 440] [127.0.0.1:33928] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:18:19] [1] [http_80_tcp 440] [127.0.0.1:33928] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:18:19] [1] [http_80_tcp 440] [127.0.0.1:33928] disconnect
+[2026-02-26 14:18:29] [1] [http_80_tcp 447] [127.0.0.1:46234] connect
+[2026-02-26 14:18:29] [1] [http_80_tcp 447] [127.0.0.1:46234] recv: GET / HTTP/1.1
+[2026-02-26 14:18:29] [1] [http_80_tcp 447] [127.0.0.1:46234] recv: Host: localhost
+[2026-02-26 14:18:29] [1] [http_80_tcp 447] [127.0.0.1:46234] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:18:29] [1] [http_80_tcp 447] [127.0.0.1:46234] recv: Accept: */*
+[2026-02-26 14:18:29] [1] [http_80_tcp 447] [127.0.0.1:46234] info: Request URL: http://localhost/
+[2026-02-26 14:18:29] [1] [http_80_tcp 447] [127.0.0.1:46234] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:18:29] [1] [http_80_tcp 447] [127.0.0.1:46234] send: HTTP/1.1 200 OK
+[2026-02-26 14:18:29] [1] [http_80_tcp 447] [127.0.0.1:46234] send: Connection: Close
+[2026-02-26 14:18:29] [1] [http_80_tcp 447] [127.0.0.1:46234] send: Server: INetSim HTTP Server
+[2026-02-26 14:18:29] [1] [http_80_tcp 447] [127.0.0.1:46234] send: Content-Length: 258
+[2026-02-26 14:18:29] [1] [http_80_tcp 447] [127.0.0.1:46234] send: Content-Type: text/html
+[2026-02-26 14:18:29] [1] [http_80_tcp 447] [127.0.0.1:46234] send: Date: Thu, 26 Feb 2026 14:18:29 GMT
+[2026-02-26 14:18:40] [1] [http_80_tcp 447] [127.0.0.1:46234] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:18:40] [1] [http_80_tcp 447] [127.0.0.1:46234] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:18:40] [1] [http_80_tcp 447] [127.0.0.1:46234] disconnect
+[2026-02-26 14:18:40] [1] [http_80_tcp 454] [127.0.0.1:34260] connect
+[2026-02-26 14:18:40] [1] [http_80_tcp 454] [127.0.0.1:34260] recv: GET / HTTP/1.1
+[2026-02-26 14:18:40] [1] [http_80_tcp 454] [127.0.0.1:34260] recv: Host: localhost
+[2026-02-26 14:18:40] [1] [http_80_tcp 454] [127.0.0.1:34260] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:18:40] [1] [http_80_tcp 454] [127.0.0.1:34260] recv: Accept: */*
+[2026-02-26 14:18:40] [1] [http_80_tcp 454] [127.0.0.1:34260] info: Request URL: http://localhost/
+[2026-02-26 14:18:40] [1] [http_80_tcp 454] [127.0.0.1:34260] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:18:40] [1] [http_80_tcp 454] [127.0.0.1:34260] send: HTTP/1.1 200 OK
+[2026-02-26 14:18:40] [1] [http_80_tcp 454] [127.0.0.1:34260] send: Connection: Close
+[2026-02-26 14:18:40] [1] [http_80_tcp 454] [127.0.0.1:34260] send: Content-Type: text/html
+[2026-02-26 14:18:40] [1] [http_80_tcp 454] [127.0.0.1:34260] send: Content-Length: 258
+[2026-02-26 14:18:40] [1] [http_80_tcp 454] [127.0.0.1:34260] send: Date: Thu, 26 Feb 2026 14:18:40 GMT
+[2026-02-26 14:18:40] [1] [http_80_tcp 454] [127.0.0.1:34260] send: Server: INetSim HTTP Server
+[2026-02-26 14:18:40] [1] [http_80_tcp 454] [127.0.0.1:34260] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:18:40] [1] [http_80_tcp 454] [127.0.0.1:34260] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:18:40] [1] [http_80_tcp 454] [127.0.0.1:34260] disconnect
+[2026-02-26 14:18:50] [1] [http_80_tcp 461] [127.0.0.1:58028] connect
+[2026-02-26 14:18:50] [1] [http_80_tcp 461] [127.0.0.1:58028] recv: GET / HTTP/1.1
+[2026-02-26 14:18:50] [1] [http_80_tcp 461] [127.0.0.1:58028] recv: Host: localhost
+[2026-02-26 14:18:50] [1] [http_80_tcp 461] [127.0.0.1:58028] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:18:50] [1] [http_80_tcp 461] [127.0.0.1:58028] recv: Accept: */*
+[2026-02-26 14:18:50] [1] [http_80_tcp 461] [127.0.0.1:58028] info: Request URL: http://localhost/
+[2026-02-26 14:18:50] [1] [http_80_tcp 461] [127.0.0.1:58028] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:18:50] [1] [http_80_tcp 461] [127.0.0.1:58028] send: HTTP/1.1 200 OK
+[2026-02-26 14:18:50] [1] [http_80_tcp 461] [127.0.0.1:58028] send: Connection: Close
+[2026-02-26 14:18:50] [1] [http_80_tcp 461] [127.0.0.1:58028] send: Server: INetSim HTTP Server
+[2026-02-26 14:18:50] [1] [http_80_tcp 461] [127.0.0.1:58028] send: Date: Thu, 26 Feb 2026 14:18:50 GMT
+[2026-02-26 14:18:50] [1] [http_80_tcp 461] [127.0.0.1:58028] send: Content-Length: 258
+[2026-02-26 14:18:50] [1] [http_80_tcp 461] [127.0.0.1:58028] send: Content-Type: text/html
+[2026-02-26 14:18:51] [1] [http_80_tcp 461] [127.0.0.1:58028] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:18:51] [1] [http_80_tcp 461] [127.0.0.1:58028] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:18:51] [1] [http_80_tcp 461] [127.0.0.1:58028] disconnect
+[2026-02-26 14:19:01] [1] [http_80_tcp 468] [127.0.0.1:33148] connect
+[2026-02-26 14:19:01] [1] [http_80_tcp 468] [127.0.0.1:33148] recv: GET / HTTP/1.1
+[2026-02-26 14:19:01] [1] [http_80_tcp 468] [127.0.0.1:33148] recv: Host: localhost
+[2026-02-26 14:19:01] [1] [http_80_tcp 468] [127.0.0.1:33148] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:19:01] [1] [http_80_tcp 468] [127.0.0.1:33148] recv: Accept: */*
+[2026-02-26 14:19:01] [1] [http_80_tcp 468] [127.0.0.1:33148] info: Request URL: http://localhost/
+[2026-02-26 14:19:01] [1] [http_80_tcp 468] [127.0.0.1:33148] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:19:01] [1] [http_80_tcp 468] [127.0.0.1:33148] send: HTTP/1.1 200 OK
+[2026-02-26 14:19:01] [1] [http_80_tcp 468] [127.0.0.1:33148] send: Date: Thu, 26 Feb 2026 14:19:01 GMT
+[2026-02-26 14:19:01] [1] [http_80_tcp 468] [127.0.0.1:33148] send: Content-Type: text/html
+[2026-02-26 14:19:01] [1] [http_80_tcp 468] [127.0.0.1:33148] send: Content-Length: 258
+[2026-02-26 14:19:01] [1] [http_80_tcp 468] [127.0.0.1:33148] send: Server: INetSim HTTP Server
+[2026-02-26 14:19:01] [1] [http_80_tcp 468] [127.0.0.1:33148] send: Connection: Close
+[2026-02-26 14:19:01] [1] [http_80_tcp 468] [127.0.0.1:33148] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:19:01] [1] [http_80_tcp 468] [127.0.0.1:33148] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:19:01] [1] [http_80_tcp 468] [127.0.0.1:33148] disconnect
+[2026-02-26 14:19:11] [1] [http_80_tcp 475] [127.0.0.1:44320] connect
+[2026-02-26 14:19:11] [1] [http_80_tcp 475] [127.0.0.1:44320] recv: GET / HTTP/1.1
+[2026-02-26 14:19:11] [1] [http_80_tcp 475] [127.0.0.1:44320] recv: Host: localhost
+[2026-02-26 14:19:11] [1] [http_80_tcp 475] [127.0.0.1:44320] recv: User-Agent: curl/7.81.0
+[2026-02-26 14:19:11] [1] [http_80_tcp 475] [127.0.0.1:44320] recv: Accept: */*
+[2026-02-26 14:19:11] [1] [http_80_tcp 475] [127.0.0.1:44320] info: Request URL: http://localhost/
+[2026-02-26 14:19:11] [1] [http_80_tcp 475] [127.0.0.1:44320] info: No matching file extension configured. Sending default fake file.
+[2026-02-26 14:19:11] [1] [http_80_tcp 475] [127.0.0.1:44320] send: HTTP/1.1 200 OK
+[2026-02-26 14:19:12] [1] [http_80_tcp 475] [127.0.0.1:44320] send: Connection: Close
+[2026-02-26 14:19:12] [1] [http_80_tcp 475] [127.0.0.1:44320] send: Server: INetSim HTTP Server
+[2026-02-26 14:19:12] [1] [http_80_tcp 475] [127.0.0.1:44320] send: Content-Length: 258
+[2026-02-26 14:19:12] [1] [http_80_tcp 475] [127.0.0.1:44320] send: Content-Type: text/html
+[2026-02-26 14:19:12] [1] [http_80_tcp 475] [127.0.0.1:44320] send: Date: Thu, 26 Feb 2026 14:19:11 GMT
+[2026-02-26 14:19:12] [1] [http_80_tcp 475] [127.0.0.1:44320] info: Sending file: /var/lib/inetsim/http/fakefiles/sample.html
+[2026-02-26 14:19:12] [1] [http_80_tcp 475] [127.0.0.1:44320] stat: 1 method=GET url=http://localhost/ sent=/var/lib/inetsim/http/fakefiles/sample.html postdata=
+[2026-02-26 14:19:12] [1] [http_80_tcp 475] [127.0.0.1:44320] disconnect
