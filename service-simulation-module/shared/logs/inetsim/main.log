@@ -190,3 +190,69 @@
 [2026-02-26 14:19:13]   Unable to open report file '/var/log/inetsim/report/report.1.txt' for writing: No such file or directory
 [2026-02-26 14:19:13]  === INetSim main process stopped (PID 1) ===
 [2026-02-26 14:19:13]  .
+[2026-02-28 01:06:41]  Using log directory:      /var/log/inetsim/
+[2026-02-28 01:06:41]  Using data directory:     /var/lib/inetsim/
+[2026-02-28 01:06:41]  Using report directory:   /var/log/inetsim/report/
+[2026-02-28 01:06:41]  Using configuration file: /etc/inetsim/inetsim.conf
+[2026-02-28 01:06:41]  Parsing configuration file.
+[2026-02-28 01:06:41]  Configuration file parsed successfully.
+[2026-02-28 01:06:41]  === INetSim main process started (PID 1) ===
+[2026-02-28 01:06:41]  Session ID:     1
+[2026-02-28 01:06:41]  Listening on:   0.0.0.0
+[2026-02-28 01:06:41]  Real Date/Time: 2026-02-28 01:06:41
+[2026-02-28 01:06:41]  Fake Date/Time: 2026-02-28 01:06:41 (Delta: 0 seconds)
+[2026-02-28 01:06:42]   Forking services...
+[2026-02-28 01:06:42]    * dns_53_tcp_udp started (PID 15)
+[2026-02-28 01:06:42]    * http_80_tcp started (PID 14)
+[2026-02-28 01:06:45]   done.
+[2026-02-28 01:06:45]  Simulation running.
+[2026-02-28 01:07:44]    * http_80_tcp stopped (PID 14)
+[2026-02-28 01:07:44]    * dns_53_tcp_udp stopped (PID 15)
+[2026-02-28 01:07:44]  Simulation stopped.
+[2026-02-28 01:07:44]   Unable to open report file '/var/log/inetsim/report/report.1.txt' for writing: No such file or directory
+[2026-02-28 01:07:44]  === INetSim main process stopped (PID 1) ===
+[2026-02-28 01:07:44]  .
+[2026-02-28 14:21:58]  Using log directory:      /var/log/inetsim/
+[2026-02-28 14:21:58]  Using data directory:     /var/lib/inetsim/
+[2026-02-28 14:21:58]  Using report directory:   /var/log/inetsim/report/
+[2026-02-28 14:21:58]  Using configuration file: /etc/inetsim/inetsim.conf
+[2026-02-28 14:21:58]  Parsing configuration file.
+[2026-02-28 14:21:58]  Configuration file parsed successfully.
+[2026-02-28 14:21:58]  === INetSim main process started (PID 1) ===
+[2026-02-28 14:21:58]  Session ID:     1
+[2026-02-28 14:21:58]  Listening on:   0.0.0.0
+[2026-02-28 14:21:58]  Real Date/Time: 2026-02-28 14:21:58
+[2026-02-28 14:21:58]  Fake Date/Time: 2026-02-28 14:21:58 (Delta: 0 seconds)
+[2026-02-28 14:21:58]   Forking services...
+[2026-02-28 14:21:58]    * dns_53_tcp_udp started (PID 15)
+[2026-02-28 14:21:58]    * http_80_tcp started (PID 14)
+[2026-02-28 14:22:01]   done.
+[2026-02-28 14:22:01]  Simulation running.
+[2026-02-28 14:23:17]    * http_80_tcp stopped (PID 14)
+[2026-02-28 14:23:17]    * dns_53_tcp_udp stopped (PID 15)
+[2026-02-28 14:23:17]  Simulation stopped.
+[2026-02-28 14:23:17]   Unable to open report file '/var/log/inetsim/report/report.1.txt' for writing: No such file or directory
+[2026-02-28 14:23:17]  === INetSim main process stopped (PID 1) ===
+[2026-02-28 14:23:17]  .
+[2026-03-06 05:56:27]  Using log directory:      /var/log/inetsim/
+[2026-03-06 05:56:27]  Using data directory:     /var/lib/inetsim/
+[2026-03-06 05:56:27]  Using report directory:   /var/log/inetsim/report/
+[2026-03-06 05:56:27]  Using configuration file: /etc/inetsim/inetsim.conf
+[2026-03-06 05:56:27]  Parsing configuration file.
+[2026-03-06 05:56:27]  Configuration file parsed successfully.
+[2026-03-06 05:56:27]  === INetSim main process started (PID 1) ===
+[2026-03-06 05:56:27]  Session ID:     1
+[2026-03-06 05:56:27]  Listening on:   0.0.0.0
+[2026-03-06 05:56:27]  Real Date/Time: 2026-03-06 05:56:27
+[2026-03-06 05:56:27]  Fake Date/Time: 2026-03-06 05:56:27 (Delta: 0 seconds)
+[2026-03-06 05:56:27]   Forking services...
+[2026-03-06 05:56:27]    * dns_53_tcp_udp started (PID 16)
+[2026-03-06 05:56:28]    * http_80_tcp started (PID 15)
+[2026-03-06 05:56:30]   done.
+[2026-03-06 05:56:30]  Simulation running.
+[2026-03-06 05:56:50]    * http_80_tcp stopped (PID 15)
+[2026-03-06 05:56:50]    * dns_53_tcp_udp stopped (PID 16)
+[2026-03-06 05:56:50]  Simulation stopped.
+[2026-03-06 05:56:50]   Unable to open report file '/var/log/inetsim/report/report.1.txt' for writing: No such file or directory
+[2026-03-06 05:56:50]  === INetSim main process stopped (PID 1) ===
+[2026-03-06 05:56:50]  .
