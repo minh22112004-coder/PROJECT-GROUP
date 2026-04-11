@@ -21,3 +21,5 @@ web/package-analysis-web/package_analysis/management/__pycache__
 web/docs
 web/package-analysis-web/.env
 packamalenv/
+service-simulation-module/shared/logs/inetsim/main.log
+service-simulation-module/shared/logs/inetsim/service.log
