@@ -1,0 +1,21 @@
+{
+  "user_type": "normal",
+  "dns": {
+    "entries": 150,
+    "negative_ratio": 0.05,
+    "ttl_jitter_seconds": 3600
+  },
+  "browser": {
+    "history_entries": 400,
+    "cache_size_mb": 200,
+    "days_of_history": 14,
+    "transition_weights": {
+      "LINK":           0.45,
+      "TYPED":          0.20,
+      "AUTO_BOOKMARK":  0.05,
+      "AUTO_SUBFRAME":  0.15,
+      "FORM_SUBMIT":    0.10,
+      "RELOAD":         0.05
+    }
+  }
+}

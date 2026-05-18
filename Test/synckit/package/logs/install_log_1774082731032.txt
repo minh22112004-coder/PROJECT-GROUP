@@ -1,0 +1,2 @@
+Created directory: /home/seed/synckit/package/logs
+Target system is not Windows. Skipping payload download.

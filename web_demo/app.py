@@ -2,6 +2,8 @@
 Pack-a-mal Demo Web App (Standalone Flask)
 Không dependencies ngoài Flask - chạy độc lập hoàn toàn
 """
+import re
+import sqlite3
 import subprocess
 import json
 import os
@@ -18,6 +20,11 @@ GO_TEST_DIR = DYNAMIC_ANALYSIS_DIR / "internal" / "networksim"
 
 # Dùng venv Python để chạy demo scripts - venv có sitecustomize.py force UTF-8
 VENV_PYTHON = Path(__file__).resolve().parent / "venv" / "Scripts" / "python.exe"
+
+# ── Artifact Extension paths ──────────────────────────────────────────────────
+ARTIFACT_EXT_DIR = BASE_DIR / "service-simulation-module" / "artifact-extension"
+# Demo artifacts are written here (inside the extension dir, easy to inspect)
+ARTIFACTS_DEMO_PATH = ARTIFACT_EXT_DIR / "demo_artifacts"
 
 
 def run_cmd(command, cwd=None, env_extra=None, timeout=60):
@@ -459,6 +466,120 @@ def package_info():
             {"name": "test_network.py", "purpose": "Test KHÔNG có simulation → ❌ fail"},
             {"name": "test_with_inetsim.py", "purpose": "Test CÓ INetSim → ✅ success"}
         ]
+    })
+
+
+# ── Artifact Extension routes ─────────────────────────────────────────────────
+
+@app.route("/stream/artifact/docker-inject")
+def artifact_docker_inject():
+    """Re-inject artifacts bằng cách chạy lại container trong Docker Compose."""
+    compose = DYNAMIC_ANALYSIS_DIR / "docker-compose.network-sim.yml"
+    def gen():
+        yield f"data: {json.dumps('🐳 Re-inject artifacts via Docker Compose...')}\n\n"
+        yield f"data: {json.dumps('─' * 50)}\n\n"
+        # Chạy artifact-extension container một lần (--rm tự xóa sau khi xong)
+        yield from stream_cmd(
+            f'docker-compose -f "{compose}" run --rm artifact-extension',
+            cwd=str(DYNAMIC_ANALYSIS_DIR),
+            env_extra={"COMPOSE_PROGRESS": "plain", "NO_COLOR": "1"},
+        )
+        yield f"data: {json.dumps('─' * 50)}\n\n"
+        # Kiểm tra volume tồn tại
+        r = run_cmd('docker volume inspect pack-a-mal-artifacts', timeout=10)
+        if r["ok"]:
+            yield f"data: {json.dumps('✅ Volume pack-a-mal-artifacts tồn tại')}\n\n"
+        else:
+            yield f"data: {json.dumps('⚠️  Volume chưa thấy — thử docker compose up trước')}\n\n"
+    return make_sse_response(gen)
+
+
+@app.route("/api/artifact/poc")
+def artifact_poc():
+    """Chạy 10 PoC sandbox-detector test cases và trả về JSON kết quả."""
+    result = run_cmd(
+        f'"{VENV_PYTHON}" -m pytest tests/test_poc_detector.py -v --tb=short --no-header 2>&1',
+        cwd=str(ARTIFACT_EXT_DIR),
+        timeout=60,
+    )
+    output = result["out"] + result["err"]
+
+    cases: dict = {
+        "case_a":  {"label": "Case A: Clean sandbox → detected",        "status": "unknown", "tests": []},
+        "case_b":  {"label": "Case B: Service only → still detected",   "status": "unknown", "tests": []},
+        "case_c":  {"label": "Case C: Full artifact injection → NOT detected", "status": "unknown", "tests": []},
+        "extra":   {"label": "Extra: Freshness + Zone.Identifier + Chrome epoch", "status": "unknown", "tests": []},
+    }
+
+    for line in output.splitlines():
+        m = re.search(r"test_poc_detector\.py::(\w+)\s+(PASSED|FAILED|ERROR)", line)
+        if not m:
+            continue
+        test_name, status = m.group(1), m.group(2)
+        entry = {"name": test_name, "status": status}
+        if "case_a" in test_name:
+            cases["case_a"]["tests"].append(entry)
+        elif "case_b" in test_name:
+            cases["case_b"]["tests"].append(entry)
+        elif "case_c" in test_name:
+            cases["case_c"]["tests"].append(entry)
+        else:
+            cases["extra"]["tests"].append(entry)
+
+    for case in cases.values():
+        if not case["tests"]:
+            case["status"] = "unknown"
+        elif all(t["status"] == "PASSED" for t in case["tests"]):
+            case["status"] = "pass"
+        else:
+            case["status"] = "fail"
+
+    summary_line = next(
+        (l.strip() for l in output.splitlines() if "passed" in l or "failed" in l), ""
+    )
+    return jsonify({
+        "ok": result["ok"],
+        "cases": cases,
+        "summary": summary_line,
+        "raw": output[-3000:],
+    })
+
+
+@app.route("/api/artifact/summary")
+def artifact_summary():
+    """Trả về thống kê các artifacts hiện có trong thư mục demo."""
+    ap = ARTIFACTS_DEMO_PATH
+    dns_cache = ap / "dns" / "cache.txt"
+    history_db = ap / "browser" / "History"
+    downloads_dir = ap / "browser" / "downloads"
+
+    dns_entries = 0
+    if dns_cache.exists():
+        dns_entries = dns_cache.read_text(encoding="utf-8", errors="replace").count("Record Name")
+
+    history_urls = history_visits = 0
+    if history_db.exists():
+        try:
+            conn = sqlite3.connect(str(history_db))
+            (history_urls,)  = conn.execute("SELECT COUNT(*) FROM urls").fetchone()
+            (history_visits,) = conn.execute("SELECT COUNT(*) FROM visits").fetchone()
+            conn.close()
+        except Exception:
+            pass
+
+    zone_files = (
+        [f.name for f in downloads_dir.glob("*.Zone.Identifier")]
+        if downloads_dir.exists() else []
+    )
+
+    return jsonify({
+        "ok": True,
+        "artifacts_path": str(ap),
+        "exists": ap.exists(),
+        "dns":      {"file_exists": dns_cache.exists(), "entries": dns_entries},
+        "browser":  {"history_exists": history_db.exists(),
+                     "url_count": history_urls, "visit_count": history_visits},
+        "downloads": {"zone_identifier_files": zone_files, "count": len(zone_files)},
     })
 
 

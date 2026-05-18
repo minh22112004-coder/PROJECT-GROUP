@@ -1,0 +1,5 @@
+# Runtime dependencies
+# sqlite3 is part of the Python standard library — no extra package needed.
+
+# Testing
+pytest>=7.4

@@ -26,6 +26,21 @@ services:
       timeout: 5s
       retries: 3
 
+  # UBER-like Artifact Extension — init container, runs once then exits
+  # Injects persistent system artifacts (DNS cache, browser history, Zone.Identifier)
+  # into the shared artifacts_volume BEFORE the sample runner starts.
+  # No network access needed — only writes to a volume.
+  artifact-extension:
+    build: ../service-simulation-module/artifact-extension
+    container_name: pack-a-mal-artifact-ext
+    volumes:
+      - artifacts_volume:/artifacts
+      - ../service-simulation-module/shared/config:/config
+    environment:
+      - ARTIFACTS_PATH=/artifacts
+      - PROFILE_PATH=/config/artifact_profile.json
+    restart: "no"         # init-container pattern: run once and exit
+
   # Service Simulation API - Management interface for INetSim
   service-simulation:
     build: ../service-simulation-module/service-simulation
@@ -33,12 +48,15 @@ services:
     depends_on:
       inetsim:
         condition: service_healthy
+      artifact-extension:
+        condition: service_completed_successfully
     ports:
       - "5000:5000"     # Flask API
     volumes:
       - ../service-simulation-module/shared/logs:/logs
       - ../service-simulation-module/shared/config:/config
       - ../service-simulation-module/shared/config/etc/inetsim:/etc/inetsim
+      - artifacts_volume:/artifacts   # artifacts injected by artifact-extension
     dns:
       - 172.20.0.2
     networks:
@@ -96,3 +114,5 @@ volumes:
     name: pack-a-mal-inetsim-logs
   inetsim_config:
     name: pack-a-mal-inetsim-config
+  artifacts_volume:
+    name: pack-a-mal-artifacts
