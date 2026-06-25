@@ -1,0 +1,44 @@
+
+╔════════════════════════════════════════════════════════╗
+║  Dead URL Redirect to INetSim - Demo Script          ║
+║  Yêu cầu 2: Kiểm tra URL alive & redirect INetSim    ║
+╚════════════════════════════════════════════════════════╝
+
+============================================================
+Testing Dead URL WITHOUT INetSim (Should Fail)
+============================================================
+
+[*] Target URL: http://malicious-c2-server.example.com/api/data
+[*] No proxy - direct connection attempt
+
+✓ Connection failed (as expected)
+✓ This confirms the URL is indeed dead
+
+
+------------------------------------------------------------
+
+============================================================
+Testing Dead URL Redirect to INetSim
+============================================================
+
+[*] INetSim Proxy: http://localhost:8080
+[*] Testing dead URLs...
+
+[*] Testing: http://malicious-c2-server.example.com/api/data
+    ✗ Connection failed: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: http://malicious-c2-
+    ℹ Make sure INetSim is running on localhost:8080
+
+[*] Testing: http://expired-malware-repo.net/payload.exe
+    ✗ Connection failed: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: http://expired-malwa
+    ℹ Make sure INetSim is running on localhost:8080
+
+[*] Testing: http://dead-phishing-site.org/login
+    ✗ Connection failed: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: http://dead-phishing
+    ℹ Make sure INetSim is running on localhost:8080
+
+============================================================
+Summary: 0/3 URLs successfully redirected
+============================================================
+
+✗ No URLs were redirected. Check if INetSim is running.
+

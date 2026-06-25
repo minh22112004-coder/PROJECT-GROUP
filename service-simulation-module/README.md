@@ -31,6 +31,25 @@ Dự án mô phỏng các Internet services (HTTP, DNS) sử dụng INetSim và 
 Project bao gồm 2 services chính:
 1. **INetSim**: Mô phỏng các internet services (HTTP, DNS)
 2. **Service-Simulation**: Flask API thông minh với khả năng phân tích và phản hồi HTTP
+3. **Artifact Extension**: Bộ sinh fake artifacts nội bộ cho DNS, browser history, Zone.Identifier và footprint Linux để làm môi trường phân tích trông giống máy thật hơn.
+
+### Linux Fake Artifacts
+Phần `artifact-extension` tạo thêm dấu vết Linux để môi trường phân tích trông tự nhiên hơn:
+
+ - `linux/etc/hostname`
+ - `linux/etc/machine-id`
+ - `linux/etc/os-release`
+ - `linux/sys/class/dmi/id/*`
+ - `linux/home/<user>/.bash_history`
+
+Chạy test riêng cho phần này bằng:
+
+```bash
+cd artifact-extension
+python -m pytest tests -v
+```
+
+Kết quả mong đợi: toàn bộ test pass, gồm cả kiểm tra Linux artifacts.
 
 ## 📁 Cấu trúc dự án
 
@@ -65,6 +84,7 @@ service-simulation-module/
 │           ├── *.exe          # Fake/honeypot executables
 │           ├── *.metadata.json  # Request metadata
 │           └── executable_requests.log  # Execution logs
+├── artifact-extension/        # Fake artifact generator cho Linux và browser-like footprints
 ├── HTTP_SIMULATION_GUIDE.md   # 🆕 Comprehensive guide
 ├── demo_http_simulation.py    # 🆕 Demo script
 └── test_http_simulation.py    # 🆕 Test suite

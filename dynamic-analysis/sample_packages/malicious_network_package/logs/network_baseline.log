@@ -1,0 +1,9 @@
+============================================================
+Malicious Network Package - Connecting to dead URL
+============================================================
+
+[*] Target URL: http://malicious-c2-server.example.com/api/data
+[*] Attempting connection...
+[-] Connection failed: HTTPConnectionPool(host='malicious-c2-server.example.com', port=80): Max retries exceeded with url: /api/data (Caused by NameResolutionError("HTTPConnection(host='malicious-c2-server.example.com', port=80): Failed to resolve 'malicious-c2-server.example.com' ([Errno 11001] getaddrinfo failed)"))
+
+============================================================

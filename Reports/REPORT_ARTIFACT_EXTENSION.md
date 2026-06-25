@@ -540,30 +540,55 @@ tests/test_poc_detector.py::test_chrome_timestamps_in_correct_epoch     PASSED
 
 ### 5.4. Phân tích từng nhóm test
 
-**Case A — Clean sandbox:**
-- `test_case_a_clean_sandbox_detected`: `is_sandbox()` trả về `True` với thư mục rỗng
-- `test_case_a_individual_checks`: Tất cả 6 individual checks đều trả về `True`
+| Test case | Mục tiêu test | Test như thế nào | Kết quả mong đợi |
+|---|---|---|---|
+| `test_case_a_clean_sandbox_detected` | Xác nhận detector phát hiện sandbox khi chưa có artifact | Chạy `is_sandbox()` trên thư mục rỗng | Trả về `True` |
+| `test_case_a_individual_checks` | Kiểm tra từng tín hiệu sandbox hoạt động độc lập | Gọi 6 individual checks trên môi trường sạch | Tất cả đều trả về `True` |
+| `test_case_b_service_only_still_detected` | Chứng minh service events thôi chưa đủ | Dispatch events nhưng không gọi `inject_all()` | Vẫn bị detect |
+| `test_case_c_artifact_injection_bypasses_detection` | Xác minh artifact đầy đủ có thể bypass detection | Chạy inject đầy đủ rồi kiểm tra lại detector | Trả về `False` |
+| `test_case_c_dns_checks_pass` | Kiểm tra DNS artifact được sinh đúng mức tối thiểu | Đọc DNS cache sau khi inject | Có cache, ≥ 10 entries, TTL spread ≥ 60s |
+| `test_case_c_browser_checks_pass` | Kiểm tra browser artifact hợp lệ | Đọc History SQLite sau khi inject | Có history, ≥ 20 URLs, ≥ 2 transition types |
+| `test_artifact_freshness_dns` | Đảm bảo mỗi lần inject không bị deterministic | So sánh TTL giữa hai lần inject | TTL khác nhau |
+| `test_zone_identifier_created_for_download` | Xác minh file download sinh Zone.Identifier | Trigger `file_download` event và kiểm tra output | Mỗi event tạo 1 file |
+| `test_zone_identifier_fields_populated` | Kiểm tra metadata download được điền đủ | Mở file Zone.Identifier sau inject | Có `ZoneId`, `ReferrerUrl`, `HostUrl` |
+| `test_chrome_timestamps_in_correct_epoch` | Xác minh Chrome timestamp đúng epoch | Chuyển timestamp Unix sang Chrome format | Offset được áp dụng đúng |
 
-**Case B — Service events without injection:**
-- `test_case_b_service_only_still_detected`: Dispatch events nhưng không inject → vẫn bị detect
-- Chứng minh rằng events alone không đủ; phải gọi `inject_all()`
+### 5.5. Test Samples and Baseline (English addendum)
 
-**Case C — Full injection:**
-- `test_case_c_artifact_injection_bypasses_detection`: `is_sandbox()` trả về `False`
-- `test_case_c_dns_checks_pass`: DNS cache tồn tại, ≥ 10 entries, TTL spread ≥ 60s
-- `test_case_c_browser_checks_pass`: History tồn tại, ≥ 20 URLs, ≥ 2 transition types
+The evaluation uses **three representative test samples**, all created in-house and stored under `dynamic-analysis/sample_packages/malicious_network_package/`:
 
-**Freshness:**
-- `test_artifact_freshness_dns`: Hai lần inject sinh TTL khác nhau (randomised)
-- Đảm bảo không có "deterministic injection" fingerprint
+- [test_network.py](https://github.com/DangTheNhan/EIU-Chat-Zone/blob/main/dynamic-analysis/sample_packages/malicious_network_package/test_network.py)
+- [test_with_inetsim.py](https://github.com/DangTheNhan/EIU-Chat-Zone/blob/main/dynamic-analysis/sample_packages/malicious_network_package/test_with_inetsim.py)
+- [test_full_mode.py](https://github.com/DangTheNhan/EIU-Chat-Zone/blob/main/dynamic-analysis/sample_packages/malicious_network_package/test_full_mode.py)
 
-**Zone.Identifier:**
-- `test_zone_identifier_created_for_download`: Mỗi `file_download` event → 1 file
-- `test_zone_identifier_fields_populated`: `ZoneId`, `ReferrerUrl`, `HostUrl` đều có
+These samples were **synthetic test scripts**, not real malware samples collected from the wild. They were authored to emulate common malicious network behaviors in a controlled and reproducible way, so that the impact of network simulation and artifact emulation could be observed under consistent conditions.
 
-**Chrome Epoch:**
-- `test_chrome_timestamps_in_correct_epoch`: Timestamps > Unix epoch 2026 đổi sang Chrome
-- Xác minh offset `11_644_473_600 × 10⁶ µs` được áp dụng đúng
+The samples were selected to cover three execution scenarios:
+
+1. **Direct execution without simulation**
+2. **Execution with INetSim redirection**
+3. **Execution with the stricter Full Mode interception policy**
+
+The baseline for comparison is the **non-simulated environment**, meaning:
+
+- no network simulation
+- no artifact injection
+- direct execution only
+
+Under this baseline, the samples are expected to fail early because DNS resolution and HTTP requests are not intercepted, and no persistent host artifacts are available.
+
+For the enhanced configurations, the samples are executed with:
+
+- **Network simulation only**: traffic is redirected through INetSim, but the host environment remains minimal
+- **Network simulation + artifact emulation**: INetSim is combined with the artifact extension so that the environment also contains realistic persistent artifacts
+
+This sample design allows the evaluation to answer three practical questions:
+
+- How many execution paths become active when simulation is enabled?
+- Does the resulting trace become more coherent and easier to interpret?
+- Are repeated runs stable under the same configuration?
+
+In short, the sample set is intentionally small, controlled, and reproducible. Its purpose is to provide a reliable benchmark for evaluating sandbox realism rather than to represent a large malware corpus.
 
 ---
 

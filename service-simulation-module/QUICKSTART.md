@@ -226,6 +226,11 @@ docker-compose up -d
 - Authentication simulation
 - File downloads
 
+### 5. Linux Fake Artifacts
+- Tạo footprint hệ thống Linux ở `artifact-extension/linux/`
+- Sinh `hostname`, `machine-id`, `os-release`, DMI, bash history, syslog
+- Kiểm thử bằng `cd artifact-extension; python -m pytest tests -v`
+
 ## 💡 Tips
 
 1. **Luôn check status trước:** `curl http://localhost:5000/status`

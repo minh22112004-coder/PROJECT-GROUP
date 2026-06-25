@@ -3,7 +3,7 @@
 This script is designed to run as the container ENTRYPOINT.  It:
 
 1. Loads a statistical user profile (from ``--profile`` or uses the default).
-2. Registers DNS and HTTP artifact extensions with the ArtifactManager.
+2. Registers DNS, HTTP, and Linux artifact extensions with the ArtifactManager.
 3. Emits a set of plausible warm-up service events (background traffic).
 4. Calls ``inject_all()`` to write all artifacts to the Docker volume.
 5. Exits with code 0 so the container CMD (the actual sample runner) starts.
@@ -28,6 +28,7 @@ import time
 
 from artifact_extension.extensions.dns_extension import DNSArtifactExtension
 from artifact_extension.extensions.http_extension import HTTPArtifactExtension
+from artifact_extension.extensions.linux_extension import LinuxArtifactExtension
 from artifact_extension.manager import ArtifactManager
 from artifact_extension.profile import UserProfile
 
@@ -155,6 +156,7 @@ def main() -> None:
     manager = ArtifactManager(artifacts_path=args.artifacts, profile=profile)
     manager.register(DNSArtifactExtension(profile))
     manager.register(HTTPArtifactExtension(profile))
+    manager.register(LinuxArtifactExtension(profile))
 
     # Seed with background events
     logger.info("Emitting background service events ...")
