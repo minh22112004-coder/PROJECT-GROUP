@@ -1,0 +1,10 @@
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i7-1185G7 CPU @ 3.00GHz
+cpu MHz		: 2394.0
+cache size	: 12288 KB
+siblings	: 12
+cpu cores	: 6
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx sse sse2 ss ht syscall nx lm constant_tsc
