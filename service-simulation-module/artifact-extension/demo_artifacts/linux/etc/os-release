@@ -1,0 +1,6 @@
+NAME="Ubuntu"
+PRETTY_NAME="Ubuntu 22.04.4 LTS"
+ID=ubuntu
+ID_LIKE="debian"
+VERSION_ID="22.04"
+HOME_URL="https://www.linux.org/"

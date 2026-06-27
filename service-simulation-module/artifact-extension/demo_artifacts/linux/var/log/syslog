@@ -1,0 +1,3 @@
+Jun 21 01:41:47 workstation-07 systemd[1]: Started User Manager for UID 1000.
+Jun 21 01:41:47 workstation-07 NetworkManager[512]: state change: connected
+Jun 21 01:41:47 workstation-07 sudo:     alex : TTY=pts/0 ; PWD=/home/alex ; USER=root ; COMMAND=/usr/bin/apt update

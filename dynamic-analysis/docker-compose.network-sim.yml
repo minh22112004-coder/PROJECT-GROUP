@@ -18,7 +18,7 @@ services:
       - ../service-simulation-module/shared/logs/inetsim:/var/log/inetsim
     networks:
       pack_a_mal_network:
-        ipv4_address: 172.20.0.2
+        ipv4_address: 172.30.0.2
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:80"]
@@ -58,7 +58,7 @@ services:
       - ../service-simulation-module/shared/config/etc/inetsim:/etc/inetsim
       - artifacts_volume:/artifacts   # artifacts injected by artifact-extension
     dns:
-      - 172.20.0.2
+      - 172.30.0.2
     networks:
       - pack_a_mal_network
     restart: unless-stopped
@@ -106,8 +106,9 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: 172.20.0.0/24
-          gateway: 172.20.0.1
+        - subnet: 172.30.0.0/24
+          gateway: 172.30.0.1
+
 
 volumes:
   inetsim_logs:

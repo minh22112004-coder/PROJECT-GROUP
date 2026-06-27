@@ -1,0 +1,1103 @@
+Windows IP Configuration
+
+    DNS Resolver Cache
+    -------------------
+
+    Record Name . . . . . : www.gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3426
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1386
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.46
+
+    Record Name . . . . . : www.gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1128
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : update.googleapis.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3291
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.74
+
+    Record Name . . . . . : stackoverflow.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3263
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.193.69
+
+    Record Name . . . . . : reddit.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3591
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.65.140
+
+    Record Name . . . . . : amazon.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2415
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 176.32.103.205
+
+    Record Name . . . . . : github.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1291
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 140.82.112.3
+
+    Record Name . . . . . : amazon.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1832
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 176.32.103.205
+
+    Record Name . . . . . : update.googleapis.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1412
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.74
+
+    Record Name . . . . . : connectivitycheck.gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1029
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : akamaiedge.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 926
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 23.221.50.138
+
+    Record Name . . . . . : docs.python.org
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2145
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.64.223
+
+    Record Name . . . . . : update.googleapis.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 960
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.74
+
+    Record Name . . . . . : crl3.digicert.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2287
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 93.184.220.29
+
+    Record Name . . . . . : cdn.jsdelivr.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 935
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.2.229
+
+    Record Name . . . . . : linkedin.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2844
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 13.107.42.14
+
+    Record Name . . . . . : crl3.digicert.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1531
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 93.184.220.29
+
+    Record Name . . . . . : npmjs.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1147
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 104.16.21.35
+
+    Record Name . . . . . : fastly.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 999
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.0.57
+
+    Record Name . . . . . : akamaiedge.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3321
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 23.221.50.138
+
+    Record Name . . . . . : pypi.org
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3461
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.64.223
+
+    Record Name . . . . . : pypi.org
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3265
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.64.223
+
+    Record Name . . . . . : gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3237
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : youtube.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2801
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.185.46
+
+    Record Name . . . . . : google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2157
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.46
+
+    Record Name . . . . . : pypi.org
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3054
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.64.223
+
+    Record Name . . . . . : fastly.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 753
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.0.57
+
+    Record Name . . . . . : bing.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1843
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 204.79.197.200
+
+    Record Name . . . . . : googleapis.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 274
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.74
+
+    Record Name . . . . . : stackoverflow.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1876
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.193.69
+
+    Record Name . . . . . : github.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 596
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 140.82.112.3
+
+    Record Name . . . . . : stackoverflow.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2210
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.193.69
+
+    Record Name . . . . . : google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2316
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.46
+
+    Record Name . . . . . : www.google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2392
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.68
+
+    Record Name . . . . . : www.google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1780
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.68
+
+    Record Name . . . . . : connectivitycheck.gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 301
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : ssl.gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2180
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : www.google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3255
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.68
+
+    Record Name . . . . . : twitter.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 962
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 104.244.42.65
+
+    Record Name . . . . . : npmjs.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2988
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 104.16.21.35
+
+    Record Name . . . . . : connectivitycheck.gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3564
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : play.google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1981
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.68
+
+    Record Name . . . . . : cloudflare.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1373
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 104.16.132.229
+
+    Record Name . . . . . : npmjs.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1233
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 104.16.21.35
+
+    Record Name . . . . . : github.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3257
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 140.82.112.3
+
+    Record Name . . . . . : bing.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3533
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 204.79.197.200
+
+    Record Name . . . . . : stackoverflow.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 65
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.193.69
+
+    Record Name . . . . . : youtube.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 713
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.185.46
+
+    Record Name . . . . . : google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1310
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.46
+
+    Record Name . . . . . : bing.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2437
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 204.79.197.200
+
+    Record Name . . . . . : fonts.googleapis.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 883
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.74
+
+    Record Name . . . . . : crl3.digicert.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3085
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 93.184.220.29
+
+    Record Name . . . . . : bing.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1969
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 204.79.197.200
+
+    Record Name . . . . . : crl3.digicert.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 446
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 93.184.220.29
+
+    Record Name . . . . . : accounts.google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1823
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : akamaiedge.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1118
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 23.221.50.138
+
+    Record Name . . . . . : npmjs.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 202
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 104.16.21.35
+
+    Record Name . . . . . : reddit.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 83
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.65.140
+
+    Record Name . . . . . : ocsp.digicert.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1952
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 93.184.220.29
+
+    Record Name . . . . . : www.google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 81
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.68
+
+    Record Name . . . . . : akamaiedge.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2327
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 23.221.50.138
+
+    Record Name . . . . . : google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3176
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.46
+
+    Record Name . . . . . : bing.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2754
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 204.79.197.200
+
+    Record Name . . . . . : crl3.digicert.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3153
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 93.184.220.29
+
+    Record Name . . . . . : ocsp.digicert.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2506
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 93.184.220.29
+
+    Record Name . . . . . : play.google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1283
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.68
+
+    Record Name . . . . . : fastly.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2217
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.0.57
+
+    Record Name . . . . . : fonts.googleapis.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 438
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.74
+
+    Record Name . . . . . : gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1389
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : bing.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1479
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 204.79.197.200
+
+    Record Name . . . . . : fonts.googleapis.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3237
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.74
+
+    Record Name . . . . . : gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1017
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : ocsp.digicert.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3014
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 93.184.220.29
+
+    Record Name . . . . . : ocsp.digicert.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2847
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 93.184.220.29
+
+    Record Name . . . . . : github.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1116
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 140.82.112.3
+
+    Record Name . . . . . : crl3.digicert.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 745
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 93.184.220.29
+
+    Record Name . . . . . : www.google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1982
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.68
+
+    Record Name . . . . . : youtube.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 394
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.185.46
+
+    Record Name . . . . . : play.google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2946
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.68
+
+    Record Name . . . . . : stackoverflow.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3377
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.193.69
+
+    Record Name . . . . . : pypi.org
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 957
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.64.223
+
+    Record Name . . . . . : ssl.gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2457
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : youtube.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3170
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.185.46
+
+    Record Name . . . . . : fonts.googleapis.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2859
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.74
+
+    Record Name . . . . . : googleapis.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3372
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.74
+
+    Record Name . . . . . : googleapis.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1514
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.74
+
+    Record Name . . . . . : microsoft.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2790
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 20.112.52.29
+
+    Record Name . . . . . : twitter.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 750
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 104.244.42.65
+
+    Record Name . . . . . : www.gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1032
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : connectivitycheck.gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3459
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : accounts.google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1410
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : connectivitycheck.gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 46
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : cdn.jsdelivr.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1952
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.2.229
+
+    Record Name . . . . . : amazon.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3359
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 176.32.103.205
+
+    Record Name . . . . . : twitter.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2833
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 104.244.42.65
+
+    Record Name . . . . . : update.googleapis.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 912
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.74
+
+    Record Name . . . . . : twitter.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 904
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 104.244.42.65
+
+    Record Name . . . . . : cdn.jsdelivr.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3345
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.2.229
+
+    Record Name . . . . . : linkedin.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2353
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 13.107.42.14
+
+    Record Name . . . . . : cdn.jsdelivr.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1864
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.2.229
+
+    Record Name . . . . . : docs.python.org
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3548
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.64.223
+
+    Record Name . . . . . : pypi.org
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 341
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.64.223
+
+    Record Name . . . . . : cloudflare.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1931
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 104.16.132.229
+
+    Record Name . . . . . : pypi.org
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 672
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.64.223
+
+    Record Name . . . . . : update.googleapis.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 86
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.74
+
+    Record Name . . . . . : fonts.googleapis.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2658
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.74
+
+    Record Name . . . . . : reddit.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2615
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.65.140
+
+    Record Name . . . . . : microsoft.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3500
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 20.112.52.29
+
+    Record Name . . . . . : www.google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2391
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.68
+
+    Record Name . . . . . : fastly.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 748
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.0.57
+
+    Record Name . . . . . : akamaiedge.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 422
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 23.221.50.138
+
+    Record Name . . . . . : npmjs.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2608
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 104.16.21.35
+
+    Record Name . . . . . : linkedin.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 349
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 13.107.42.14
+
+    Record Name . . . . . : gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 500
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : pypi.org
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2849
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.64.223
+
+    Record Name . . . . . : bing.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 476
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 204.79.197.200
+
+    Record Name . . . . . : linkedin.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2161
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 13.107.42.14
+
+    Record Name . . . . . : cloudflare.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 597
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 104.16.132.229
+
+    Record Name . . . . . : connectivitycheck.gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2130
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : stackoverflow.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2058
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.193.69
+
+    Record Name . . . . . : akamaiedge.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2397
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 23.221.50.138
+
+    Record Name . . . . . : twitter.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1999
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 104.244.42.65
+
+    Record Name . . . . . : gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3079
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : docs.python.org
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1730
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.64.223
+
+    Record Name . . . . . : fastly.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 895
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.0.57
+
+    Record Name . . . . . : google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2607
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.46
+
+    Record Name . . . . . : www.gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2965
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : connectivitycheck.gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 148
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 280
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.46
+
+    Record Name . . . . . : microsoft.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 371
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 20.112.52.29
+
+    Record Name . . . . . : crl3.digicert.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3061
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 93.184.220.29
+
+    Record Name . . . . . : stackoverflow.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3293
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.193.69
+
+    Record Name . . . . . : stackoverflow.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1816
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.193.69
+
+    Record Name . . . . . : ssl.gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2265
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : fastly.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1735
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.0.57
+
+    Record Name . . . . . : fonts.googleapis.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 410
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.74
+
+    Record Name . . . . . : www.gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2426
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : www.gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 3284
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : cdn.jsdelivr.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1941
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.2.229
+
+    Record Name . . . . . : docs.python.org
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1392
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.64.223
+
+    Record Name . . . . . : ssl.gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 907
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : accounts.google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1863
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : fonts.googleapis.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1472
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.74
+
+    Record Name . . . . . : twitter.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2268
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 104.244.42.65
+
+    Record Name . . . . . : microsoft.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 473
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 20.112.52.29
+
+    Record Name . . . . . : play.google.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 1271
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.68
+
+    Record Name . . . . . : pypi.org
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 2513
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 151.101.64.223
+
+    Record Name . . . . . : update.googleapis.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 823
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.74
+
+    Record Name . . . . . : gstatic.com
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 40
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 142.250.80.84
+
+    Record Name . . . . . : tracker.old-analytics.invalid
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 392
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    (NXDOMAIN / No records found)
+
+    Record Name . . . . . : ads.legacy-network.invalid
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 335
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    (NXDOMAIN / No records found)
+
+    Record Name . . . . . : telemetry.stale-service.invalid
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 368
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    (NXDOMAIN / No records found)
+
+    Record Name . . . . . : cdn.expired-asset.invalid
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 509
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    (NXDOMAIN / No records found)
+
+    Record Name . . . . . : pixel.retired-tracker.invalid
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 712
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    (NXDOMAIN / No records found)
+
+    Record Name . . . . . : tracker.old-analytics.invalid
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 109
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    (NXDOMAIN / No records found)
+
+    Record Name . . . . . : ads.legacy-network.invalid
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 287
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    (NXDOMAIN / No records found)

@@ -36,6 +36,7 @@ import pytest
 
 from artifact_extension.extensions.dns_extension import DNSArtifactExtension
 from artifact_extension.extensions.http_extension import HTTPArtifactExtension
+from artifact_extension.extensions.linux_extension import LinuxArtifactExtension
 from artifact_extension.manager import ArtifactManager
 from artifact_extension.profile import UserProfile
 
@@ -137,6 +138,7 @@ def _make_manager(artifacts_path: str, profile: UserProfile) -> ArtifactManager:
     manager = ArtifactManager(artifacts_path=artifacts_path, profile=profile)
     manager.register(DNSArtifactExtension(profile))
     manager.register(HTTPArtifactExtension(profile))
+    manager.register(LinuxArtifactExtension(profile))
     return manager
 
 
@@ -348,3 +350,36 @@ def test_chrome_timestamps_in_correct_epoch(
             )
     finally:
         conn.close()
+
+
+# ---------------------------------------------------------------------------
+# Linux artifact checks
+# ---------------------------------------------------------------------------
+
+def test_linux_artifacts_created(tmp_artifacts: str, normal_profile: UserProfile) -> None:
+    """Linux artifact injection must create a plausible host footprint."""
+    manager = _make_manager(tmp_artifacts, normal_profile)
+    manager.inject_all()
+
+    linux_root = Path(tmp_artifacts) / "linux"
+    assert (linux_root / "etc" / "hostname").exists()
+    assert (linux_root / "etc" / "machine-id").exists()
+    assert (linux_root / "etc" / "os-release").exists()
+    assert (linux_root / "sys" / "class" / "dmi" / "id" / "product_name").exists()
+    assert (linux_root / "home").exists()
+
+
+def test_linux_artifacts_are_fresh_across_runs() -> None:
+    """Machine IDs should vary across independent runs."""
+    profile = UserProfile.default_normal()
+
+    def run(root: str) -> str:
+        manager = ArtifactManager(artifacts_path=root, profile=profile)
+        manager.register(LinuxArtifactExtension(profile))
+        manager.inject_all()
+        return (Path(root) / "linux" / "etc" / "machine-id").read_text()
+
+    with tempfile.TemporaryDirectory() as d1, tempfile.TemporaryDirectory() as d2:
+        a1 = run(os.path.join(d1, "art"))
+        a2 = run(os.path.join(d2, "art"))
+        assert a1 != a2, "Linux machine-id should differ across runs"

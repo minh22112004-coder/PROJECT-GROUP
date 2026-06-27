@@ -23,3 +23,4 @@ web/package-analysis-web/.env
 packamalenv/
 service-simulation-module/shared/logs/inetsim/main.log
 service-simulation-module/shared/logs/inetsim/service.log
+service-simulation-module/artifact-extension/.pytest_cache/

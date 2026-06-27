@@ -1,0 +1,3 @@
+Jun 20 13:42:56 devbox-12 systemd[1]: Started User Manager for UID 1000.
+Jun 20 13:42:56 devbox-12 NetworkManager[512]: state change: connected
+Jun 20 13:42:56 devbox-12 sudo:     sam : TTY=pts/0 ; PWD=/home/sam ; USER=root ; COMMAND=/usr/bin/apt update

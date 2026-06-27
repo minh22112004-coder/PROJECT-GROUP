@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: sample_python_package
+Version: 0.0.1
+Summary: A small example package
+Author: OpenSSF <openssf-wg-securing-crit-prjs@lists.openssf.org>
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown

@@ -1,0 +1,31 @@
+
+============================================================
+  BƯỚC 1 — Không có Full Mode  (kết nối trực tiếp)
+============================================================
+Kịch bản: URL còn alive → kết nối thành công, dữ liệu KHÔNG bị ghi lại
+
+[*] Target      : http://example.com
+[*] Proxy       : NONE (direct internet)
+
+    ✓ Status     : 200
+    ✓ Content    : 559 bytes
+    ✓ Server Hdr : cloudflare
+
+    → URL alive, kết nối trực tiếp thành công
+
+============================================================
+  BƯỚC 2 — Full Mode BẬT  (INetSim intercept mọi thứ)
+============================================================
+Kịch bản: Cùng URL alive → Full Mode chặn lại, INetSim xử lý thay thế
+
+[*] Target      : http://example.com
+[*] Proxy       : http://localhost:8080  (INetSim - Full Mode)
+
+    ✗ Error: HTTPConnectionPool(host='localhost', port=8080): Read timed out. (read timeout=5)
+
+============================================================
+  KẾT LUẬN
+============================================================
+
+  ⚠  INetSim chưa chạy — hãy Start Docker ở Card 01 trước
+
